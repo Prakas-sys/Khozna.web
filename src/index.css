@@ -284,9 +284,10 @@ body {
   font-family: var(--font-logo);
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--primary); /* Use Sky Blue for the text to match the icon */
+  color: var(--primary);
   margin-left: 10px;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase; /* Force all caps */
 }
 
 .text-gradient {
