@@ -379,6 +379,7 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
       </div>
 
       <AppWalkthrough />
+      <AppShowcase />
 
       <section style={{ padding: 'clamp(5rem, 15vh, 15rem) 0', background: '#050505', position: 'relative' }}>
         <div className="container">
@@ -414,6 +415,58 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
         <div style={{ position: 'absolute', bottom: '-20%', left: '50%', transform: 'translateX(-50%)', width: '80vw', height: '80vw', background: 'var(--primary-glow)', filter: 'blur(200px)', borderRadius: '50%', opacity: 0.3, zIndex: -1 }} />
       </section>
     </main>
+  );
+};
+
+const AppShowcase = () => {
+  return (
+    <section id="app" style={{ padding: 'clamp(4rem, 10vh, 10rem) 0', overflow: 'hidden' }}>
+      <div className="container">
+        <div className="glass" style={{ padding: 'clamp(2rem, 5vw, 6rem)', borderRadius: '48px', position: 'relative', overflow: 'hidden' }}>
+           <div className="grid-2" style={{ alignItems: 'center' }}>
+              <div>
+                <Reveal><h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1, marginBottom: '2rem' }}>
+                  THE FUTURE <br/> IN YOUR POCKET.
+                </h2></Reveal>
+                <p style={{ fontSize: '1.1rem', color: 'var(--text-dim)', marginBottom: '3rem', maxWidth: '450px' }}>
+                  The Khozna app is coming soon to revolutionize how you live. Simple, fast, and secure.
+                </p>
+                
+                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                   <div className="glass" style={{ padding: '1rem 2rem', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                      <div style={{ width: '24px', height: '24px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div style={{ width: '12px', height: '12px', background: 'black', borderRadius: '2px' }} />
+                      </div>
+                      <div style={{ textAlign: 'left' }}>
+                         <div style={{ fontSize: '0.6rem', opacity: 0.6 }}>Coming Soon on</div>
+                         <div style={{ fontSize: '1rem', fontWeight: 800 }}>App Store</div>
+                      </div>
+                   </div>
+                   <div className="glass" style={{ padding: '1rem 2rem', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                      <Zap size={24} color="var(--primary)" />
+                      <div style={{ textAlign: 'left' }}>
+                         <div style={{ fontSize: '0.6rem', opacity: 0.6 }}>Coming Soon on</div>
+                         <div style={{ fontSize: '1rem', fontWeight: 800 }}>Play Store</div>
+                      </div>
+                   </div>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: '2rem', transform: 'rotate(5deg) translateY(30px)' }}>
+                 <div className="phone-mockup" style={{ transform: 'translateY(-30px)' }}>
+                    <img src="/Home screeen.jpeg" className="phone-screen" />
+                 </div>
+                 <div className="phone-mockup">
+                    <img src="/meesage setion.jpeg" className="phone-screen" />
+                 </div>
+              </div>
+           </div>
+
+           {/* Background Glow */}
+           <div style={{ position: 'absolute', bottom: '-20%', right: '-10%', width: '600px', height: '600px', background: 'var(--primary-glow)', filter: 'blur(150px)', borderRadius: '50%', zIndex: -1 }} />
+        </div>
+      </div>
+    </section>
   );
 };
 
