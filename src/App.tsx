@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 
 // --- Configuration ---
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyhAKH-8IQxdzTegL5_c8kNtG5cTdl5uffnQN1R8AdWp89A12NH0b0OBA9O15NGIcuC/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwvHzo2RkDYJi2pezC7UUEpp3Fdu1-seeiLUMPIAl9YT5D4P7Qi1N5bfBr5wqqh3z38/exec";
 
 // --- Utility Components ---
 
@@ -137,12 +137,12 @@ const LegalModal = ({ isOpen, onClose, type }: { isOpen: boolean, onClose: () =>
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
           style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.9)', backdropFilter: 'blur(15px)', zIndex: 3000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}
           onClick={onClose}
         >
-          <motion.div 
+          <motion.div
             initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
             className="glass"
             style={{ width: '100%', maxWidth: '700px', maxHeight: '80vh', overflowY: 'auto', padding: '3rem', borderRadius: '32px', position: 'relative' }}
@@ -267,12 +267,12 @@ const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
 
   return (
     <nav className="glass-nav" style={{ position: 'fixed', top: 0, left: 0, width: '100%', padding: '1rem 4rem', zIndex: 1000, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-      <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+      <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
         <div className="logo-box">
           <img src="/original_logo.png" style={{ height: '32px', objectFit: 'contain' }} alt="KHOZNA Icon" />
           <span className="logo-text">KHOZNA</span>
         </div>
-      </Link>
+      </a>
       <div className="nav-links" style={{ display: 'flex', gap: '3rem', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px' }}>
         <a href="#walkthrough" onClick={(e) => handleNavClick(e, "walkthrough")} className="nav-link">The Platform</a>
         <Link to="/vision" className="nav-link">Vision</Link>
@@ -333,7 +333,6 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
 
 const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
 
   return (
     <main>
