@@ -221,7 +221,7 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
                   <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="social-btn"><Instagram size={18} /></a>
                   <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" className="social-btn"><Linkedin size={18} /></a>
                   <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" className="social-btn"><Facebook size={18} /></a>
-                  <a href="#" target="_blank" rel="noopener noreferrer" className="social-btn"><Music2 size={18} /></a>
+                  <a href="https://www.tiktok.com/@khozna_" target="_blank" rel="noopener noreferrer" className="social-btn"><Music2 size={18} /></a>
                 </div>
               </motion.div>
             ) : (
@@ -311,7 +311,7 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
                 <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" className="footer-social-item">
                   <div className="social-btn"><Facebook size={14} /></div> Facebook
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className="footer-social-item">
+                <a href="https://www.tiktok.com/@khozna_" target="_blank" rel="noopener noreferrer" className="footer-social-item">
                   <div className="social-btn"><Music2 size={14} /></div> TikTok
                 </a>
               </div>
