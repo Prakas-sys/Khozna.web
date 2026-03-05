@@ -13,14 +13,12 @@ import {
 } from 'lucide-react';
 // --- Components ---
 
-import { createClient } from '@supabase/supabase-js';
-
-// PASTE YOUR SUPABASE CREDENTIALS HERE
-const SUPABASE_URL = "YOUR_SUPABASE_URL";
-const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// PASTE YOUR GOOGLE SCRIPT 'WEB APP' URL HERE
+const GOOGLE_SCRIPT_URL = "YOUR_SCRIPT_EXEC_URL";
 
 const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
@@ -30,16 +28,20 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
     setStatus("loading");
 
     try {
-      const { error } = await supabase
-        .from('waitlist')
-        .insert([{ email }]);
-
-      if (error) throw error;
+      // Send all data to Google Sheets via Apps Script
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, email }),
+      });
 
       setIsSubmitted(true);
       setStatus("idle");
       setTimeout(() => {
         setIsSubmitted(false);
+        setName("");
+        setPhone("");
         setEmail("");
         onClose();
       }, 5000);
@@ -63,7 +65,7 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.9, y: 20 }}
             className="glass"
-            style={{ width: '100%', maxWidth: '500px', padding: '4rem 3rem', borderRadius: '32px', textAlign: 'center', position: 'relative' }}
+            style={{ width: '100%', maxWidth: '500px', padding: 'clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 3rem)', borderRadius: '32px', textAlign: 'center', position: 'relative' }}
             onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
             <button
@@ -82,22 +84,38 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
                 <p style={{ color: 'var(--text-dim)', lineHeight: '1.6', marginBottom: '2rem' }}>We'll notify you the moment Khozna goes live. In the meantime, follow our journey.</p>
 
                 <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
-                   <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Instagram size={24} /></a>
-                   <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Linkedin size={24} /></a>
-                   <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Facebook size={24} /></a>
+                  <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Instagram size={24} /></a>
+                  <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Linkedin size={24} /></a>
+                  <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Facebook size={24} /></a>
                 </div>
 
               </motion.div>
             ) : (
               <>
                 <span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.8rem' }}>Early Access</span>
-                <h3 style={{ fontSize: '2.5rem', fontWeight: 900, marginTop: '1rem', marginBottom: '1.5rem' }}>JOIN THE<br />WAITLIST.</h3>
-                <p style={{ color: 'var(--text-dim)', marginBottom: '3rem', lineHeight: '1.6' }}>Be the first to experience Nepal's #1 direct rental ecosystem. No middleman, ever.</p>
+                <h3 style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', fontWeight: 900, marginTop: '1rem', marginBottom: '1.5rem' }}>JOIN THE<br />WAITLIST.</h3>
+                <p style={{ color: 'var(--text-dim)', marginBottom: 'clamp(1.5rem, 5vw, 3rem)', lineHeight: '1.6' }}>Be the first to experience Nepal's #1 direct rental ecosystem. No middleman, ever.</p>
 
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   <input
+                    type="text"
+                    placeholder="Full Name"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', padding: '1.2rem 1.5rem', borderRadius: '16px', color: 'white', fontSize: '1rem', outline: 'none' }}
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    required
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', padding: '1.2rem 1.5rem', borderRadius: '16px', color: 'white', fontSize: '1rem', outline: 'none' }}
+                  />
+                  <input
                     type="email"
-                    placeholder="Enter your email address"
+                    placeholder="Email Address"
                     required
                     value={email}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
@@ -188,7 +206,7 @@ const AppWalkthrough = () => {
   const screen3Y = useTransform(scrollYProgress, [0.55, 0.6], [100, 0]);
 
   return (
-    <section ref={targetRef} className="walkthrough-container" style={{ height: '400vh', background: '#000', position: 'relative', zIndex: 1 }}>
+    <section ref={targetRef} className="walkthrough-container" style={{ background: '#000', position: 'relative', zIndex: 1 }}>
       <div className="walkthrough-sticky" style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         <div className="container walkthrough-grid grid-2" style={{ alignItems: 'center' }}>
 
@@ -238,7 +256,7 @@ const AppWalkthrough = () => {
 
 const BrandPhilosophy = () => {
   return (
-    <section style={{ padding: '15rem 0', background: '#050505', position: 'relative' }}>
+    <section style={{ padding: 'clamp(5rem, 15vh, 15rem) 0', background: '#050505', position: 'relative' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '8rem' }}>
           <Reveal><h2 className="section-title" style={{ fontSize: 'clamp(3rem, 10vw, 8rem)', margin: '0 auto' }}>THE NEW WAY<br />TO RENT.</h2></Reveal>
@@ -270,7 +288,7 @@ const BrandPhilosophy = () => {
 
 const Hero = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
   return (
-    <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', padding: '120px 0', zIndex: 100 }}>
+    <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', zIndex: 100 }}>
 
       {/* Cinematic Background Video Layer restored - only the video, no overlays */}
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden' }}>
@@ -334,14 +352,17 @@ const CustomCursor = () => {
   const followerY = useSpring(0, { stiffness: 150, damping: 25, mass: 0.1 });
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
-      followerX.set(e.clientX);
-      followerY.set(e.clientY);
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    // Only track mouse on devices with a cursor
+    if (window.matchMedia("(pointer: fine)").matches) {
+      const handleMouseMove = (e: MouseEvent) => {
+        mouseX.set(e.clientX);
+        mouseY.set(e.clientY);
+        followerX.set(e.clientX);
+        followerY.set(e.clientY);
+      };
+      window.addEventListener('mousemove', handleMouseMove);
+      return () => window.removeEventListener('mousemove', handleMouseMove);
+    }
   }, []);
 
   return (
@@ -365,15 +386,15 @@ function App() {
           <img src="/original_logo.png" style={{ height: '32px', objectFit: 'contain' }} alt="KHOZNA Icon" />
           <span className="logo-text">KHOZNA</span>
         </div>
-        <div style={{ display: 'flex', gap: '3rem', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px' }}>
+        <div className="nav-links" style={{ display: 'flex', gap: '3rem', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px' }}>
           <a href="#" className="nav-link">The Platform</a>
           <a href="#" className="nav-link">Vision</a>
           <a href="#" className="nav-link">Contact</a>
         </div>
         <button
           onClick={() => setIsWaitlistOpen(true)}
-          className="glass"
-          style={{ padding: '0.6rem 1.5rem', borderRadius: '100px', fontSize: '0.7rem', fontWeight: 800, letterSpacing: '1px', border: '1px solid var(--primary)', color: 'var(--primary)', cursor: 'pointer' }}
+          className="glass nav-btn"
+          style={{ padding: '0.6rem 1.5rem', borderRadius: '100px', fontSize: '0.7rem', fontWeight: 800, letterSpacing: '1px', border: '1px solid var(--primary)', color: 'var(--primary)', cursor: 'pointer', whiteSpace: 'nowrap' }}
         >
           JOIN WAITLIST
         </button>
@@ -403,10 +424,10 @@ function App() {
       <BrandPhilosophy />
 
       {/* Final Call to Action - Representation style */}
-      <section style={{ padding: '15rem 0', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: 'clamp(6rem, 20vh, 15rem) 0', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
-          <Reveal><h2 className="section-title" style={{ fontSize: 'clamp(3rem, 12vw, 10rem)', lineHeight: 0.8, marginBottom: '4rem' }}>JOIN THE<br />REVOLUTION.</h2></Reveal>
-          <p style={{ color: 'var(--text-dim)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto 4rem', lineHeight: '1.8' }}>
+          <Reveal><h2 className="section-title" style={{ fontSize: 'clamp(2.5rem, 12vw, 10rem)', lineHeight: 0.8, marginBottom: '4rem' }}>JOIN THE<br />REVOLUTION.</h2></Reveal>
+          <p style={{ color: 'var(--text-dim)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto 4rem', lineHeight: '1.8', padding: '0 1rem' }}>
             We're not just building an app. We're building the future of how people live and connect in Nepal.
           </p>
           <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
@@ -418,7 +439,7 @@ function App() {
       </section>
 
       {/* Minimal Footer */}
-      <footer style={{ padding: '8rem 0 4rem', background: '#000', borderTop: '1px solid var(--border)' }}>
+      <footer style={{ padding: 'clamp(4rem, 10vh, 8rem) 0 4rem', background: '#000', borderTop: '1px solid var(--border)' }}>
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6rem' }}>
             <div>
@@ -433,10 +454,10 @@ function App() {
             </div>
             <div style={{ display: 'flex', gap: '6rem' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                 <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Socials</span>
-                 <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="footer-link">Instagram</a>
-                 <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" className="footer-link">LinkedIn</a>
-                 <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" className="footer-link">Facebook</a>
+                <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Socials</span>
+                <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="footer-link">Instagram</a>
+                <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" className="footer-link">LinkedIn</a>
+                <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" className="footer-link">Facebook</a>
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
