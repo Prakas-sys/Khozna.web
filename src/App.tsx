@@ -257,7 +257,7 @@ const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
         </div>
       </Link>
       <div className="nav-links" style={{ display: 'flex', gap: '3rem', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px' }}>
-        <Link to="/" className="nav-link">The Platform</Link>
+        <a href="/#walkthrough" className="nav-link">The Platform</a>
         <Link to="/vision" className="nav-link">Vision</Link>
         <a href="#contact" className="nav-link">Contact</a>
       </div>
@@ -436,7 +436,7 @@ const AppWalkthrough = () => {
   const screen3Y = useTransform(scrollYProgress, [0.55, 0.6], [100, 0]);
 
   return (
-    <section ref={targetRef} className="walkthrough-container" style={{ background: '#000', position: 'relative', zIndex: 1 }}>
+    <section id="walkthrough" ref={targetRef} className="walkthrough-container" style={{ background: '#000', position: 'relative', zIndex: 1 }}>
       <div className="walkthrough-sticky" style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         <div className="container walkthrough-grid grid-2" style={{ alignItems: 'center' }}>
           <div className="walkthrough-text-side" style={{ position: 'relative', height: '50vh' }}>
