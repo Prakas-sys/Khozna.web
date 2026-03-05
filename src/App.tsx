@@ -383,18 +383,18 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
           <div style={{ textAlign: 'center', marginBottom: '8rem' }}>
             <Reveal><h2 className="section-title" style={{ fontSize: 'clamp(3rem, 10vw, 8rem)', margin: '0 auto' }}>THE NEW WAY<br />TO RENT.</h2></Reveal>
           </div>
-          <div className="grid-3">
-            <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
+          <div className="grid-3 features-container">
+            <div className="glass feature-box" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
               <img src="/icon-money.png" alt="No Commission" className="icon-3d" />
               <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>No Commission</h3>
               <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Khozna connects you directly to the owner for $0 commission.</p>
             </div>
-            <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', border: '1px solid var(--primary)', textAlign: 'center' }}>
+            <div className="glass feature-box default-active" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
               <img src="/icon-chat.png" alt="Direct Chat" className="icon-3d" />
               <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>Direct Chat</h3>
               <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Chat directly with the house owner inside our app and close the deal faster.</p>
             </div>
-            <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
+            <div className="glass feature-box" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
               <img src="/icon-verified.png" alt="Verified" className="icon-3d" />
               <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>100% Verified</h3>
               <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>We manually check every house. If it's on Khozna, it's real and safe.</p>
