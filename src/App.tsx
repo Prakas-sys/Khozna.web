@@ -4,14 +4,7 @@ import {
   ShieldCheck, 
   MessageSquare, 
   Zap, 
-  Download, 
-  Smartphone,
-  CheckCircle2,
   ArrowRight,
-  Instagram,
-  Facebook,
-  Twitter,
-  Linkedin,
   Cpu,
   Layers
 } from 'lucide-react';
