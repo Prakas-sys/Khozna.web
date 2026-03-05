@@ -217,11 +217,11 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
                 </div>
                 <h3 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>USER VERIFIED</h3>
                 <p style={{ color: 'var(--text-dim)', lineHeight: '1.6', marginBottom: '2rem' }}>You are now officially on the Khozna early access list. Follow us for the launch date.</p>
-                <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
-                  <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Instagram size={24} /></a>
-                  <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Linkedin size={24} /></a>
-                  <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Facebook size={24} /></a>
-                  <a href="#" style={{ color: 'var(--primary)' }}><Music2 size={24} /></a>
+                <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+                  <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="social-btn"><Instagram size={18} /></a>
+                  <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" className="social-btn"><Linkedin size={18} /></a>
+                  <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" className="social-btn"><Facebook size={18} /></a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" className="social-btn"><Music2 size={18} /></a>
                 </div>
               </motion.div>
             ) : (
@@ -301,18 +301,20 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
           <div style={{ display: 'flex', gap: '6rem' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Socials</span>
-              <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Instagram size={16} /> Instagram
-              </a>
-              <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Linkedin size={16} /> LinkedIn
-              </a>
-              <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Facebook size={16} /> Facebook
-              </a>
-              <a href="#" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Music2 size={16} /> TikTok
-              </a>
+              <div className="footer-social-row">
+                <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="footer-social-item">
+                  <div className="social-btn"><Instagram size={14} /></div> Instagram
+                </a>
+                <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" className="footer-social-item">
+                  <div className="social-btn"><Linkedin size={14} /></div> LinkedIn
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" className="footer-social-item">
+                  <div className="social-btn"><Facebook size={14} /></div> Facebook
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" className="footer-social-item">
+                  <div className="social-btn"><Music2 size={14} /></div> TikTok
+                </a>
+              </div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Platform</span>
