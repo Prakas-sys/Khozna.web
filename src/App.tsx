@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from 'framer-motion';
 import {
   Zap,
@@ -10,14 +11,22 @@ import {
   Facebook,
   Mail,
   Phone,
-  CheckCircle2
+  CheckCircle2,
+  ArrowLeft
 } from 'lucide-react';
 
 // --- Configuration ---
-
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyhAKH-8IQxdzTegL5_c8kNtG5cTdl5uffnQN1R8AdWp89A12NH0b0OBA9O15NGIcuC/exec";
 
-// --- Components ---
+// --- Utility Components ---
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 const Reveal = ({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) => {
   const ref = useRef(null);
@@ -236,6 +245,186 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
   );
 };
 
+// --- Shared Layout Components ---
+
+const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
+  return (
+    <nav className="glass-nav" style={{ position: 'fixed', top: 0, left: 0, width: '100%', padding: '1rem 4rem', zIndex: 1000, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+        <div className="logo-box">
+          <img src="/original_logo.png" style={{ height: '32px', objectFit: 'contain' }} alt="KHOZNA Icon" />
+          <span className="logo-text">KHOZNA</span>
+        </div>
+      </Link>
+      <div className="nav-links" style={{ display: 'flex', gap: '3rem', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px' }}>
+        <Link to="/" className="nav-link">The Platform</Link>
+        <Link to="/vision" className="nav-link">Vision</Link>
+        <a href="#contact" className="nav-link">Contact</a>
+      </div>
+      <button onClick={onJoinWaitlist} className="glass nav-btn" style={{ padding: '0.6rem 1.5rem', borderRadius: '100px', fontSize: '0.7rem', fontWeight: 800, letterSpacing: '1px', border: '1px solid var(--primary)', color: 'var(--primary)', cursor: 'pointer', whiteSpace: 'nowrap' }}>JOIN FREE</button>
+    </nav>
+  );
+};
+
+const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety") => void }) => {
+  return (
+    <footer id="contact" style={{ padding: 'clamp(4rem, 10vh, 8rem) 0 4rem', background: '#000', borderTop: '1px solid var(--border)' }}>
+      <div className="container">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6rem' }}>
+          <div>
+            <div className="logo-box" style={{ marginBottom: '1.5rem' }}>
+              <img src="/original_logo.png" style={{ height: '32px', objectFit: 'contain' }} alt="KHOZNA Icon" />
+              <span className="logo-text">KHOZNA</span>
+            </div>
+            <h5 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '2px', marginBottom: '0.5rem' }}>#1 NEPAL'S TRUSTED RENTAL PLATFORM</h5>
+            <p style={{ color: 'var(--text-dim)', maxWidth: '300px', lineHeight: '1.6', fontSize: '0.9rem' }}>FIND YOUR NEXT HOME.<br />NO MIDDLEMAN.</p>
+          </div>
+          <div style={{ display: 'flex', gap: '6rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Socials</span>
+              <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="footer-link">Instagram</a>
+              <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" className="footer-link">LinkedIn</a>
+              <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" className="footer-link">Facebook</a>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Platform</span>
+              <Link to="/" className="footer-link">Home</Link>
+              <button onClick={() => openLegal("safety")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Safe Rental Guide</button>
+              <button onClick={() => openLegal("privacy")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Privacy Policy</button>
+              <button onClick={() => openLegal("terms")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Terms of Service</button>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Contact</span>
+              <a href="https://wa.me/9705278379" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Phone size={16} /> 9705278379</a>
+              <a href="mailto:khoznaapp@gmail.com" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Mail size={16} /> khoznaapp@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '4rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+          <p style={{ color: 'var(--text-dim)', fontSize: '0.8rem' }}>© 2026 KHOZNA. THE RENTAL ECOSYSTEM.</p>
+          <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+            <div style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%' }} />
+            <span style={{ color: 'var(--text-dim)', fontSize: '0.8rem', fontWeight: 700 }}>KATHMANDU, NEPAL</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+// --- Page Components ---
+
+const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+
+  return (
+    <main>
+      <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', zIndex: 100 }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden' }}>
+          <video autoPlay muted loop playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.6, filter: 'brightness(0.8) contrast(1.1)' }}>
+            <source src="/valley of KTM.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div style={{ textAlign: 'center', zIndex: 10, width: '100%' }}>
+          <h1 className="hero-title">
+            <span className="hero-line"><Reveal>#1 NEPAL'S TRUSTED</Reveal></span>
+            <span className="hero-line"><Reveal delay={0.1}><span className="text-gradient">RENTAL PLATFORM.</span></Reveal></span>
+          </h1>
+          <Reveal delay={0.3}>
+            <div style={{ marginTop: '4rem', display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }} className="hero-buttons">
+              <MagneticElement><button onClick={onJoinWaitlist} className="btn-primary" style={{ padding: '1.2rem 3rem' }}>JOIN NOW <ArrowRight size={20} /></button></MagneticElement>
+              <Link to="/vision" className="btn-outline" style={{ padding: '1.2rem 3rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>The Vision</Link>
+            </div>
+          </Reveal>
+        </div>
+        <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} style={{ position: 'absolute', bottom: '5%', left: '50%', transform: 'translateX(-50%)', opacity: 0.5 }}>
+          <div style={{ width: '30px', height: '50px', border: '2px solid white', borderRadius: '15px', position: 'relative' }}>
+            <motion.div animate={{ y: [0, 20, 0] }} transition={{ duration: 2, repeat: Infinity }} style={{ width: '4px', height: '10px', background: 'white', borderRadius: '2px', position: 'absolute', top: '10px', left: '50%', marginLeft: '-2px' }} />
+          </div>
+        </motion.div>
+      </section>
+
+      <div className="marquee-container" style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '3rem 0', background: 'rgba(255,255,255,0.01)', overflow: 'hidden' }}>
+        <motion.div animate={{ x: [0, -2000] }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} style={{ display: 'flex', gap: '6rem', whiteSpace: 'nowrap', fontSize: '1.5rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '8px', opacity: 0.2 }}>
+          {[1, 2, 3, 4, 5].map(i => (<React.Fragment key={i}><span>NO SCAMS</span><span>ZERO COMMISSION</span></React.Fragment>))}
+        </motion.div>
+      </div>
+
+      <AppWalkthrough />
+
+      <section style={{ padding: 'clamp(5rem, 15vh, 15rem) 0', background: '#050505', position: 'relative' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '8rem' }}>
+            <Reveal><h2 className="section-title" style={{ fontSize: 'clamp(3rem, 10vw, 8rem)', margin: '0 auto' }}>THE NEW WAY<br />TO RENT.</h2></Reveal>
+          </div>
+          <div className="grid-3">
+            <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
+              <Zap size={48} color="var(--primary)" style={{ marginBottom: '2rem' }} />
+              <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>No Commission</h3>
+              <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Khozna connects you directly to the owner for $0 commission.</p>
+            </div>
+            <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', border: '1px solid var(--primary)', textAlign: 'center' }}>
+              <Cpu size={48} color="var(--primary)" style={{ marginBottom: '2rem' }} />
+              <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>Direct Chat</h3>
+              <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Chat directly with the house owner inside our app and close the deal faster.</p>
+            </div>
+            <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
+              <Layers size={48} color="var(--primary)" style={{ marginBottom: '2rem' }} />
+              <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>100% Verified</h3>
+              <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>We manually check every house. If it's on Khozna, it's real and safe.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: 'clamp(6rem, 20vh, 15rem) 0', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <div className="container">
+          <Reveal><h2 className="section-title" style={{ fontSize: 'clamp(2.5rem, 12vw, 10rem)', lineHeight: 0.8, marginBottom: '4rem' }}>JOIN THE<br />REVOLUTION.</h2></Reveal>
+          <p style={{ color: 'var(--text-dim)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto 4rem', lineHeight: '1.8', padding: '0 1rem' }}>We're not just building an app. We're building the future of how people live and connect in Nepal.</p>
+          <div style={{ display: 'flex', justifyContent: 'center' }}><img src="/original_logo.png" style={{ height: '80px', objectFit: 'contain' }} alt="KHOZNA Quality Stamp" /></div>
+        </div>
+        <div style={{ position: 'absolute', bottom: '-20%', left: '50%', transform: 'translateX(-50%)', width: '80vw', height: '80vw', background: 'var(--primary-glow)', filter: 'blur(200px)', borderRadius: '50%', opacity: 0.3, zIndex: -1 }} />
+      </section>
+    </main>
+  );
+};
+
+const VisionPage = () => {
+  return (
+    <main style={{ padding: '120px 0 0', background: '#000' }}>
+      <section style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', background: '#0a0a0a', position: 'relative', overflow: 'hidden', padding: '10vh 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '50vw', height: '50vw', background: 'rgba(0, 163, 225, 0.03)', filter: 'blur(150px)', borderRadius: '50%', pointerEvents: 'none' }} />
+        <div className="container">
+          <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+            <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--primary)', textDecoration: 'none', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '3rem' }}>
+              <ArrowLeft size={16} /> Back to Home
+            </Link>
+            <Reveal><span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '6px', textTransform: 'uppercase', fontSize: '0.8rem', display: 'block', marginBottom: '1rem' }}>The Mission</span></Reveal>
+            <Reveal><h2 className="section-title" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', lineHeight: 0.9, marginBottom: '4rem' }}>OUR<br />VISION.</h2></Reveal>
+            <div className="grid-2" style={{ gap: '6rem', alignItems: 'start' }}>
+              <div>
+                <Reveal delay={0.1}><p style={{ fontSize: '1.4rem', color: 'white', lineHeight: '1.6', marginBottom: '3rem', fontWeight: 500 }}>At Khozna, our vision is to eliminate brokers, reduce rental friction, and bring transparency to Nepal’s rental market.</p></Reveal>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                  <Reveal delay={0.2}><div style={{ display: 'flex', gap: '1.5rem' }}><div className="glass" style={{ width: '40px', height: '40px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><CheckCircle2 size={20} color="var(--primary)" /></div><p style={{ color: 'var(--text-dim)', lineHeight: '1.6' }}>Connecting renters and owners directly without any hidden fees or exploitation.</p></div></Reveal>
+                  <Reveal delay={0.3}><div style={{ display: 'flex', gap: '1.5rem' }}><div className="glass" style={{ width: '40px', height: '40px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><CheckCircle2 size={20} color="var(--primary)" /></div><p style={{ color: 'var(--text-dim)', lineHeight: '1.6' }}>Building a digital rental ecosystem specifically engineered for the needs of Nepal.</p></div></Reveal>
+                </div>
+              </div>
+              <Reveal delay={0.4}>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '3rem', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.05)', height: '100%' }}>
+                  <h4 style={{ fontWeight: 800, color: 'white', marginBottom: '1.5rem', fontSize: '1.2rem' }}>The Principle</h4>
+                  <p style={{ color: 'var(--text-dim)', lineHeight: '1.8', marginBottom: '2rem' }}>Finding a room in Nepal is unnecessarily expensive. We believe renting should be direct, honest, and accessible for everyone.</p>
+                  <div style={{ paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}><h3 style={{ fontSize: '1.8rem', fontWeight: 900, color: 'white' }}>SIMPLE. FAIR.<br /><span className="text-gradient">BROKER-FREE.</span></h3></div>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+};
+
 const AppWalkthrough = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: targetRef, offset: ["start start", "end end"] });
@@ -280,120 +469,6 @@ const AppWalkthrough = () => {
   );
 };
 
-const VisionSection = () => {
-  return (
-    <section id="vision" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', background: '#0a0a0a', position: 'relative', overflow: 'hidden', padding: '10vh 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-      {/* Background Accent */}
-      <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '50vw', height: '50vw', background: 'rgba(0, 163, 225, 0.03)', filter: 'blur(150px)', borderRadius: '50%', pointerEvents: 'none' }} />
-      
-      <div className="container">
-        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <Reveal><span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '6px', textTransform: 'uppercase', fontSize: '0.8rem', display: 'block', marginBottom: '1rem' }}>The Mission</span></Reveal>
-          <Reveal><h2 className="section-title" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', lineHeight: 0.9, marginBottom: '4rem' }}>A NEW<br />PERSPECTIVE.</h2></Reveal>
-          
-          <div className="grid-2" style={{ gap: '6rem', alignItems: 'start' }}>
-            <div>
-              <Reveal delay={0.1}>
-                <p style={{ fontSize: '1.4rem', color: 'white', lineHeight: '1.6', marginBottom: '3rem', fontWeight: 500 }}>
-                  At Khozna, our vision is to eliminate brokers, reduce rental friction, and bring transparency to Nepal’s rental market.
-                </p>
-              </Reveal>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                <Reveal delay={0.2}>
-                  <div style={{ display: 'flex', gap: '1.5rem' }}>
-                    <div style={{ width: '40px', height: '40px', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <CheckCircle2 size={20} color="var(--primary)" />
-                    </div>
-                    <p style={{ color: 'var(--text-dim)', lineHeight: '1.6' }}>Connecting renters and owners directly without any hidden fees or exploitation.</p>
-                  </div>
-                </Reveal>
-                <Reveal delay={0.3}>
-                  <div style={{ display: 'flex', gap: '1.5rem' }}>
-                    <div style={{ width: '40px', height: '40px', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <CheckCircle2 size={20} color="var(--primary)" />
-                    </div>
-                    <p style={{ color: 'var(--text-dim)', lineHeight: '1.6' }}>Building a digital rental ecosystem specifically engineered for the needs of Nepal.</p>
-                  </div>
-                </Reveal>
-              </div>
-            </div>
-
-            <Reveal delay={0.4}>
-              <div style={{ background: 'rgba(255,255,255,0.02)', padding: '3rem', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.05)', height: '100%' }}>
-                <h4 style={{ fontWeight: 800, color: 'white', marginBottom: '1.5rem', fontSize: '1.2rem' }}>The Principle</h4>
-                <p style={{ color: 'var(--text-dim)', lineHeight: '1.8', marginBottom: '2rem' }}>
-                  Finding a room in Nepal is unnecessarily expensive. We believe renting should be direct, honest, and accessible for everyone—student, family, or owner.
-                </p>
-                <div style={{ paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-                  <h3 style={{ fontSize: '1.8rem', fontWeight: 900, color: 'white' }}>SIMPLE. FAIR.<br /><span className="text-gradient">BROKER-FREE.</span></h3>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const BrandPhilosophy = () => {
-  return (
-    <section style={{ padding: 'clamp(5rem, 15vh, 15rem) 0', background: '#050505', position: 'relative' }}>
-      <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '8rem' }}>
-          <Reveal><h2 className="section-title" style={{ fontSize: 'clamp(3rem, 10vw, 8rem)', margin: '0 auto' }}>THE NEW WAY<br />TO RENT.</h2></Reveal>
-        </div>
-        <div className="grid-3">
-          <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
-            <Zap size={48} color="var(--primary)" style={{ marginBottom: '2rem' }} />
-            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>No Commission</h3>
-            <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Khozna connects you directly to the owner for $0 commission.</p>
-          </div>
-          <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', border: '1px solid var(--primary)', textAlign: 'center' }}>
-            <Cpu size={48} color="var(--primary)" style={{ marginBottom: '2rem' }} />
-            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>Direct Chat</h3>
-            <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Chat directly with the house owner inside our app and close the deal faster.</p>
-          </div>
-          <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
-            <Layers size={48} color="var(--primary)" style={{ marginBottom: '2rem' }} />
-            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>100% Verified</h3>
-            <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>We manually check every house. If it's on Khozna, it's real and safe.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const Hero = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
-  return (
-    <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', zIndex: 100 }}>
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden' }}>
-        <video autoPlay muted loop playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.6, filter: 'brightness(0.8) contrast(1.1)' }}>
-          <source src="/valley of KTM.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div style={{ textAlign: 'center', zIndex: 10, width: '100%' }}>
-        <h1 className="hero-title">
-          <span className="hero-line"><Reveal>#1 NEPAL'S TRUSTED</Reveal></span>
-          <span className="hero-line"><Reveal delay={0.1}><span className="text-gradient">RENTAL PLATFORM.</span></Reveal></span>
-        </h1>
-        <Reveal delay={0.3}>
-          <div style={{ marginTop: '4rem', display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }} className="hero-buttons">
-            <MagneticElement><button onClick={onJoinWaitlist} className="btn-primary" style={{ padding: '1.2rem 3rem' }}>JOIN NOW <ArrowRight size={20} /></button></MagneticElement>
-            <button className="btn-outline" style={{ padding: '1.2rem 3rem' }}>The Vision</button>
-          </div>
-        </Reveal>
-      </div>
-      <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} style={{ position: 'absolute', bottom: '5%', left: '50%', transform: 'translateX(-50%)', opacity: 0.5 }}>
-        <div style={{ width: '30px', height: '50px', border: '2px solid white', borderRadius: '15px', position: 'relative' }}>
-          <motion.div animate={{ y: [0, 20, 0] }} transition={{ duration: 2, repeat: Infinity }} style={{ width: '4px', height: '10px', background: 'white', borderRadius: '2px', position: 'absolute', top: '10px', left: '50%', marginLeft: '-2px' }} />
-        </div>
-      </motion.div>
-    </section>
-  );
-};
-
 const CustomCursor = () => {
   const mouseX = useSpring(0, { stiffness: 500, damping: 28, mass: 0.5 });
   const mouseY = useSpring(0, { stiffness: 500, damping: 28, mass: 0.5 });
@@ -425,87 +500,23 @@ function App() {
   const openLegal = (type: "terms" | "privacy" | "safety") => setLegalModal({ open: true, type });
 
   return (
-    <div style={{ position: 'relative', background: '#000' }}>
-      <CustomCursor />
-      <WaitlistModal isOpen={isWaitlistOpen} onClose={() => setIsWaitlistOpen(false)} />
-      <LegalModal isOpen={legalModal.open} type={legalModal.type} onClose={() => setLegalModal({ ...legalModal, open: false })} />
+    <Router>
+      <ScrollToTop />
+      <div style={{ position: 'relative', background: '#000' }}>
+        <CustomCursor />
+        <WaitlistModal isOpen={isWaitlistOpen} onClose={() => setIsWaitlistOpen(false)} />
+        <LegalModal isOpen={legalModal.open} type={legalModal.type} onClose={() => setLegalModal({ ...legalModal, open: false })} />
 
-      <nav className="glass-nav" style={{ position: 'fixed', top: 0, left: 0, width: '100%', padding: '1rem 4rem', zIndex: 1000, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div className="logo-box">
-          <img src="/original_logo.png" style={{ height: '32px', objectFit: 'contain' }} alt="KHOZNA Icon" />
-          <span className="logo-text">KHOZNA</span>
-        </div>
-        <div className="nav-links" style={{ display: 'flex', gap: '3rem', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px' }}>
-          <a href="#" className="nav-link">The Platform</a>
-          <a href="#vision" className="nav-link">Vision</a>
-          <a href="#contact" className="nav-link">Contact</a>
-        </div>
-        <button onClick={() => setIsWaitlistOpen(true)} className="glass nav-btn" style={{ padding: '0.6rem 1.5rem', borderRadius: '100px', fontSize: '0.7rem', fontWeight: 800, letterSpacing: '1px', border: '1px solid var(--primary)', color: 'var(--primary)', cursor: 'pointer', whiteSpace: 'nowrap' }}>JOIN FREE</button>
-      </nav>
+        <Navbar onJoinWaitlist={() => setIsWaitlistOpen(true)} />
 
-      <div className="hero-section"><Hero onJoinWaitlist={() => setIsWaitlistOpen(true)} /></div>
+        <Routes>
+          <Route path="/" element={<HomePage onJoinWaitlist={() => setIsWaitlistOpen(true)} />} />
+          <Route path="/vision" element={<VisionPage />} />
+        </Routes>
 
-      <div className="marquee-container" style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '3rem 0', background: 'rgba(255,255,255,0.01)', overflow: 'hidden' }}>
-        <motion.div animate={{ x: [0, -2000] }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} style={{ display: 'flex', gap: '6rem', whiteSpace: 'nowrap', fontSize: '1.5rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '8px', opacity: 0.2 }}>
-          {[1, 2, 3, 4, 5].map(i => (<React.Fragment key={i}><span>NO SCAMS</span><span>ZERO COMMISSION</span></React.Fragment>))}
-        </motion.div>
+        <Footer openLegal={openLegal} />
       </div>
-
-      <AppWalkthrough />
-      <VisionSection />
-      <BrandPhilosophy />
-
-      <section style={{ padding: 'clamp(6rem, 20vh, 15rem) 0', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-        <div className="container">
-          <Reveal><h2 className="section-title" style={{ fontSize: 'clamp(2.5rem, 12vw, 10rem)', lineHeight: 0.8, marginBottom: '4rem' }}>JOIN THE<br />REVOLUTION.</h2></Reveal>
-          <p style={{ color: 'var(--text-dim)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto 4rem', lineHeight: '1.8', padding: '0 1rem' }}>We're not just building an app. We're building the future of how people live and connect in Nepal.</p>
-          <div style={{ display: 'flex', justifyContent: 'center' }}><img src="/original_logo.png" style={{ height: '80px', objectFit: 'contain' }} alt="KHOZNA Quality Stamp" /></div>
-        </div>
-        <div style={{ position: 'absolute', bottom: '-20%', left: '50%', transform: 'translateX(-50%)', width: '80vw', height: '80vw', background: 'var(--primary-glow)', filter: 'blur(200px)', borderRadius: '50%', opacity: 0.3, zIndex: -1 }} />
-      </section>
-
-      <footer id="contact" style={{ padding: 'clamp(4rem, 10vh, 8rem) 0 4rem', background: '#000', borderTop: '1px solid var(--border)' }}>
-        <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6rem' }}>
-            <div>
-              <div className="logo-box" style={{ marginBottom: '1.5rem' }}>
-                <img src="/original_logo.png" style={{ height: '32px', objectFit: 'contain' }} alt="KHOZNA Icon" />
-                <span className="logo-text">KHOZNA</span>
-              </div>
-              <h5 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '2px', marginBottom: '0.5rem' }}>#1 NEPAL'S TRUSTED RENTAL PLATFORM</h5>
-              <p style={{ color: 'var(--text-dim)', maxWidth: '300px', lineHeight: '1.6', fontSize: '0.9rem' }}>FIND YOUR NEXT HOME.<br />NO MIDDLEMAN.</p>
-            </div>
-            <div style={{ display: 'flex', gap: '6rem' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Socials</span>
-                <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="footer-link">Instagram</a>
-                <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" className="footer-link">LinkedIn</a>
-                <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" className="footer-link">Facebook</a>
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Platform</span>
-                <a href="#" className="footer-link">The App</a>
-                <button onClick={() => openLegal("safety")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Safe Rental Guide</button>
-                <button onClick={() => openLegal("privacy")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Privacy Policy</button>
-                <button onClick={() => openLegal("terms")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Terms of Service</button>
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Contact</span>
-                <a href="https://wa.me/9705278379" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Phone size={16} /> 9705278379</a>
-                <a href="mailto:khoznaapp@gmail.com" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Mail size={16} /> khoznaapp@gmail.com</a>
-              </div>
-            </div>
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '4rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-            <p style={{ color: 'var(--text-dim)', fontSize: '0.8rem' }}>© 2026 KHOZNA. THE RENTAL ECOSYSTEM.</p>
-            <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-              <div style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%' }} />
-              <span style={{ color: 'var(--text-dim)', fontSize: '0.8rem', fontWeight: 700 }}>KATHMANDU, NEPAL</span>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </Router>
   );
 }
 
