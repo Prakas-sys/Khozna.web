@@ -55,7 +55,13 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
                   <Zap color="white" size={32} />
                 </div>
                 <h3 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>YOU'RE ON THE LIST!</h3>
-                <p style={{ color: 'var(--text-dim)', lineHeight: '1.6' }}>We'll notify you the moment Khozna goes live. Get ready for the revolution.</p>
+                <p style={{ color: 'var(--text-dim)', lineHeight: '1.6', marginBottom: '2rem' }}>We'll notify you the moment Khozna goes live. In the meantime, follow our journey.</p>
+                
+                <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
+                   <a href="#" style={{ color: 'var(--primary)' }}><Instagram size={24} /></a>
+                   <a href="#" style={{ color: 'var(--primary)' }}><Linkedin size={24} /></a>
+                   <a href="#" style={{ color: 'var(--primary)' }}><Facebook size={24} /></a>
+                </div>
               </motion.div>
             ) : (
               <>
