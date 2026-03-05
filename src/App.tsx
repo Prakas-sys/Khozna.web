@@ -320,7 +320,7 @@ const Hero = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
                 className="btn-primary"
                 style={{ padding: '1.2rem 3rem' }}
               >
-                Join Waitlist <ArrowRight size={20} />
+                JOIN NOW <ArrowRight size={20} />
               </button>
             </MagneticElement>
             <button className="btn-outline" style={{ padding: '1.2rem 3rem' }}>The Vision</button>
@@ -396,7 +396,7 @@ function App() {
           className="glass nav-btn"
           style={{ padding: '0.6rem 1.5rem', borderRadius: '100px', fontSize: '0.7rem', fontWeight: 800, letterSpacing: '1px', border: '1px solid var(--primary)', color: 'var(--primary)', cursor: 'pointer', whiteSpace: 'nowrap' }}
         >
-          JOIN WAITLIST
+          JOIN FREE
         </button>
       </nav>
 
