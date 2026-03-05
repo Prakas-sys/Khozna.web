@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from 'framer-motion';
 import {
   Zap,
@@ -249,10 +249,17 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
 
 const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
   const location = useLocation();
+  const navigate = useNavigate();
 
-  const handleScroll = (e: React.MouseEvent, id: string) => {
-    if (location.pathname === "/") {
-      e.preventDefault();
+  const handleNavClick = (e: React.MouseEvent, id: string) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: "smooth" });
     }
@@ -267,9 +274,9 @@ const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
         </div>
       </Link>
       <div className="nav-links" style={{ display: 'flex', gap: '3rem', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px' }}>
-        <Link to="/#walkthrough" onClick={(e) => handleScroll(e, "walkthrough")} className="nav-link">The Platform</Link>
+        <a href="#walkthrough" onClick={(e) => handleNavClick(e, "walkthrough")} className="nav-link">The Platform</a>
         <Link to="/vision" className="nav-link">Vision</Link>
-        <Link to="/#contact" onClick={(e) => handleScroll(e, "contact")} className="nav-link">Contact</Link>
+        <a href="#contact" onClick={(e) => handleNavClick(e, "contact")} className="nav-link">Contact</a>
       </div>
       <button onClick={onJoinWaitlist} className="glass nav-btn" style={{ padding: '0.6rem 1.5rem', borderRadius: '100px', fontSize: '0.7rem', fontWeight: 800, letterSpacing: '1px', border: '1px solid var(--primary)', color: 'var(--primary)', cursor: 'pointer', whiteSpace: 'nowrap' }}>JOIN FREE</button>
     </nav>
