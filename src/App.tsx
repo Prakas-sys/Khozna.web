@@ -182,11 +182,6 @@ const Hero = () => {
           <Reveal>#1 NEPAL'S TRUSTED</Reveal>
           <Reveal delay={0.1}><span className="text-gradient">RENTAL PLATFORM.</span></Reveal>
         </h1>
-        <Reveal delay={0.2}>
-          <p style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-dim)', marginTop: '2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
-            FIND YOUR NEXT HOME. NO MIDDLEMAN.
-          </p>
-        </Reveal>
         <Reveal delay={0.3}>
           <div style={{ marginTop: '4rem', display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }} className="hero-buttons">
              <MagneticElement><button className="btn-primary" style={{ padding: '1.2rem 3rem' }}>Explore App <ArrowRight size={20} /></button></MagneticElement>
@@ -250,7 +245,7 @@ function App() {
       
       <nav className="glass-nav" style={{ position: 'fixed', top: 0, left: 0, width: '100%', padding: '1rem 4rem', zIndex: 1000, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <div className="logo-box">
-        <img src="/original_logo.png" style={{ height: '42px', objectFit: 'contain' }} alt="KHOZNA Icon" />
+        <img src="/original_logo.png" style={{ height: '32px', objectFit: 'contain' }} alt="KHOZNA Icon" />
         <span className="logo-text">KHOZNA</span>
       </div>
         <div style={{ display: 'flex', gap: '3rem', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px' }}>
@@ -307,7 +302,7 @@ function App() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6rem' }}>
             <div>
               <div className="logo-box" style={{ marginBottom: '1.5rem' }}>
-                <img src="/original_logo.png" style={{ height: '42px', objectFit: 'contain' }} alt="KHOZNA Icon" />
+                <img src="/original_logo.png" style={{ height: '32px', objectFit: 'contain' }} alt="KHOZNA Icon" />
                 <span className="logo-text">KHOZNA</span>
               </div>
               <h5 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '2px', marginBottom: '0.5rem' }}>#1 NEPAL'S TRUSTED RENTAL PLATFORM</h5>

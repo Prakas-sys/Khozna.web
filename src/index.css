@@ -433,10 +433,10 @@ body {
 
 .logo-text {
   font-family: var(--font-logo);
-  font-size: 1.6rem; /* Slightly larger for the bigger icon */
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--primary);
-  margin-left: 16px;
+  margin-left: 12px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
