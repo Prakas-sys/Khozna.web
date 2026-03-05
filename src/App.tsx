@@ -386,17 +386,17 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
           </div>
           <div className="grid-3">
             <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
-              <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Microsoft-Fluent-Emoji/main/Emojis/Objects/Money%20Bag.png" alt="No Commission" className="icon-3d" />
+              <img src="/icon-money.png" alt="No Commission" className="icon-3d" />
               <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>No Commission</h3>
               <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Khozna connects you directly to the owner for $0 commission.</p>
             </div>
             <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', border: '1px solid var(--primary)', textAlign: 'center' }}>
-              <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Microsoft-Fluent-Emoji/main/Emojis/Objects/Speech%20Balloon.png" alt="Direct Chat" className="icon-3d" />
+              <img src="/icon-chat.png" alt="Direct Chat" className="icon-3d" />
               <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>Direct Chat</h3>
               <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Chat directly with the house owner inside our app and close the deal faster.</p>
             </div>
             <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
-              <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Microsoft-Fluent-Emoji/main/Emojis/Symbols/Check%20Mark%20Button.png" alt="Verified" className="icon-3d" />
+              <img src="/icon-verified.png" alt="Verified" className="icon-3d" />
               <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>100% Verified</h3>
               <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>We manually check every house. If it's on Khozna, it's real and safe.</p>
             </div>
@@ -443,7 +443,7 @@ const AppShowcase = () => {
         >
           <div className="grid-2" style={{ alignItems: 'center' }}>
             <div>
-              <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Microsoft-Fluent-Emoji/main/Emojis/Objects/Mobile%20Phone.png" alt="Mobile" className="icon-3d" style={{ width: '80px', height: '80px' }} />
+              <img src="/icon-phone.png" alt="Mobile" className="icon-3d" style={{ width: '80px', height: '80px' }} />
               <Reveal><h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1, marginBottom: '2rem' }}>
                 THE FUTURE <br /> IN YOUR POCKET.
               </h2></Reveal>
