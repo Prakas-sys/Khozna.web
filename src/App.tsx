@@ -9,7 +9,8 @@ import {
   Linkedin,
   Facebook,
   Mail,
-  Phone
+  Phone,
+  CheckCircle2
 } from 'lucide-react';
 // --- Components ---
 
@@ -77,40 +78,39 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
 
             {isSubmitted ? (
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-                <div style={{ width: '60px', height: '60px', background: 'var(--primary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2rem' }}>
-                  <Zap color="white" size={32} />
+                <div style={{ width: '60px', height: '60px', background: '#10B981', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2rem' }}>
+                  <CheckCircle2 color="white" size={32} />
                 </div>
-                <h3 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>YOU'RE ON THE LIST!</h3>
-                <p style={{ color: 'var(--text-dim)', lineHeight: '1.6', marginBottom: '2rem' }}>We'll notify you the moment Khozna goes live. In the meantime, follow our journey.</p>
+                <h3 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>USER VERIFIED</h3>
+                <p style={{ color: 'var(--text-dim)', lineHeight: '1.6', marginBottom: '2rem' }}>You are now officially on the Khozna early access list. Follow us for the launch date.</p>
 
                 <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
                   <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Instagram size={24} /></a>
                   <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Linkedin size={24} /></a>
                   <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Facebook size={24} /></a>
                 </div>
-
               </motion.div>
             ) : (
               <>
-                <span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.8rem' }}>Early Access</span>
-                <h3 style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', fontWeight: 900, marginTop: '1rem', marginBottom: '1.5rem' }}>JOIN THE<br />WAITLIST.</h3>
-                <p style={{ color: 'var(--text-dim)', marginBottom: 'clamp(1.5rem, 5vw, 3rem)', lineHeight: '1.6' }}>Be the first to experience Nepal's #1 direct rental ecosystem. No middleman, ever.</p>
+                <span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.8rem' }}>Identity Verification</span>
+                <h3 style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', fontWeight: 900, marginTop: '1rem', marginBottom: '1.5rem' }}>JOIN THE<br />ECOSYSTEM.</h3>
+                <p style={{ color: 'var(--text-dim)', marginBottom: 'clamp(1.5rem, 5vw, 3rem)', lineHeight: '1.6' }}>Enter your details to get verified for early access to Nepal's #1 rental platform.</p>
 
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   <input
                     type="text"
-                    placeholder="Full Name"
+                    placeholder="Your Full Name"
                     required
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
                     style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', padding: '1.2rem 1.5rem', borderRadius: '16px', color: 'white', fontSize: '1rem', outline: 'none' }}
                   />
                   <input
                     type="tel"
-                    placeholder="Phone Number"
+                    placeholder="WhatsApp Number"
                     required
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)}
                     style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', padding: '1.2rem 1.5rem', borderRadius: '16px', color: 'white', fontSize: '1rem', outline: 'none' }}
                   />
                   <input
@@ -127,10 +127,10 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
                   <button
                     type="submit"
                     className="btn-primary"
-                    style={{ width: '100%', justifyContent: 'center', padding: '1.2rem' }}
+                    style={{ width: '100%', justifyContent: 'center', padding: '1.2rem', background: 'var(--primary)', fontWeight: 800 }}
                     disabled={status === "loading"}
                   >
-                    {status === "loading" ? "Submitting..." : "Notify Me"} <ArrowRight size={20} />
+                    {status === "loading" ? "VERIFYING..." : "VERIFY & JOIN"} <ArrowRight size={20} />
                   </button>
                 </form>
               </>
