@@ -178,13 +178,13 @@ const Hero = () => {
   return (
     <section style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
       <div style={{ textAlign: 'center', zIndex: 10 }}>
-        <Reveal><span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '8px', textTransform: 'uppercase', fontSize: '0.8rem', marginBottom: '2rem', display: 'block' }}>NEPAL'S #1 RENTAL PLATFORM</span></Reveal>
+        <Reveal><span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '8px', textTransform: 'uppercase', fontSize: '0.8rem', marginBottom: '2rem', display: 'block' }}>#1 NEPAL'S TRUSTED RENTAL PLATFORM</span></Reveal>
         <h1 className="hero-title">
-          <Reveal>REDEFINING</Reveal>
-          <Reveal delay={0.1}><span className="text-gradient">NEPALESE RENTAL.</span></Reveal>
+          <Reveal>FIND YOUR NEXT HOME.</Reveal>
+          <Reveal delay={0.1}><span className="text-gradient">NO MIDDLEMAN.</span></Reveal>
         </h1>
         <Reveal delay={0.3}>
-          <div style={{ marginTop: '4rem', display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ marginTop: '4rem', display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }} className="hero-buttons">
              <MagneticElement><button className="btn-primary" style={{ padding: '1.2rem 3rem' }}>Explore App <ArrowRight size={20} /></button></MagneticElement>
              <button className="btn-outline" style={{ padding: '1.2rem 3rem' }}>The Vision</button>
           </div>
