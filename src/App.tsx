@@ -7,7 +7,9 @@ import {
   Layers,
   Instagram,
   Linkedin,
-  Facebook
+  Facebook,
+  Mail,
+  Phone
 } from 'lucide-react';
 // --- Components ---
 
@@ -442,6 +444,16 @@ function App() {
                 <a href="#" className="footer-link">The App</a>
                 <a href="#" className="footer-link">KYC Policy</a>
                 <a href="#" className="footer-link">Privacy</a>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Contact</span>
+                <a href="https://wa.me/9705278379" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <Phone size={16} /> 9705278379
+                </a>
+                <a href="mailto:khoznaapp@gmail.com" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <Mail size={16} /> khoznaapp@gmail.com
+                </a>
               </div>
             </div>
           </div>
