@@ -178,11 +178,15 @@ const Hero = () => {
   return (
     <section style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
       <div style={{ textAlign: 'center', zIndex: 10 }}>
-        <Reveal><span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '8px', textTransform: 'uppercase', fontSize: '0.8rem', marginBottom: '2rem', display: 'block' }}>#1 NEPAL'S TRUSTED RENTAL PLATFORM</span></Reveal>
         <h1 className="hero-title">
-          <Reveal>FIND YOUR NEXT HOME.</Reveal>
-          <Reveal delay={0.1}><span className="text-gradient">NO MIDDLEMAN.</span></Reveal>
+          <Reveal>#1 NEPAL'S TRUSTED</Reveal>
+          <Reveal delay={0.1}><span className="text-gradient">RENTAL PLATFORM.</span></Reveal>
         </h1>
+        <Reveal delay={0.2}>
+          <p style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-dim)', marginTop: '2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
+            FIND YOUR NEXT HOME. NO MIDDLEMAN.
+          </p>
+        </Reveal>
         <Reveal delay={0.3}>
           <div style={{ marginTop: '4rem', display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }} className="hero-buttons">
              <MagneticElement><button className="btn-primary" style={{ padding: '1.2rem 3rem' }}>Explore App <ArrowRight size={20} /></button></MagneticElement>
