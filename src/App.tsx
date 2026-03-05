@@ -248,6 +248,16 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
 // --- Shared Layout Components ---
 
 const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
+  const location = useLocation();
+
+  const handleScroll = (e: React.MouseEvent, id: string) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav className="glass-nav" style={{ position: 'fixed', top: 0, left: 0, width: '100%', padding: '1rem 4rem', zIndex: 1000, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
@@ -257,9 +267,9 @@ const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
         </div>
       </Link>
       <div className="nav-links" style={{ display: 'flex', gap: '3rem', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px' }}>
-        <a href="/#walkthrough" className="nav-link">The Platform</a>
+        <Link to="/#walkthrough" onClick={(e) => handleScroll(e, "walkthrough")} className="nav-link">The Platform</Link>
         <Link to="/vision" className="nav-link">Vision</Link>
-        <a href="#contact" className="nav-link">Contact</a>
+        <Link to="/#contact" onClick={(e) => handleScroll(e, "contact")} className="nav-link">Contact</Link>
       </div>
       <button onClick={onJoinWaitlist} className="glass nav-btn" style={{ padding: '0.6rem 1.5rem', borderRadius: '100px', fontSize: '0.7rem', fontWeight: 800, letterSpacing: '1px', border: '1px solid var(--primary)', color: 'var(--primary)', cursor: 'pointer', whiteSpace: 'nowrap' }}>JOIN FREE</button>
     </nav>
