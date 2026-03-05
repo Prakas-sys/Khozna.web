@@ -389,7 +389,7 @@ function App() {
         <div className="nav-links" style={{ display: 'flex', gap: '3rem', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px' }}>
           <a href="#" className="nav-link">The Platform</a>
           <a href="#" className="nav-link">Vision</a>
-          <a href="#" className="nav-link">Contact</a>
+          <a href="#contact" className="nav-link">Contact</a>
         </div>
         <button
           onClick={() => setIsWaitlistOpen(true)}
@@ -439,7 +439,7 @@ function App() {
       </section>
 
       {/* Minimal Footer */}
-      <footer style={{ padding: 'clamp(4rem, 10vh, 8rem) 0 4rem', background: '#000', borderTop: '1px solid var(--border)' }}>
+      <footer id="contact" style={{ padding: 'clamp(4rem, 10vh, 8rem) 0 4rem', background: '#000', borderTop: '1px solid var(--border)' }}>
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6rem' }}>
             <div>
