@@ -332,8 +332,6 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
 // --- Page Components ---
 
 const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
-  const { scrollY } = useScroll();
-
   return (
     <main>
       <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', zIndex: 100 }}>
