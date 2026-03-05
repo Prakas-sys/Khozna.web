@@ -11,41 +11,41 @@ import {
 } from 'lucide-react';
 // --- Components ---
 
+import { createClient } from '@supabase/supabase-js';
+
+// PASTE YOUR SUPABASE CREDENTIALS HERE
+const SUPABASE_URL = "YOUR_SUPABASE_URL";
+const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
 const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
-
-  // PASTE YOUR FORMSPREE ID HERE
-  const FORMSPREE_ID = "YOUR_ID_HERE";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
 
     try {
-      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
+      const { error } = await supabase
+        .from('waitlist')
+        .insert([{ email }]);
 
-      if (response.ok) {
-        setIsSubmitted(true);
-        setStatus("idle");
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setEmail("");
-          onClose();
-        }, 5000);
-      } else {
-        setStatus("error");
-      }
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      setStatus("idle");
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setEmail("");
+        onClose();
+      }, 5000);
     } catch (err) {
+      console.error(err);
       setStatus("error");
     }
   };
-
   return (
     <AnimatePresence>
       {isOpen && (
