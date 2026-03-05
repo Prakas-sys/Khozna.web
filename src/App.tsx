@@ -56,6 +56,7 @@ const MagneticElement = ({ children, strength = 0.3 }: { children: React.ReactNo
       onMouseLeave={reset}
       animate={{ x: position.x, y: position.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+      style={{ display: 'inline-flex' }}
     >
       {children}
     </motion.div>
@@ -184,14 +185,14 @@ const Hero = () => {
   return (
     <section style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
       <div style={{ textAlign: 'center', zIndex: 10 }}>
-        <Reveal><span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '8px', textTransform: 'uppercase', fontSize: '0.8rem', marginBottom: '2rem', display: 'block' }}>KHOZNA BRAND ECOSYSTEM</span></Reveal>
+        <Reveal><span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '8px', textTransform: 'uppercase', fontSize: '0.8rem', marginBottom: '2rem', display: 'block' }}>NEPAL'S #1 RENTAL PLATFORM</span></Reveal>
         <h1 className="hero-title">
           <Reveal>REDEFINING</Reveal>
           <Reveal delay={0.1}><span className="text-gradient">NEPALESE RENTAL.</span></Reveal>
         </h1>
         <Reveal delay={0.3}>
-          <div style={{ marginTop: '4rem', display: 'flex', gap: '2rem', justifyContent: 'center' }}>
-             <MagneticElement><button className="btn-primary" style={{ padding: '1.2rem 3rem' }}>Get Started <ArrowRight size={20} /></button></MagneticElement>
+          <div style={{ marginTop: '4rem', display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }}>
+             <MagneticElement><button className="btn-primary" style={{ padding: '1.2rem 3rem' }}>Explore App <ArrowRight size={20} /></button></MagneticElement>
              <button className="btn-outline" style={{ padding: '1.2rem 3rem' }}>The Vision</button>
           </div>
         </Reveal>
