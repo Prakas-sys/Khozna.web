@@ -271,21 +271,21 @@ body {
 
 .logo-box {
   background: white;
-  padding: 8px 16px;
+  padding: 10px 24px;
   border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: fit-content;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 .logo-text {
   font-family: var(--font-logo);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--primary);
-  margin-left: 10px;
+  margin-left: 14px;
   letter-spacing: 1px;
   text-transform: uppercase; /* Force all caps */
 }
