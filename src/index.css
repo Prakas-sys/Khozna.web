@@ -206,64 +206,136 @@ body {
   gap: 2rem;
 }
 
-/* Responsive Design */
+/* Responsive Design Overhaul */
 @media (max-width: 1024px) {
   .grid-2, .grid-3 {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 3rem;
   }
 }
 
 @media (max-width: 768px) {
+  * {
+    cursor: auto !important; /* Disable custom cursor on touch devices */
+  }
+
+  .custom-cursor, .cursor-follower {
+    display: none !important;
+  }
+
   .container {
     padding: 0 1.5rem;
   }
 
   .glass-nav {
-    padding: 1rem 1.5rem !important;
+    padding: 0.8rem 1.2rem !important;
   }
 
   .nav-link {
-    display: none; /* Hide links on mobile for simplicity, or we could add a burger */
+    display: none;
   }
 
   .logo-box {
-    padding: 6px 16px;
+    padding: 4px 12px;
   }
 
   .logo-text {
-    font-size: 1.1rem;
-    margin-left: 8px;
+    font-size: 1rem;
+    margin-left: 6px;
   }
 
   .logo-box img {
-    height: 24px !important;
+    height: 20px !important;
   }
 
   .hero-title {
-    font-size: 3.5rem;
-    line-height: 1;
+    font-size: 3rem !important;
+    line-height: 1.1;
+    text-align: center;
   }
 
   .section-title {
-    font-size: 2.8rem;
+    font-size: 2.2rem !important;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Fix Walkthrough for Mobile */
+  .walkthrough-container {
+    height: auto !important;
+    padding: 4rem 0;
+  }
+
+  .walkthrough-sticky {
+    position: relative !important;
+    height: auto !important;
+    top: 0 !important;
+  }
+
+  .walkthrough-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4rem !important;
+  }
+
+  .walkthrough-text-side {
+    height: auto !important;
+    position: relative !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .walkthrough-text-side > div {
+    position: relative !important;
+    opacity: 1 !important;
+    margin-bottom: 2rem;
   }
 
   .phone-mockup {
-    width: 240px;
-    height: 500px;
+    width: 200px;
+    height: 420px;
+    margin: 0 auto;
+    border-width: 6px;
   }
 
-  /* Adjust walkthrough for mobile stack */
-  .grid-2 {
-    display: flex;
+  .phone-screen {
+    opacity: 1 !important; /* Show all screens in a stack or handle differently */
+  }
+
+  /* Hero Adjustments */
+  .hero-section {
+    height: auto !important;
+    min-height: 80vh;
+    padding: 8rem 0 4rem;
+  }
+
+  .hero-buttons {
     flex-direction: column;
-    gap: 3rem;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .btn-primary, .btn-outline {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Marquee */
+  .marquee-container {
+    padding: 1.5rem 0 !important;
   }
 
   footer .grid-3 {
     grid-template-columns: 1fr !important;
+    text-align: center;
     gap: 3rem;
+  }
+
+  footer .logo-box {
+    margin: 0 auto 2rem !important;
   }
 
   footer .container > div:last-child {
@@ -275,17 +347,11 @@ body {
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2.8rem;
+    font-size: 2.4rem !important;
   }
   
-  .btn-primary, .btn-outline {
-    width: 100%;
-    justify-content: center;
-    padding: 1rem 1.5rem;
-  }
-
-  .logo-text {
-    display: none; /* Only show icon on very small screens if needed, or keep small */
+  .section-title {
+    font-size: 1.8rem !important;
   }
 }
 

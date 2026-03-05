@@ -75,12 +75,12 @@ const AppWalkthrough = () => {
   const screen3Y = useTransform(scrollYProgress, [0.55, 0.6], [100, 0]);
 
   return (
-    <section ref={targetRef} style={{ height: '400vh', background: '#000' }}>
-      <div style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-        <div className="container grid-2" style={{ alignItems: 'center' }}>
+    <section ref={targetRef} className="walkthrough-container" style={{ height: '400vh', background: '#000' }}>
+      <div className="walkthrough-sticky" style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+        <div className="container walkthrough-grid grid-2" style={{ alignItems: 'center' }}>
           
           {/* Left Side: Storytelling */}
-          <div style={{ position: 'relative', height: '50vh' }}>
+          <div className="walkthrough-text-side" style={{ position: 'relative', height: '50vh' }}>
             <motion.div style={{ position: 'absolute', opacity: useTransform(scrollYProgress, [0, 0.2], [1, 0]) }}>
               <span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase' }}>Step 01</span>
               <h2 className="section-title" style={{ marginTop: '1rem' }}>DISCOVER<br/>BEYOND.</h2>
@@ -257,10 +257,12 @@ function App() {
         <button className="btn-primary" style={{ padding: '0.6rem 1.5rem', fontSize: '0.8rem' }}>Get The App</button>
       </nav>
 
-      <Hero />
+      <div className="hero-section">
+        <Hero />
+      </div>
       
       {/* Brand Marquee */}
-      <div style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '3rem 0', background: 'rgba(255,255,255,0.01)', overflow: 'hidden' }}>
+      <div className="marquee-container" style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '3rem 0', background: 'rgba(255,255,255,0.01)', overflow: 'hidden' }}>
         <motion.div 
           animate={{ x: [0, -2000] }}
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
