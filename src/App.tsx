@@ -297,7 +297,7 @@ const Hero = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
           muted
           loop
           playsInline
-          style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45, filter: 'brightness(0.6) contrast(1.1)' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.6, filter: 'brightness(0.8) contrast(1.1)' }}
         >
           <source src="/valley of KTM.mp4" type="video/mp4" />
         </video>
