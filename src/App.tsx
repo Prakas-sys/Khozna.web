@@ -465,6 +465,7 @@ const AppShowcase = () => {
             </div>
 
             <motion.div
+              className="emotion-slider-mobile"
               style={{
                 display: 'flex',
                 gap: '2rem',

@@ -290,6 +290,33 @@ body {
     gap: 3rem;
   }
 
+  .emotion-slider-mobile {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    padding: 1rem 0 2rem 1rem !important;
+    /* give space for scrolling */
+    margin: 0 -1rem !important;
+    /* extend beyond container to edges */
+    -webkit-overflow-scrolling: touch;
+    width: 100vw !important;
+    justify-content: flex-start !important;
+    transform: none !important;
+    perspective: none !important;
+  }
+
+  .emotion-slider-mobile::-webkit-scrollbar {
+    display: none;
+  }
+
+  .emotion-slider-mobile .emotion-card {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    margin-right: 1.5rem;
+    transform: none !important;
+    /* Cancel 3D overlaps on swipable screen */
+  }
+
   /* Padding adjustments to remove fixed large values */
   section {
     padding: 4rem 0 !important;
