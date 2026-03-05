@@ -419,12 +419,33 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
 };
 
 const AppShowcase = () => {
+  const [rotate, setRotate] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientY - rect.top) / rect.height - 0.5;
+    const y = (e.clientX - rect.left) / rect.width - 0.5;
+    setRotate({ x: x * 20, y: y * -20 });
+  };
+
   return (
     <section id="app" style={{ padding: 'clamp(4rem, 10vh, 10rem) 0', overflow: 'hidden' }}>
       <div className="container">
-        <div className="glass" style={{ padding: 'clamp(2rem, 5vw, 6rem)', borderRadius: '48px', position: 'relative', overflow: 'hidden' }}>
+        <div 
+          onMouseMove={handleMouseMove}
+          onMouseLeave={() => setRotate({ x: 0, y: 0 })}
+          className="glass" 
+          style={{ 
+            padding: 'clamp(2rem, 5vw, 6rem)', 
+            borderRadius: '48px', 
+            position: 'relative', 
+            overflow: 'hidden',
+            transition: 'transform 0.1s ease-out'
+          }}
+        >
            <div className="grid-2" style={{ alignItems: 'center' }}>
               <div>
+                <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Microsoft-Fluent-Emoji/main/Emojis/Objects/Mobile%20Phone.png" alt="Mobile" className="icon-3d" style={{ width: '80px', height: '80px' }} />
                 <Reveal><h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1, marginBottom: '2rem' }}>
                   THE FUTURE <br/> IN YOUR POCKET.
                 </h2></Reveal>
@@ -452,14 +473,24 @@ const AppShowcase = () => {
                 </div>
               </div>
 
-              <div style={{ display: 'flex', gap: '2rem', transform: 'rotate(5deg) translateY(30px)' }}>
-                 <div className="phone-mockup" style={{ transform: 'translateY(-30px)' }}>
+              <motion.div 
+                style={{ 
+                  display: 'flex', 
+                  gap: '2rem', 
+                  transformStyle: 'preserve-3d',
+                  perspective: '1000px',
+                  rotateX: rotate.x,
+                  rotateY: rotate.y
+                }}
+                transition={{ type: "spring", stiffness: 100, damping: 30 }}
+              >
+                 <div className="phone-mockup" style={{ transform: 'translateZ(50px) translateY(-30px) rotate(5deg)' }}>
                     <img src="/Home screeen.jpeg" className="phone-screen" />
                  </div>
-                 <div className="phone-mockup">
+                 <div className="phone-mockup" style={{ transform: 'translateZ(100px) rotate(-5deg)' }}>
                     <img src="/meesage setion.jpeg" className="phone-screen" />
                  </div>
-              </div>
+              </motion.div>
            </div>
 
            {/* Background Glow */}
