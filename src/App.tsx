@@ -17,7 +17,93 @@ import {
 // GOOGLE SCRIPT 'WEB APP' URL
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyhAKH-8IQxdzTegL5_c8kNtG5cTdl5uffnQN1R8AdWp89A12NH0b0OBA9O15NGIcuC/exec";
 
-const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
+// --- Legal Modal Component ---
+
+const LegalModal = ({ isOpen, onClose, type }: { isOpen: boolean, onClose: () => void, type: "terms" | "privacy" | "safety" }) => {
+  const content = {
+    terms: {
+      title: "Terms & Conditions",
+      date: "Last Updated: March 2026",
+      body: (
+        <div style={{ textAlign: 'left', fontSize: '0.95rem', lineHeight: '1.8', color: 'var(--text-dim)' }}>
+          <p style={{ color: 'white', marginBottom: '1.5rem' }}>Welcome to Khozna. By accessing or using our website or services, you agree to comply with and be bound by these Terms & Conditions.</p>
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>1. Platform Purpose</h4>
+          <p>Khozna is a direct rental discovery platform that connects property owners and renters without brokers. We do not own, manage, or lease properties listed on the platform.</p>
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>2. User Eligibility</h4>
+          <p>You must be at least 18 years old to use Khozna. By using the platform, you confirm that the information you provide is accurate and lawful.</p>
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>3. Listings & Content</h4>
+          <ul style={{ paddingLeft: '1.5rem' }}>
+            <li>Property owners are responsible for the accuracy of listings</li>
+            <li>Fake, misleading, or duplicate listings are strictly prohibited</li>
+            <li>Khozna reserves the right to remove any content without prior notice</li>
+          </ul>
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>4. No Brokerage Guarantee</h4>
+          <p>Khozna does not act as a broker, handle payments, or guarantee rental outcomes. All transactions occur directly between users.</p>
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>5. User Conduct</h4>
+          <p>Violation of platform safeguards or attempting to scam users may result in a permanent ban.</p>
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>6. Limitation of Liability</h4>
+          <p>Khozna is not responsible for property disputes, financial loss, or damages. Use the platform at your own risk.</p>
+        </div>
+      )
+    },
+    privacy: {
+      title: "Privacy Policy",
+      date: "Last Updated: March 2026",
+      body: (
+        <div style={{ textAlign: 'left', fontSize: '0.95rem', lineHeight: '1.8', color: 'var(--text-dim)' }}>
+          <p style={{ color: 'white', marginBottom: '1.5rem' }}>Your privacy matters. We collect only what is necessary to operate the platform.</p>
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>Information We Collect</h4>
+          <p>Name, phone number, email, and property listing details for platform operations and fraud prevention.</p>
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>Data Protection</h4>
+          <p>We do not sell user data. We apply reasonable security measures and only share data when legally required.</p>
+        </div>
+      )
+    },
+    safety: {
+      title: "Safe Rental Guide",
+      date: "Stay Secure",
+      body: (
+        <div style={{ textAlign: 'left', fontSize: '0.95rem', lineHeight: '1.8', color: 'var(--text-dim)' }}>
+          <ul style={{ paddingLeft: '1.5rem', marginBottom: '2rem' }}>
+            <li>Meet property owners in person before any agreement.</li>
+            <li>Never send advance payments without verification.</li>
+            <li>Avoid deals that feel rushed or unrealistic.</li>
+            <li>Visit properties before confirming.</li>
+          </ul>
+          <div style={{ background: 'rgba(239, 68, 68, 0.1)', padding: '1.5rem', borderRadius: '16px', border: '1px solid rgba(239, 68, 68, 0.2)' }}>
+            <h4 style={{ color: '#ef4444', marginBottom: '0.5rem' }}>Report a Scammer</h4>
+            <p style={{ fontSize: '0.85rem' }}>Email: khoznaapp@gmail.com<br />Phone: +977 9705278379</p>
+          </div>
+          <p style={{ marginTop: '2rem', fontSize: '0.8rem', fontStyle: 'italic' }}>Disclaimer: Khozna is a technology platform, not a real estate agency. Users are solely responsible for their interactions.</p>
+        </div>
+      )
+    }
+  };
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div 
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+          style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.9)', backdropFilter: 'blur(15px)', zIndex: 3000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}
+          onClick={onClose}
+        >
+          <motion.div 
+            initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
+            className="glass"
+            style={{ width: '100%', maxWidth: '700px', maxHeight: '80vh', overflowY: 'auto', padding: '3rem', borderRadius: '32px', position: 'relative' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button onClick={onClose} style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'transparent', border: 'none', color: 'white', cursor: 'pointer', opacity: 0.5 }}>✕</button>
+            <span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.7rem' }}>{content[type].date}</span>
+            <h3 style={{ fontSize: '2.5rem', fontWeight: 900, marginTop: '0.5rem', marginBottom: '2rem' }}>{content[type].title}</h3>
+            {content[type].body}
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -443,11 +529,15 @@ const CustomCursor = () => {
 
 function App() {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+  const [legalModal, setLegalModal] = useState<{ open: boolean, type: "terms" | "privacy" | "safety" }>({ open: false, type: "terms" });
+
+  const openLegal = (type: "terms" | "privacy" | "safety") => setLegalModal({ open: true, type });
 
   return (
     <div style={{ position: 'relative', background: '#000' }}>
       <CustomCursor />
       <WaitlistModal isOpen={isWaitlistOpen} onClose={() => setIsWaitlistOpen(false)} />
+      <LegalModal isOpen={legalModal.open} type={legalModal.type} onClose={() => setLegalModal({ ...legalModal, open: false })} />
 
       <nav className="glass-nav" style={{ position: 'fixed', top: 0, left: 0, width: '100%', padding: '1rem 4rem', zIndex: 1000, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div className="logo-box">
@@ -532,8 +622,9 @@ function App() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Platform</span>
                 <a href="#" className="footer-link">The App</a>
-                <a href="#" className="footer-link">KYC Policy</a>
-                <a href="#" className="footer-link">Privacy</a>
+                <button onClick={() => openLegal("safety")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Safe Rental Guide</button>
+                <button onClick={() => openLegal("privacy")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Privacy Policy</button>
+                <button onClick={() => openLegal("terms")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Terms of Service</button>
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
