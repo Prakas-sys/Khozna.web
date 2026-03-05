@@ -4,8 +4,6 @@ import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence 
 import {
   Zap,
   ArrowRight,
-  Cpu,
-  Layers,
   Instagram,
   Linkedin,
   Facebook,
@@ -17,7 +15,7 @@ import {
 } from 'lucide-react';
 
 // --- Configuration ---
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwvHzo2RkDYJi2pezC7UUEpp3Fdu1-seeiLUMPIAl9YT5D4P7Qi1N5bfBr5wqqh3z38/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyhAKH-8IQxdzTegL5_c8kNtG5cTdl5uffnQN1R8AdWp89A12NH0b0OBA9O15NGIcuC/exec";
 
 // --- Utility Components ---
 
@@ -431,70 +429,70 @@ const AppShowcase = () => {
   return (
     <section id="app" style={{ padding: 'clamp(4rem, 10vh, 10rem) 0', overflow: 'hidden' }}>
       <div className="container">
-        <div 
+        <div
           onMouseMove={handleMouseMove}
           onMouseLeave={() => setRotate({ x: 0, y: 0 })}
-          className="glass" 
-          style={{ 
-            padding: 'clamp(2rem, 5vw, 6rem)', 
-            borderRadius: '48px', 
-            position: 'relative', 
+          className="glass"
+          style={{
+            padding: 'clamp(2rem, 5vw, 6rem)',
+            borderRadius: '48px',
+            position: 'relative',
             overflow: 'hidden',
             transition: 'transform 0.1s ease-out'
           }}
         >
-           <div className="grid-2" style={{ alignItems: 'center' }}>
-              <div>
-                <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Microsoft-Fluent-Emoji/main/Emojis/Objects/Mobile%20Phone.png" alt="Mobile" className="icon-3d" style={{ width: '80px', height: '80px' }} />
-                <Reveal><h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1, marginBottom: '2rem' }}>
-                  THE FUTURE <br/> IN YOUR POCKET.
-                </h2></Reveal>
-                <p style={{ fontSize: '1.1rem', color: 'var(--text-dim)', marginBottom: '3rem', maxWidth: '450px' }}>
-                  The Khozna app is coming soon to revolutionize how you live. Simple, fast, and secure.
-                </p>
-                
-                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                   <div className="glass" style={{ padding: '1rem 2rem', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                      <div style={{ width: '24px', height: '24px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <div style={{ width: '12px', height: '12px', background: 'black', borderRadius: '2px' }} />
-                      </div>
-                      <div style={{ textAlign: 'left' }}>
-                         <div style={{ fontSize: '0.6rem', opacity: 0.6 }}>Coming Soon on</div>
-                         <div style={{ fontSize: '1rem', fontWeight: 800 }}>App Store</div>
-                      </div>
-                   </div>
-                   <div className="glass" style={{ padding: '1rem 2rem', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                      <Zap size={24} color="var(--primary)" />
-                      <div style={{ textAlign: 'left' }}>
-                         <div style={{ fontSize: '0.6rem', opacity: 0.6 }}>Coming Soon on</div>
-                         <div style={{ fontSize: '1rem', fontWeight: 800 }}>Play Store</div>
-                      </div>
-                   </div>
+          <div className="grid-2" style={{ alignItems: 'center' }}>
+            <div>
+              <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Microsoft-Fluent-Emoji/main/Emojis/Objects/Mobile%20Phone.png" alt="Mobile" className="icon-3d" style={{ width: '80px', height: '80px' }} />
+              <Reveal><h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1, marginBottom: '2rem' }}>
+                THE FUTURE <br /> IN YOUR POCKET.
+              </h2></Reveal>
+              <p style={{ fontSize: '1.1rem', color: 'var(--text-dim)', marginBottom: '3rem', maxWidth: '450px' }}>
+                The Khozna app is coming soon to revolutionize how you live. Simple, fast, and secure.
+              </p>
+
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <div className="glass" style={{ padding: '1rem 2rem', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                  <div style={{ width: '24px', height: '24px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: '12px', height: '12px', background: 'black', borderRadius: '2px' }} />
+                  </div>
+                  <div style={{ textAlign: 'left' }}>
+                    <div style={{ fontSize: '0.6rem', opacity: 0.6 }}>Coming Soon on</div>
+                    <div style={{ fontSize: '1rem', fontWeight: 800 }}>App Store</div>
+                  </div>
+                </div>
+                <div className="glass" style={{ padding: '1rem 2rem', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                  <Zap size={24} color="var(--primary)" />
+                  <div style={{ textAlign: 'left' }}>
+                    <div style={{ fontSize: '0.6rem', opacity: 0.6 }}>Coming Soon on</div>
+                    <div style={{ fontSize: '1rem', fontWeight: 800 }}>Play Store</div>
+                  </div>
                 </div>
               </div>
+            </div>
 
-              <motion.div 
-                style={{ 
-                  display: 'flex', 
-                  gap: '2rem', 
-                  transformStyle: 'preserve-3d',
-                  perspective: '1000px',
-                  rotateX: rotate.x,
-                  rotateY: rotate.y
-                }}
-                transition={{ type: "spring", stiffness: 100, damping: 30 }}
-              >
-                 <div className="phone-mockup" style={{ transform: 'translateZ(50px) translateY(-30px) rotate(5deg)' }}>
-                    <img src="/Home screeen.jpeg" className="phone-screen" />
-                 </div>
-                 <div className="phone-mockup" style={{ transform: 'translateZ(100px) rotate(-5deg)' }}>
-                    <img src="/meesage setion.jpeg" className="phone-screen" />
-                 </div>
-              </motion.div>
-           </div>
+            <motion.div
+              style={{
+                display: 'flex',
+                gap: '2rem',
+                transformStyle: 'preserve-3d',
+                perspective: '1000px',
+                rotateX: rotate.x,
+                rotateY: rotate.y
+              }}
+              transition={{ type: "spring", stiffness: 100, damping: 30 }}
+            >
+              <div className="phone-mockup" style={{ transform: 'translateZ(50px) translateY(-30px) rotate(5deg)' }}>
+                <img src="/Home screeen.jpeg" className="phone-screen" />
+              </div>
+              <div className="phone-mockup" style={{ transform: 'translateZ(100px) rotate(-5deg)' }}>
+                <img src="/meesage setion.jpeg" className="phone-screen" />
+              </div>
+            </motion.div>
+          </div>
 
-           {/* Background Glow */}
-           <div style={{ position: 'absolute', bottom: '-20%', right: '-10%', width: '600px', height: '600px', background: 'var(--primary-glow)', filter: 'blur(150px)', borderRadius: '50%', zIndex: -1 }} />
+          {/* Background Glow */}
+          <div style={{ position: 'absolute', bottom: '-20%', right: '-10%', width: '600px', height: '600px', background: 'var(--primary-glow)', filter: 'blur(150px)', borderRadius: '50%', zIndex: -1 }} />
         </div>
       </div>
     </section>
@@ -605,6 +603,44 @@ const CustomCursor = () => {
   );
 };
 
+const PageTransition = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1] }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const TopProgressBar = () => {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  return (
+    <motion.div
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        height: '3px',
+        background: 'var(--primary)',
+        transformOrigin: '0%',
+        zIndex: 2000,
+        scaleX
+      }}
+    />
+  );
+};
+
 function App() {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
   const [legalModal, setLegalModal] = useState<{ open: boolean, type: "terms" | "privacy" | "safety" }>({ open: false, type: "terms" });
@@ -613,6 +649,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <TopProgressBar />
       <div style={{ position: 'relative', background: '#000' }}>
         <CustomCursor />
         <WaitlistModal isOpen={isWaitlistOpen} onClose={() => setIsWaitlistOpen(false)} />
@@ -620,10 +657,12 @@ function App() {
 
         <Navbar onJoinWaitlist={() => setIsWaitlistOpen(true)} />
 
-        <Routes>
-          <Route path="/" element={<HomePage onJoinWaitlist={() => setIsWaitlistOpen(true)} />} />
-          <Route path="/vision" element={<VisionPage />} />
-        </Routes>
+        <AnimatePresence mode="wait">
+          <Routes>
+            <Route path="/" element={<PageTransition><HomePage onJoinWaitlist={() => setIsWaitlistOpen(true)} /></PageTransition>} />
+            <Route path="/vision" element={<PageTransition><VisionPage /></PageTransition>} />
+          </Routes>
+        </AnimatePresence>
 
         <Footer openLegal={openLegal} />
       </div>
