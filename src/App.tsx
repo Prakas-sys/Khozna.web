@@ -104,6 +104,8 @@ const LegalModal = ({ isOpen, onClose, type }: { isOpen: boolean, onClose: () =>
     </AnimatePresence>
   );
 };
+
+const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
