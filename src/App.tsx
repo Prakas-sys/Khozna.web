@@ -276,9 +276,9 @@ const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
         </div>
       </a>
       <div className="nav-links" style={{ display: 'flex', gap: '3rem', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px' }}>
-        <a href="#walkthrough" onClick={(e) => handleNavClick(e, "walkthrough")} className="nav-link">The Platform</a>
+        <Link to="/" onClick={(e) => handleNavClick(e, "walkthrough")} className="nav-link">The Platform</Link>
         <Link to="/vision" className="nav-link">Vision</Link>
-        <a href="#contact" onClick={(e) => handleNavClick(e, "contact")} className="nav-link">Contact</a>
+        <Link to="/" onClick={(e) => handleNavClick(e, "contact")} className="nav-link">Contact</Link>
       </div>
       <button onClick={onJoinWaitlist} className="nav-btn-premium">JOIN FREE</button>
     </nav>
