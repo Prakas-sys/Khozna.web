@@ -396,7 +396,7 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
             <div className="glass feature-box default-active" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
               <img src="/icon-chat.png" alt="Direct Chat" className="icon-3d" />
               <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>Direct Chat</h3>
-              <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Chat directly with the house owner inside our app and close the deal faster.</p>
+              <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Chat directly with the Gharbeti inside our app and close the deal faster.</p>
             </div>
             <div className="glass feature-box" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
               <img src="/icon-verified.png" alt="Verified" className="icon-3d" />
