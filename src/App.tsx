@@ -191,26 +191,7 @@ const AppWalkthrough = () => {
                <motion.img src="/kyc screen.jpeg" className="phone-screen" style={{ opacity: screen3Opacity, position: 'absolute', top: 0, left: 0, y: screen3Y }} />
             </motion.div>
 
-            {/* Floating Elements */}
-            <motion.div 
-              style={{ position: 'absolute', top: '10%', right: '-15%', opacity: screen2Opacity }}
-              animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-            >
-              <div className="glass" style={{ padding: '1rem', borderRadius: '16px' }}>
-                <MessageSquare color="var(--primary)" />
-              </div>
-            </motion.div>
-
-            <motion.div 
-              style={{ position: 'absolute', bottom: '10%', left: '-15%', opacity: screen3Opacity }}
-              animate={{ y: [0, 20, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
-            >
-              <div className="glass" style={{ padding: '1rem', borderRadius: '16px' }}>
-                <ShieldCheck color="#10B981" />
-              </div>
-            </motion.div>
+            {/* Floating Elements removed for cleaner look */}
           </div>
 
         </div>
