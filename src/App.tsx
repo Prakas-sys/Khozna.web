@@ -11,16 +11,35 @@ import {
 const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // PASTE YOUR FORMSPREE ID HERE
+  const FORMSPREE_ID = "YOUR_ID_HERE"; 
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setEmail("");
-        onClose();
-      }, 3000);
+    setStatus("loading");
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setStatus("idle");
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setEmail("");
+          onClose();
+        }, 5000);
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
     }
   };
 
