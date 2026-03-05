@@ -276,6 +276,24 @@ body {
     gap: 3rem !important;
   }
 
+  .walkthrough-text-side {
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4rem !important;
+    position: relative !important;
+  }
+
+  .walkthrough-text-side > div {
+    position: relative !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
   .phone-mockup {
     width: 180px;
     height: 380px;
