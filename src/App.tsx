@@ -298,26 +298,6 @@ const Hero = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
         </Reveal>
       </div>
 
-      {/* Traditional Property Image (Parallax) */}
-      <motion.div 
-        style={{ 
-          position: 'absolute', 
-          right: '-5%', 
-          top: '15%', 
-          width: '35vw', 
-          zIndex: 1, 
-          y: y1,
-          opacity: 0.4,
-          filter: 'grayscale(30%)'
-        }}
-      >
-        <img 
-          src="/property listing.jpeg" 
-          style={{ width: '100%', borderRadius: '40px', boxShadow: '0 50px 100px rgba(0,0,0,0.5)' }} 
-          alt="Luxury Traditional Rental" 
-        />
-      </motion.div>
-
       {/* Abstract Background */}
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1 }}>
          <div style={{ position: 'absolute', top: '20%', left: '10%', width: '30vw', height: '30vw', background: 'var(--primary-glow)', filter: 'blur(150px)', borderRadius: '50%' }} />
