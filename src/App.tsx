@@ -184,7 +184,7 @@ const Hero = () => {
         </h1>
         <Reveal delay={0.3}>
           <div style={{ marginTop: '4rem', display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }} className="hero-buttons">
-             <MagneticElement><button className="btn-primary" style={{ padding: '1.2rem 3rem' }}>Explore App <ArrowRight size={20} /></button></MagneticElement>
+             <MagneticElement><button className="btn-primary" style={{ padding: '1.2rem 3rem' }}>Join Waitlist <ArrowRight size={20} /></button></MagneticElement>
              <button className="btn-outline" style={{ padding: '1.2rem 3rem' }}>The Vision</button>
           </div>
         </Reveal>
@@ -253,7 +253,7 @@ function App() {
           <a href="#" className="nav-link">Vision</a>
           <a href="#" className="nav-link">Contact</a>
         </div>
-        <button className="btn-primary" style={{ padding: '0.6rem 1.5rem', fontSize: '0.8rem' }}>Get The App</button>
+        <div className="glass" style={{ padding: '0.6rem 1.5rem', borderRadius: '100px', fontSize: '0.7rem', fontWeight: 800, letterSpacing: '1px' }}>COMING SOON</div>
       </nav>
 
       <div className="hero-section">
