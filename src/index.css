@@ -423,9 +423,10 @@ body {
 }
 
 .logo-box img {
-  border-radius: 0;
+  border-radius: 10px; /* App icon style */
   background: transparent;
   padding: 0;
+  object-fit: contain;
 }
 
 .logo-text {
