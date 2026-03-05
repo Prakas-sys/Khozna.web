@@ -422,13 +422,19 @@ body {
   box-shadow: none;
 }
 
+.logo-box img {
+  border-radius: 14px;
+  background: white; /* Optional: adds a white backing if the PNG transparency is tight */
+  padding: 2px;
+}
+
 .logo-text {
   font-family: var(--font-logo);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  color: #FFFFFF; /* Clean white text for the simple look */
-  margin-left: 12px;
-  letter-spacing: 2px;
+  color: var(--primary); /* Back to Sky Blue */
+  margin-left: 14px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
