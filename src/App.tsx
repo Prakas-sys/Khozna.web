@@ -415,6 +415,41 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
   );
 };
 
+const PhoneSlideshow = () => {
+  const images = [
+    "/Home screeen.jpeg",
+    "/Listing property screen.jpeg",
+    "/chat setion screen.jpeg",
+    "/profile screen.jpeg"
+  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <div className="phone-mockup" style={{ zIndex: 10, transform: 'translateZ(80px)', position: 'relative' }}>
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={currentIndex}
+          src={images[currentIndex]}
+          className="phone-screen"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8 }}
+          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+          alt="App Screen"
+        />
+      </AnimatePresence>
+    </div>
+  );
+};
+
 const AppShowcase = () => {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
 
@@ -463,26 +498,33 @@ const AppShowcase = () => {
             <motion.div
               style={{
                 display: 'flex',
-                gap: '2rem',
+                justifyContent: 'center',
+                alignItems: 'center',
+                position: 'relative',
                 transformStyle: 'preserve-3d',
                 perspective: '1000px',
                 rotateX: rotate.x,
-                rotateY: rotate.y
+                rotateY: rotate.y,
+                height: '600px',
+                width: '100%'
               }}
               transition={{ type: "spring", stiffness: 100, damping: 30 }}
             >
-              <div className="emotion-card" style={{ transform: 'translateZ(50px) translateY(-30px) rotate(5deg)', position: 'relative' }}>
-                <img src="/landlord-happy.png" alt="Happy Gharbeti" className="emotion-image" />
+              <div className="emotion-card desktop-only" style={{ position: 'absolute', transform: 'translateX(-140px) translateZ(0px) rotate(-8deg)', zIndex: 1, opacity: 0.9, height: '320px', width: '220px' }}>
+                <img src="/man.png" alt="Happy Gharbeti" className="emotion-image" style={{ objectPosition: 'top' }} />
                 <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', background: 'rgba(5,5,5,0.7)', backdropFilter: 'blur(10px)', padding: '0.4rem 0.8rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <div style={{ width: '8px', height: '8px', background: '#10B981', borderRadius: '50%' }} />
-                  <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase' }}>Verified Owner</span>
+                  <span style={{ fontSize: '0.6rem', fontWeight: 800, textTransform: 'uppercase' }}>Verified Owner</span>
                 </div>
               </div>
-              <div className="emotion-card" style={{ transform: 'translateZ(100px) rotate(-5deg)', position: 'relative' }}>
-                <img src="/renter-happy.png" alt="Happy Renter" className="emotion-image" />
+
+              <PhoneSlideshow />
+
+              <div className="emotion-card desktop-only" style={{ position: 'absolute', transform: 'translateX(140px) translateZ(30px) rotate(8deg)', zIndex: 2, opacity: 0.9, height: '320px', width: '220px' }}>
+                <img src="/boy.png" alt="Happy Renter" className="emotion-image" style={{ objectPosition: 'top' }} />
                 <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', background: 'rgba(5,5,5,0.7)', backdropFilter: 'blur(10px)', padding: '0.4rem 0.8rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <div style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%' }} />
-                  <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase' }}>Happy Renter</span>
+                  <span style={{ fontSize: '0.6rem', fontWeight: 800, textTransform: 'uppercase' }}>Happy Renter</span>
                 </div>
               </div>
             </motion.div>

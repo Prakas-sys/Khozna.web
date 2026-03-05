@@ -303,6 +303,10 @@ body {
     margin-bottom: 1.5rem !important;
   }
 
+  .desktop-only {
+    display: none !important;
+  }
+
   .glass-nav {
     padding: 1rem 1.5rem !important;
   }
