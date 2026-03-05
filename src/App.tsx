@@ -16,7 +16,7 @@ const Reveal = ({ children, delay = 0 }: { children: React.ReactNode, delay?: nu
   const isInView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
-    <div ref={ref} style={{ position: 'relative', overflow: 'hidden', width: 'fit-content' }}>
+    <div ref={ref} style={{ position: 'relative', overflow: 'hidden', width: '100%', display: 'block' }}>
       <motion.div
         initial={{ y: "100%" }}
         animate={isInView ? { y: 0 } : { y: "100%" }}
