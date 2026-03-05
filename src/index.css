@@ -291,30 +291,80 @@ body {
   }
 
   .emotion-slider-mobile {
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory;
-    padding: 1rem 0 2rem 1rem !important;
-    /* give space for scrolling */
-    margin: 0 -1rem !important;
-    /* extend beyond container to edges */
-    -webkit-overflow-scrolling: touch;
-    width: 100vw !important;
-    justify-content: flex-start !important;
+    position: relative !important;
+    height: 380px !important;
+    width: 260px !important;
+    margin: 0 auto !important;
+    display: block !important;
     transform: none !important;
     perspective: none !important;
-  }
-
-  .emotion-slider-mobile::-webkit-scrollbar {
-    display: none;
+    padding: 0 !important;
   }
 
   .emotion-slider-mobile .emotion-card {
-    scroll-snap-align: center;
-    flex-shrink: 0;
-    margin-right: 1.5rem;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
     transform: none !important;
-    /* Cancel 3D overlaps on swipable screen */
+    /* Cancel 3D overlaps on small screen */
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Automated slide/fade for mobile so user sees both without doing anything */
+  .emotion-slider-mobile>div:first-child {
+    animation: fade-mobile 6s infinite ease-in-out;
+  }
+
+  .emotion-slider-mobile>div:last-child {
+    animation: fade-mobile-reverse 6s infinite ease-in-out;
+  }
+
+  @keyframes fade-mobile {
+
+    0%,
+    45% {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+
+    50%,
+    95% {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+  }
+
+  @keyframes fade-mobile-reverse {
+
+    0%,
+    45% {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+    }
+
+    50%,
+    95% {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+    }
   }
 
   /* Padding adjustments to remove fixed large values */
