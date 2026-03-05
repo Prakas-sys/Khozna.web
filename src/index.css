@@ -221,53 +221,43 @@ body {
   }
 }
 
+/* Perfect Mobile / Android Overhaul */
 @media (max-width: 768px) {
-  * {
-    cursor: auto !important; /* Disable custom cursor on touch devices */
-  }
-
-  .custom-cursor, .cursor-follower {
-    display: none !important;
-  }
-
   .container {
-    padding: 0 1.5rem;
+    padding: 0 1.25rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem !important; /* Force smaller size for mobile */
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal !important; /* Allow wrapping on small screens */
+  }
+
+  .hero-line {
+    white-space: normal !important; /* Allow wrapping on small screens */
+    display: inline;
+  }
+
+  .section-title {
+    font-size: 1.8rem !important;
+    text-align: center;
   }
 
   .glass-nav {
-    padding: 0.8rem 1.2rem !important;
+    padding: 0.75rem 1rem !important;
   }
 
-  .nav-link {
-    display: none;
-  }
-
-  .logo-box {
-    padding: 4px 12px;
+  .logo-box img {
+    height: 24px !important;
   }
 
   .logo-text {
     font-size: 1rem;
-    margin-left: 6px;
+    margin-left: 8px;
   }
 
-  .logo-box img {
-    height: 20px !important;
-  }
-
-  .hero-title {
-    font-size: 3rem !important;
-    line-height: 1.1;
-    text-align: center;
-  }
-
-  .section-title {
-    font-size: 2.2rem !important;
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-
-  /* Fix Walkthrough for Mobile */
+  /* Disable Sticky Walkthrough on Mobile for better performance */
   .walkthrough-container {
     height: auto !important;
     padding: 4rem 0;
@@ -277,78 +267,43 @@ body {
     position: relative !important;
     height: auto !important;
     top: 0 !important;
+    overflow: visible !important;
   }
 
   .walkthrough-grid {
     display: flex !important;
     flex-direction: column !important;
-    gap: 4rem !important;
-  }
-
-  .walkthrough-text-side {
-    height: auto !important;
-    position: relative !important;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .walkthrough-text-side > div {
-    position: relative !important;
-    opacity: 1 !important;
-    margin-bottom: 2rem;
+    gap: 3rem !important;
   }
 
   .phone-mockup {
-    width: 200px;
-    height: 420px;
-    margin: 0 auto;
-    border-width: 6px;
+    width: 180px;
+    height: 380px;
+    margin: 2rem auto;
   }
 
   .phone-screen {
-    opacity: 1 !important; /* Show all screens in a stack or handle differently */
-  }
-
-  /* Hero Adjustments */
-  .hero-section {
-    height: auto !important;
-    min-height: 80vh;
-    padding: 8rem 0 4rem;
+    position: relative !important;
+    opacity: 1 !important;
+    display: block;
+    margin-bottom: 1rem;
+    border-radius: 20px;
   }
 
   .hero-buttons {
     flex-direction: column;
-    width: 100%;
     gap: 1rem;
+    width: 100%;
   }
 
   .btn-primary, .btn-outline {
     width: 100%;
-    text-align: center;
     justify-content: center;
   }
 
-  /* Marquee */
-  .marquee-container {
-    padding: 1.5rem 0 !important;
-  }
-
-  footer .grid-3 {
-    grid-template-columns: 1fr !important;
-    text-align: center;
-    gap: 3rem;
-  }
-
-  footer .logo-box {
-    margin: 0 auto 2rem !important;
-  }
-
-  footer .container > div:last-child {
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
+  /* Hide waitlist text detail on tiny screens */
+  .modal-description {
+    font-size: 0.9rem;
   }
 }
 

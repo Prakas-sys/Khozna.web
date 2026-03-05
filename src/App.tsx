@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from 'framer-motion';
-import { 
-  Zap, 
+import {
+  Zap,
   ArrowRight,
   Cpu,
   Layers
@@ -233,7 +233,7 @@ const Hero = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
   return (
     <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', padding: '120px 0', zIndex: 100 }}>
 
-      {/* Cinematic Background Video Layer restored */}
+      {/* Cinematic Background Video Layer restored - only the video, no overlays */}
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden' }}>
         <video
           autoPlay
@@ -244,8 +244,6 @@ const Hero = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
         >
           <source src="/valley of KTM.mp4" type="video/mp4" />
         </video>
-        {/* Deep Gradient Overlay */}
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 40%, transparent 60%, rgba(0,0,0,0.9) 100%)' }} />
       </div>
 
       <div style={{ textAlign: 'center', zIndex: 10, width: '100%' }}>
@@ -271,12 +269,6 @@ const Hero = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
             <button className="btn-outline" style={{ padding: '1.2rem 3rem' }}>The Vision</button>
           </div>
         </Reveal>
-      </div>
-
-      {/* Abstract Background Accents */}
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1, pointerEvents: 'none' }}>
-        <div style={{ position: 'absolute', top: '20%', left: '10%', width: '30vw', height: '30vw', background: 'var(--primary-glow)', filter: 'blur(150px)', borderRadius: '50%' }} />
-        <div style={{ position: 'absolute', bottom: '10%', right: '10%', width: '40vw', height: '40vw', background: 'rgba(16, 185, 129, 0.1)', filter: 'blur(150px)', borderRadius: '50%' }} />
       </div>
 
       <motion.div
