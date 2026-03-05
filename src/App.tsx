@@ -80,8 +80,8 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
                 <p style={{ color: 'var(--text-dim)', lineHeight: '1.6', marginBottom: '2rem' }}>We'll notify you the moment Khozna goes live. In the meantime, follow our journey.</p>
 
                 <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
-                   <a href="#" style={{ color: 'var(--primary)' }}><Instagram size={24} /></a>
-                   <a href="#" style={{ color: 'var(--primary)' }}><Linkedin size={24} /></a>
+                   <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Instagram size={24} /></a>
+                   <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Linkedin size={24} /></a>
                    <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Facebook size={24} /></a>
                 </div>
 
@@ -432,8 +432,8 @@ function App() {
             <div style={{ display: 'flex', gap: '6rem' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                  <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Socials</span>
-                 <a href="#" className="footer-link">Instagram</a>
-                 <a href="#" className="footer-link">LinkedIn</a>
+                 <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="footer-link">Instagram</a>
+                 <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" className="footer-link">LinkedIn</a>
                  <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" className="footer-link">Facebook</a>
               </div>
 
