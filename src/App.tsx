@@ -12,7 +12,8 @@ import {
   Mail,
   Phone,
   CheckCircle2,
-  ArrowLeft
+  ArrowLeft,
+  Music2
 } from 'lucide-react';
 
 // --- Configuration ---
@@ -220,6 +221,7 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
                   <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Instagram size={24} /></a>
                   <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Linkedin size={24} /></a>
                   <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Facebook size={24} /></a>
+                  <a href="#" style={{ color: 'var(--primary)' }}><Music2 size={24} /></a>
                 </div>
               </motion.div>
             ) : (
@@ -278,7 +280,7 @@ const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
         <Link to="/vision" className="nav-link">Vision</Link>
         <a href="#contact" onClick={(e) => handleNavClick(e, "contact")} className="nav-link">Contact</a>
       </div>
-      <button onClick={onJoinWaitlist} className="glass nav-btn" style={{ padding: '0.6rem 1.5rem', borderRadius: '100px', fontSize: '0.7rem', fontWeight: 800, letterSpacing: '1px', border: '1px solid var(--primary)', color: 'var(--primary)', cursor: 'pointer', whiteSpace: 'nowrap' }}>JOIN FREE</button>
+      <button onClick={onJoinWaitlist} className="nav-btn-premium">JOIN FREE</button>
     </nav>
   );
 };
@@ -299,9 +301,18 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
           <div style={{ display: 'flex', gap: '6rem' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Socials</span>
-              <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="footer-link">Instagram</a>
-              <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" className="footer-link">LinkedIn</a>
-              <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" className="footer-link">Facebook</a>
+              <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Instagram size={16} /> Instagram
+              </a>
+              <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Linkedin size={16} /> LinkedIn
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Facebook size={16} /> Facebook
+              </a>
+              <a href="#" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Music2 size={16} /> TikTok
+              </a>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Platform</span>
