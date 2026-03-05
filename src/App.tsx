@@ -175,8 +175,11 @@ const BrandPhilosophy = () => {
 };
 
 const Hero = () => {
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+
   return (
-    <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'visible', padding: '120px 0' }}>
+    <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', padding: '120px 0' }}>
       <div style={{ textAlign: 'center', zIndex: 10, width: '100%' }}>
         <h1 className="hero-title">
           <span className="hero-line">
@@ -193,6 +196,26 @@ const Hero = () => {
           </div>
         </Reveal>
       </div>
+
+      {/* Traditional Property Image (Parallax) */}
+      <motion.div 
+        style={{ 
+          position: 'absolute', 
+          right: '-5%', 
+          top: '15%', 
+          width: '35vw', 
+          zIndex: 1, 
+          y: y1,
+          opacity: 0.4,
+          filter: 'grayscale(30%)'
+        }}
+      >
+        <img 
+          src="/property listing.jpeg" 
+          style={{ width: '100%', borderRadius: '40px', boxShadow: '0 50px 100px rgba(0,0,0,0.5)' }} 
+          alt="Luxury Traditional Rental" 
+        />
+      </motion.div>
 
       {/* Abstract Background */}
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1 }}>
