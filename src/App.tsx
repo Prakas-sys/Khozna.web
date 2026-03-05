@@ -559,12 +559,12 @@ const AppWalkthrough = () => {
             <motion.div style={{ position: 'absolute', opacity: screen2Opacity }}>
               <span style={{ color: '#10B981', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase' }}>Step 02</span>
               <h2 className="section-title" style={{ marginTop: '1rem' }}>DIRECT<br />CONNECTION.</h2>
-              <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', maxWidth: '400px', lineHeight: '1.8' }}>Skip the middleman. Chat directly with landlords in real-time. Negotiate, ask, and finalize without a single commission fee.</p>
+              <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', maxWidth: '400px', lineHeight: '1.8' }}>Skip the dalal. Chat directly with the Gharbeti in real-time. Negotiate, ask, and finalize — completely free.</p>
             </motion.div>
             <motion.div style={{ position: 'absolute', opacity: screen3Opacity }}>
               <span style={{ color: '#F59E0B', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase' }}>Step 03</span>
               <h2 className="section-title" style={{ marginTop: '1rem' }}>VERIFIED<br />TRUST.</h2>
-              <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', maxWidth: '400px', lineHeight: '1.8' }}>Our bank-grade KYC verification ensures that every user—landlord or tenant—is exactly who they say they are.</p>
+              <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', maxWidth: '400px', lineHeight: '1.8' }}>Our verification ensures every Gharbeti and renter is exactly who they say they are. Real people, real homes.</p>
             </motion.div>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
