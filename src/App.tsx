@@ -176,8 +176,8 @@ const BrandPhilosophy = () => {
 
 const Hero = () => {
   return (
-    <section style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
-      <div style={{ textAlign: 'center', zIndex: 10 }}>
+    <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'visible', padding: '120px 0' }}>
+      <div style={{ textAlign: 'center', zIndex: 10, width: '100%' }}>
         <h1 className="hero-title">
           <Reveal>#1 NEPAL'S TRUSTED</Reveal>
           <Reveal delay={0.1}><span className="text-gradient">RENTAL PLATFORM.</span></Reveal>

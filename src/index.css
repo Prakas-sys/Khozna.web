@@ -82,12 +82,14 @@ body {
 /* Typography */
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(3.5rem, 12vw, 10rem);
+  font-size: clamp(3rem, 10vw, 8rem); /* Slightly smaller to fit longer text */
   font-weight: 900;
-  line-height: 0.9;
-  letter-spacing: -0.05em;
+  line-height: 1; /* More space for multi-line */
+  letter-spacing: -0.04em;
   text-transform: uppercase;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1200px;
+  overflow: visible !important;
 }
 
 .section-title {
