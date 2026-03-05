@@ -82,13 +82,13 @@ body {
 /* Typography */
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 8vw, 7rem); /* Reduced to fit long phrases on one line */
+  font-size: clamp(2.5rem, 7vw, 6.5rem); /* Scaled down for better laptop fit */
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -0.04em;
   text-transform: uppercase;
   margin: 0 auto;
-  max-width: 1400px;
+  max-width: 1300px;
   overflow: visible !important;
 }
 
@@ -204,7 +204,7 @@ body {
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 4rem;
+  gap: 6rem; /* Increased for better laptop framing */
 }
 
 .grid-3 {
