@@ -14,8 +14,8 @@ import {
 } from 'lucide-react';
 // --- Components ---
 
-// PASTE YOUR GOOGLE SCRIPT 'WEB APP' URL HERE
-const GOOGLE_SCRIPT_URL = "YOUR_SCRIPT_EXEC_URL";
+// GOOGLE SCRIPT 'WEB APP' URL
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwvHzo2RkDYJi2pezC7UUEpp3Fdu1-seeiLUMPIAl9YT5D4P7Qi1N5bfBr5wqqh3z38/exec";
 
 const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
   const [name, setName] = useState("");
