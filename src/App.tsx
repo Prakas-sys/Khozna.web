@@ -15,7 +15,7 @@ import {
 // --- Components ---
 
 // GOOGLE SCRIPT 'WEB APP' URL
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwvHzo2RkDYJi2pezC7UUEpp3Fdu1-seeiLUMPIAl9YT5D4P7Qi1N5bfBr5wqqh3z38/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyhAKH-8IQxdzTegL5_c8kNtG5cTdl5uffnQN1R8AdWp89A12NH0b0OBA9O15NGIcuC/exec";
 
 const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
   const [name, setName] = useState("");
@@ -33,7 +33,7 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "text/plain" },
         body: JSON.stringify({ name, phone, email }),
       });
 
