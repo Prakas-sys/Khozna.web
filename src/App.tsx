@@ -269,7 +269,7 @@ function App() {
         >
           {[1,2,3,4,5].map(i => (
             <React.Fragment key={i}>
-              <span>KHOZNA BRAND</span>
+              <span>NO SCAMS</span>
               <span>DIRECT CHAT</span>
               <span>ZERO COMMISSION</span>
               <span>VERIFIED OWNERS</span>
