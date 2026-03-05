@@ -388,17 +388,17 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
           </div>
           <div className="grid-3">
             <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
-              <Zap size={48} color="var(--primary)" style={{ marginBottom: '2rem' }} />
+              <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Microsoft-Fluent-Emoji/main/Emojis/Objects/Money%20Bag.png" alt="No Commission" className="icon-3d" />
               <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>No Commission</h3>
               <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Khozna connects you directly to the owner for $0 commission.</p>
             </div>
             <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', border: '1px solid var(--primary)', textAlign: 'center' }}>
-              <Cpu size={48} color="var(--primary)" style={{ marginBottom: '2rem' }} />
+              <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Microsoft-Fluent-Emoji/main/Emojis/Objects/Speech%20Balloon.png" alt="Direct Chat" className="icon-3d" />
               <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>Direct Chat</h3>
               <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Chat directly with the house owner inside our app and close the deal faster.</p>
             </div>
             <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
-              <Layers size={48} color="var(--primary)" style={{ marginBottom: '2rem' }} />
+              <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Microsoft-Fluent-Emoji/main/Emojis/Symbols/Check%20Mark%20Button.png" alt="Verified" className="icon-3d" />
               <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>100% Verified</h3>
               <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>We manually check every house. If it's on Khozna, it's real and safe.</p>
             </div>

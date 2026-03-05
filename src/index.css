@@ -518,6 +518,20 @@ body {
   text-transform: uppercase;
 }
 
+.icon-3d {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 2.5rem;
+  filter: drop-shadow(0 15px 25px rgba(0, 163, 225, 0.2));
+  animation: float-3d 4s ease-in-out infinite;
+  object-fit: contain;
+}
+
+@keyframes float-3d {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
 .text-gradient {
   background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
   -webkit-background-clip: text;
