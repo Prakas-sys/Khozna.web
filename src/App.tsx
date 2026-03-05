@@ -239,26 +239,26 @@ const BrandPhilosophy = () => {
     <section style={{ padding: '15rem 0', background: '#050505', position: 'relative' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '8rem' }}>
-          <Reveal><h2 className="section-title" style={{ fontSize: 'clamp(3rem, 10vw, 8rem)', margin: '0 auto' }}>THE ZERO<br />MOVEMENT.</h2></Reveal>
+          <Reveal><h2 className="section-title" style={{ fontSize: 'clamp(3rem, 10vw, 8rem)', margin: '0 auto' }}>THE NEW WAY<br />TO RENT.</h2></Reveal>
         </div>
 
         <div className="grid-3">
           <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
             <Zap size={48} color="var(--primary)" style={{ marginBottom: '2rem' }} />
-            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>Zero Hidden Fees</h3>
-            <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>We removed the commission layer entirely. Khozna is built to be a public utility for the people of Nepal.</p>
+            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>No Commission</h3>
+            <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Stop paying extra money to middle-men. Khozna connects you directly to the owner for $0 commission.</p>
           </div>
 
           <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', border: '1px solid var(--primary)', textAlign: 'center' }}>
             <Cpu size={48} color="var(--primary)" style={{ marginBottom: '2rem' }} />
-            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>Next-Gen Tech</h3>
-            <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Powered by advanced matching algorithms and real-time mapping to find your perfect sanctuary.</p>
+            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>Direct Chat</h3>
+            <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>No more brokers. Chat directly with the house owner inside our app and close the deal faster.</p>
           </div>
 
           <div className="glass" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
             <Layers size={48} color="var(--primary)" style={{ marginBottom: '2rem' }} />
-            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>Transparent KYC</h3>
-            <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Safety isn't a feature, it's our foundation. Every landlord undergoes a rigorous verification process.</p>
+            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>100% Verified</h3>
+            <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>We manually check every house and every owner. If it's on Khozna, it's real and it's safe.</p>
           </div>
         </div>
       </div>
