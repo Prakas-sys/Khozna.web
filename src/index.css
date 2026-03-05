@@ -600,6 +600,7 @@ body {
   filter: drop-shadow(0 15px 25px rgba(0, 163, 225, 0.2));
   animation: float-3d 4s ease-in-out infinite;
   object-fit: contain;
+  border-radius: 24px;
 }
 
 @keyframes float-3d {
