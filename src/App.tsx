@@ -443,7 +443,7 @@ const AppShowcase = () => {
           <div className="grid-2" style={{ alignItems: 'center' }}>
             <div>
               <img src="/icon-phone.png" alt="Mobile" className="icon-3d" style={{ width: '80px', height: '80px' }} />
-              <Reveal><h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1, marginBottom: '2rem' }}>
+              <Reveal><h2 style={{ fontSize: 'clamp(2.1rem, 9vw, 4.5rem)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1.1, marginBottom: '2rem', wordWrap: 'break-word', overflowWrap: 'break-word' }}>
                 THE FUTURE <br /> IN YOUR POCKET.
               </h2></Reveal>
               <p style={{ fontSize: '1.1rem', color: 'var(--text-dim)', marginBottom: '3rem', maxWidth: '450px' }}>
