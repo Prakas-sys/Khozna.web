@@ -188,13 +188,13 @@ const Hero = () => {
           muted 
           loop 
           playsInline
-          style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3, filter: 'brightness(0.5) contrast(1.2)' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45, filter: 'brightness(0.6) contrast(1.1)' }}
         >
           {/* Once you have your video, just name it 'brand-video.mp4' in public folder */}
           <source src="/brand-video.mp4" type="video/mp4" />
         </video>
         {/* Deep Gradient Overlay for text readability */}
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'radial-gradient(circle, transparent 20%, #000 100%)' }} />
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 40%, transparent 60%, rgba(0,0,0,0.9) 100%)' }} />
       </div>
 
       <div style={{ textAlign: 'center', zIndex: 10, width: '100%' }}>
