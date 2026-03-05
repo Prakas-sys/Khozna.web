@@ -11,6 +11,83 @@ import {
 
 // --- Components ---
 
+const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
+  const [email, setEmail] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setEmail("");
+        onClose();
+      }, 3000);
+    }
+  };
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(10px)', zIndex: 2000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}
+          onClick={onClose}
+        >
+          <motion.div 
+            initial={{ scale: 0.9, y: 20 }}
+            animate={{ scale: 1, y: 0 }}
+            exit={{ scale: 0.9, y: 20 }}
+            className="glass"
+            style={{ width: '100%', maxWidth: '500px', padding: '4rem 3rem', borderRadius: '32px', textAlign: 'center', position: 'relative' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              onClick={onClose}
+              style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'transparent', border: 'none', color: 'white', cursor: 'pointer', opacity: 0.5 }}
+            >
+              ✕
+            </button>
+
+            {isSubmitted ? (
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+                <div style={{ width: '60px', height: '60px', background: 'var(--primary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2rem' }}>
+                  <Zap color="white" size={32} />
+                </div>
+                <h3 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>YOU'RE ON THE LIST!</h3>
+                <p style={{ color: 'var(--text-dim)', lineHeight: '1.6' }}>We'll notify you the moment Khozna goes live. Get ready for the revolution.</p>
+              </motion.div>
+            ) : (
+              <>
+                <span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.8rem' }}>Early Access</span>
+                <h3 style={{ fontSize: '2.5rem', fontWeight: 900, marginTop: '1rem', marginBottom: '1.5rem' }}>JOIN THE<br/>WAITLIST.</h3>
+                <p style={{ color: 'var(--text-dim)', marginBottom: '3rem', lineHeight: '1.6' }}>Be the first to experience Nepal's #1 direct rental ecosystem. No middleman, ever.</p>
+                
+                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <input 
+                    type="email" 
+                    placeholder="Enter your email address" 
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', padding: '1.2rem 1.5rem', borderRadius: '16px', color: 'white', fontSize: '1rem', outline: 'none' }}
+                  />
+                  <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center', padding: '1.2rem' }}>
+                    Notify Me <ArrowRight size={20} />
+                  </button>
+                </form>
+              </>
+            )}
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
 const Reveal = ({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10%" });
@@ -174,7 +251,7 @@ const BrandPhilosophy = () => {
   );
 };
 
-const Hero = () => {
+const Hero = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
 
@@ -207,7 +284,15 @@ const Hero = () => {
         </h1>
         <Reveal delay={0.3}>
           <div style={{ marginTop: '4rem', display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }} className="hero-buttons">
-             <MagneticElement><button className="btn-primary" style={{ padding: '1.2rem 3rem' }}>Join Waitlist <ArrowRight size={20} /></button></MagneticElement>
+             <MagneticElement>
+               <button 
+                 onClick={onJoinWaitlist}
+                 className="btn-primary" 
+                 style={{ padding: '1.2rem 3rem' }}
+               >
+                 Join Waitlist <ArrowRight size={20} />
+               </button>
+             </MagneticElement>
              <button className="btn-outline" style={{ padding: '1.2rem 3rem' }}>The Vision</button>
           </div>
         </Reveal>
@@ -282,9 +367,12 @@ const CustomCursor = () => {
 };
 
 function App() {
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+
   return (
     <div style={{ position: 'relative', background: '#000' }}>
       <CustomCursor />
+      <WaitlistModal isOpen={isWaitlistOpen} onClose={() => setIsWaitlistOpen(false)} />
       
       <nav className="glass-nav" style={{ position: 'fixed', top: 0, left: 0, width: '100%', padding: '1rem 4rem', zIndex: 1000, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <div className="logo-box">
@@ -296,11 +384,17 @@ function App() {
           <a href="#" className="nav-link">Vision</a>
           <a href="#" className="nav-link">Contact</a>
         </div>
-        <div className="glass" style={{ padding: '0.6rem 1.5rem', borderRadius: '100px', fontSize: '0.7rem', fontWeight: 800, letterSpacing: '1px' }}>COMING SOON</div>
+        <button 
+          onClick={() => setIsWaitlistOpen(true)}
+          className="glass" 
+          style={{ padding: '0.6rem 1.5rem', borderRadius: '100px', fontSize: '0.7rem', fontWeight: 800, letterSpacing: '1px', border: '1px solid var(--primary)', color: 'var(--primary)', cursor: 'pointer' }}
+        >
+          JOIN WAITLIST
+        </button>
       </nav>
 
       <div className="hero-section">
-        <Hero />
+        <Hero onJoinWaitlist={() => setIsWaitlistOpen(true)} />
       </div>
       
       {/* Brand Marquee */}
