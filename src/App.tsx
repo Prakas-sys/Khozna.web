@@ -254,6 +254,74 @@ const AppWalkthrough = () => {
   );
 };
 
+const VisionSection = () => {
+  return (
+    <section id="vision" style={{ padding: '10rem 0', background: '#000', borderTop: '1px solid var(--border)' }}>
+      <div className="container">
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <Reveal><span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.8rem' }}>The Mission</span></Reveal>
+          <Reveal><h2 className="section-title" style={{ marginTop: '1rem', marginBottom: '3rem' }}>OUR VISION.</h2></Reveal>
+          
+          <Reveal delay={0.1}>
+            <p style={{ fontSize: '1.5rem', color: 'white', lineHeight: '1.6', marginBottom: '4rem', fontWeight: 500 }}>
+              At Khozna, our vision is to eliminate brokers, reduce rental friction, and bring transparency to Nepal’s rental market.
+            </p>
+          </Reveal>
+
+          <div className="grid-2" style={{ gap: '4rem', marginBottom: '6rem' }}>
+             <Reveal delay={0.2}>
+               <div>
+                 <h4 style={{ color: 'var(--primary)', fontWeight: 800, marginBottom: '1rem' }}>The Problem</h4>
+                 <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>
+                   Finding a room or home in Nepal is unnecessarily expensive, confusing, and dominated by middlemen. We believe renting should be direct, honest, and accessible for everyone.
+                 </p>
+               </div>
+             </Reveal>
+             <Reveal delay={0.3}>
+               <div>
+                 <h4 style={{ color: 'var(--primary)', fontWeight: 800, marginBottom: '1rem' }}>The Promise</h4>
+                 <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>
+                   We are removing the unnecessary obstacles that slow people down, waste money, and create distrust. Our goal is to empower people to find housing faster and safer.
+                 </p>
+               </div>
+             </Reveal>
+          </div>
+
+          <div style={{ background: 'rgba(255,255,255,0.02)', padding: '4rem', borderRadius: '32px', border: '1px solid var(--border)' }}>
+             <h4 style={{ textAlign: 'center', fontWeight: 800, letterSpacing: '2px', marginBottom: '3rem', fontSize: '0.9rem', opacity: 0.6 }}>KHOZNA EXISTS TO</h4>
+             <div className="grid-2" style={{ gap: '2rem' }}>
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                   <div style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%', marginTop: '0.6rem' }} />
+                   <p style={{ fontWeight: 600 }}>Connect renters and property owners directly</p>
+                </div>
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                   <div style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%', marginTop: '0.6rem' }} />
+                   <p style={{ fontWeight: 600 }}>Reduce hidden fees and brokerage exploitation</p>
+                </div>
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                   <div style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%', marginTop: '0.6rem' }} />
+                   <p style={{ fontWeight: 600 }}>Promote verified, trustworthy listings</p>
+                </div>
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                   <div style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%', marginTop: '0.6rem' }} />
+                   <p style={{ fontWeight: 600 }}>Build a digital rental ecosystem for Nepal</p>
+                </div>
+             </div>
+          </div>
+
+          <div style={{ marginTop: '8rem', textAlign: 'center' }}>
+             <Reveal delay={0.4}>
+               <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1.2 }}>
+                 Renting should be <span className="text-gradient">simple, fair, and broker-free.</span>
+               </h3>
+             </Reveal>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const BrandPhilosophy = () => {
   return (
     <section style={{ padding: 'clamp(5rem, 15vh, 15rem) 0', background: '#050505', position: 'relative' }}>
@@ -388,7 +456,7 @@ function App() {
         </div>
         <div className="nav-links" style={{ display: 'flex', gap: '3rem', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px' }}>
           <a href="#" className="nav-link">The Platform</a>
-          <a href="#" className="nav-link">Vision</a>
+          <a href="#vision" className="nav-link">Vision</a>
           <a href="#contact" className="nav-link">Contact</a>
         </div>
         <button
@@ -421,6 +489,7 @@ function App() {
       </div>
 
       <AppWalkthrough />
+      <VisionSection />
       <BrandPhilosophy />
 
       {/* Final Call to Action - Representation style */}
