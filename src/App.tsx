@@ -244,9 +244,9 @@ function App() {
     <div style={{ position: 'relative', background: '#000' }}>
       <CustomCursor />
       
-      <nav className="glass-nav" style={{ position: 'fixed', top: 0, left: 0, width: '100%', padding: '2rem 4rem', zIndex: 1000, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <nav className="glass-nav" style={{ position: 'fixed', top: 0, left: 0, width: '100%', padding: '1rem 4rem', zIndex: 1000, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <div className="logo-box">
-        <img src="/original_logo.png" style={{ height: '32px', objectFit: 'contain' }} alt="KHOZNA Icon" />
+        <img src="/original_logo.png" style={{ height: '28px', objectFit: 'contain' }} alt="KHOZNA Icon" />
         <span className="logo-text">KHOZNA</span>
       </div>
         <div style={{ display: 'flex', gap: '3rem', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px' }}>
