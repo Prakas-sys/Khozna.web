@@ -287,7 +287,7 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
   return (
     <footer id="contact" style={{ padding: 'clamp(4rem, 10vh, 8rem) 0 4rem', background: '#000', borderTop: '1px solid var(--border)' }}>
       <div className="container">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6rem' }}>
+        <div className="footer-content" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6rem' }}>
           <div>
             <div className="logo-box" style={{ marginBottom: '1.5rem' }}>
               <img src="/original_logo.png" style={{ height: '32px', objectFit: 'contain' }} alt="KHOZNA Icon" />
@@ -296,9 +296,9 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
             <h5 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '2px', marginBottom: '0.5rem' }}>#1 NEPAL'S TRUSTED RENTAL PLATFORM</h5>
             <p style={{ color: 'var(--text-dim)', maxWidth: '300px', lineHeight: '1.6', fontSize: '0.9rem' }}>FIND YOUR NEXT HOME.<br />NO MIDDLEMAN.</p>
           </div>
-          <div style={{ display: 'flex', gap: '6rem' }}>
+          <div className="footer-links-grid" style={{ display: 'flex', gap: '6rem' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px', paddingLeft: '0.5rem' }}>Socials</span>
+              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Socials</span>
               <div className="footer-social-row">
                 <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="footer-social-item">
                   <div className="social-btn"><Instagram size={14} /></div> Instagram
@@ -315,22 +315,22 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
               </div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px', paddingLeft: '0.5rem' }}>Platform</span>
+              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Platform</span>
               <Link to="/" className="footer-link">Home</Link>
               <button onClick={() => openLegal("safety")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Safe Rental Guide</button>
               <button onClick={() => openLegal("privacy")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Privacy Policy</button>
               <button onClick={() => openLegal("terms")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Terms of Service</button>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px', paddingLeft: '0.5rem' }}>Contact</span>
+              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Contact</span>
               <a href="https://wa.me/9705278379" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Phone size={16} /> 9705278379</a>
               <a href="mailto:khoznaapp@gmail.com" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Mail size={16} /> khoznaapp@gmail.com</a>
             </div>
           </div>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '4rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="footer-bottom-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '4rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
           <p style={{ color: 'var(--text-dim)', fontSize: '0.8rem' }}>© 2026 KHOZNA. THE RENTAL ECOSYSTEM.</p>
-          <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%' }} />
             <span style={{ color: 'var(--text-dim)', fontSize: '0.8rem', fontWeight: 700 }}>KATHMANDU, NEPAL</span>
           </div>
