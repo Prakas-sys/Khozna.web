@@ -287,7 +287,7 @@ function App() {
               We're not just building an app. We're building the future of how people live and connect in Nepal.
             </p>
             <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
-               <img src="/original_logo.png" style={{ height: '60px', filter: 'brightness(0) invert(1)', opacity: 0.5 }} />
+               <img src="/original_logo.png" style={{ height: '80px', objectFit: 'contain' }} alt="KHOZNA Quality Stamp" />
             </div>
          </div>
          {/* Background Glow */}
