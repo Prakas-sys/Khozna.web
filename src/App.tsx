@@ -251,7 +251,9 @@ function App() {
       <CustomCursor />
       
       <nav className="glass-nav" style={{ position: 'fixed', top: 0, left: 0, width: '100%', padding: '2rem 4rem', zIndex: 1000, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <img src="/logo.png" style={{ height: '24px' }} alt="Khozna" />
+      <div className="logo-box">
+        <img src="/logo.png" style={{ height: '20px' }} alt="Khozna" />
+      </div>
         <div style={{ display: 'flex', gap: '3rem', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px' }}>
           <a href="#" className="nav-link">The Platform</a>
           <a href="#" className="nav-link">Vision</a>
