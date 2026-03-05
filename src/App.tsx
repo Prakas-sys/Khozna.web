@@ -180,6 +180,23 @@ const Hero = () => {
 
   return (
     <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', padding: '120px 0' }}>
+      
+      {/* Cinematic Background Video Layer */}
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden' }}>
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3, filter: 'brightness(0.5) contrast(1.2)' }}
+        >
+          {/* Once you have your video, just name it 'brand-video.mp4' in public folder */}
+          <source src="/brand-video.mp4" type="video/mp4" />
+        </video>
+        {/* Deep Gradient Overlay for text readability */}
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'radial-gradient(circle, transparent 20%, #000 100%)' }} />
+      </div>
+
       <div style={{ textAlign: 'center', zIndex: 10, width: '100%' }}>
         <h1 className="hero-title">
           <span className="hero-line">
