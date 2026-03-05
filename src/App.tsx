@@ -511,7 +511,7 @@ const VisionPage = () => {
               <Reveal delay={0.4}>
                 <div style={{ background: 'rgba(255,255,255,0.02)', padding: '3rem', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.05)', height: '100%' }}>
                   <h4 style={{ fontWeight: 800, color: 'white', marginBottom: '1.5rem', fontSize: '1.2rem' }}>The Principle</h4>
-                  <p style={{ color: 'var(--text-dim)', lineHeight: '1.8', marginBottom: '2rem' }}>Finding a room in Nepal is unnecessarily expensive. We believe renting should be direct, honest, and accessible for everyone.</p>
+                  <p style={{ color: 'var(--text-dim)', lineHeight: '1.8', marginBottom: '2rem' }}>Finding a rental place in Nepal is unnecessarily expensive. We believe renting should be direct, honest, and accessible for everyone.</p>
                   <div style={{ paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}><h3 style={{ fontSize: '1.8rem', fontWeight: 900, color: 'white' }}>SIMPLE. FAIR.<br /><span className="text-gradient">BROKER-FREE.</span></h3></div>
                 </div>
               </Reveal>
