@@ -179,12 +179,12 @@ const Hero = () => {
     <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'visible', padding: '120px 0' }}>
       <div style={{ textAlign: 'center', zIndex: 10, width: '100%' }}>
         <h1 className="hero-title">
-          <div style={{ display: 'block' }}>
+          <span className="hero-line">
             <Reveal>#1 NEPAL'S TRUSTED</Reveal>
-          </div>
-          <div style={{ display: 'block' }}>
+          </span>
+          <span className="hero-line">
             <Reveal delay={0.1}><span className="text-gradient">RENTAL PLATFORM.</span></Reveal>
-          </div>
+          </span>
         </h1>
         <Reveal delay={0.3}>
           <div style={{ marginTop: '4rem', display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }} className="hero-buttons">

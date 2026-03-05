@@ -82,14 +82,19 @@ body {
 /* Typography */
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(3rem, 10vw, 8rem); /* Slightly smaller to fit longer text */
+  font-size: clamp(2.5rem, 8vw, 7rem); /* Reduced to fit long phrases on one line */
   font-weight: 900;
-  line-height: 1; /* More space for multi-line */
+  line-height: 1.1;
   letter-spacing: -0.04em;
   text-transform: uppercase;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1400px;
   overflow: visible !important;
+}
+
+.hero-line {
+  white-space: nowrap; /* Prevents words from breaking into new lines */
+  display: block;
 }
 
 .section-title {
