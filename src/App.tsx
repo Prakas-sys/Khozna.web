@@ -300,7 +300,10 @@ function App() {
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6rem' }}>
             <div>
-              <img src="/logo.png" style={{ height: '32px', marginBottom: '2rem' }} alt="Khozna" />
+              <div className="logo-box" style={{ marginBottom: '2rem' }}>
+                <img src="/original_logo.png" style={{ height: '32px', objectFit: 'contain' }} alt="KHOZNA Icon" />
+                <span className="logo-text">KHOZNA</span>
+              </div>
               <p style={{ color: 'var(--text-dim)', maxWidth: '300px', lineHeight: '1.8' }}>The premier rental representation platform for Nepal's modern generation.</p>
             </div>
             <div style={{ display: 'flex', gap: '6rem' }}>
