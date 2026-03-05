@@ -238,6 +238,31 @@ body {
   object-fit: cover;
 }
 
+/* Emotion Cards (Gharbeti & User connection) */
+.emotion-card {
+  width: 260px;
+  height: 380px;
+  border: 4px solid var(--border);
+  border-radius: 32px;
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+}
+
+.emotion-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.emotion-card:hover .emotion-image {
+  transform: scale(1.05);
+}
+
 .walkthrough-container {
   height: 400vh;
 }

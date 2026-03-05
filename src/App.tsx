@@ -471,11 +471,19 @@ const AppShowcase = () => {
               }}
               transition={{ type: "spring", stiffness: 100, damping: 30 }}
             >
-              <div className="phone-mockup" style={{ transform: 'translateZ(50px) translateY(-30px) rotate(5deg)' }}>
-                <img src="/Home screeen.jpeg" className="phone-screen" />
+              <div className="emotion-card" style={{ transform: 'translateZ(50px) translateY(-30px) rotate(5deg)', position: 'relative' }}>
+                <img src="/landlord-happy.png" alt="Happy Gharbeti" className="emotion-image" />
+                <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', background: 'rgba(5,5,5,0.7)', backdropFilter: 'blur(10px)', padding: '0.4rem 0.8rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <div style={{ width: '8px', height: '8px', background: '#10B981', borderRadius: '50%' }} />
+                  <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase' }}>Verified Owner</span>
+                </div>
               </div>
-              <div className="phone-mockup" style={{ transform: 'translateZ(100px) rotate(-5deg)' }}>
-                <img src="/meesage setion.jpeg" className="phone-screen" />
+              <div className="emotion-card" style={{ transform: 'translateZ(100px) rotate(-5deg)', position: 'relative' }}>
+                <img src="/renter-happy.png" alt="Happy Renter" className="emotion-image" />
+                <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', background: 'rgba(5,5,5,0.7)', backdropFilter: 'blur(10px)', padding: '0.4rem 0.8rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <div style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%' }} />
+                  <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase' }}>Happy Renter</span>
+                </div>
               </div>
             </motion.div>
           </div>
