@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from 'framer-motion';
 import {
-  Zap,
   ArrowRight,
   Instagram,
   Linkedin,
@@ -452,21 +451,11 @@ const AppShowcase = () => {
               </p>
 
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                <div className="glass" style={{ padding: '1rem 2rem', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{ width: '24px', height: '24px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <div style={{ width: '12px', height: '12px', background: 'black', borderRadius: '2px' }} />
-                  </div>
-                  <div style={{ textAlign: 'left' }}>
-                    <div style={{ fontSize: '0.6rem', opacity: 0.6 }}>Coming Soon on</div>
-                    <div style={{ fontSize: '1rem', fontWeight: 800 }}>App Store</div>
-                  </div>
+                <div className="glass" style={{ padding: '0.8rem 1.5rem', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '1rem', cursor: 'pointer', transition: 'transform 0.3s ease' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" style={{ height: '30px' }} />
                 </div>
-                <div className="glass" style={{ padding: '1rem 2rem', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <Zap size={24} color="var(--primary)" />
-                  <div style={{ textAlign: 'left' }}>
-                    <div style={{ fontSize: '0.6rem', opacity: 0.6 }}>Coming Soon on</div>
-                    <div style={{ fontSize: '1rem', fontWeight: 800 }}>Play Store</div>
-                  </div>
+                <div className="glass" style={{ padding: '0.8rem 1.5rem', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '1rem', cursor: 'pointer', transition: 'transform 0.3s ease' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store" style={{ height: '30px' }} />
                 </div>
               </div>
             </div>
