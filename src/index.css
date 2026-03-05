@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Lexend:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Lexend:wght@300;400;500;700;900&family=Zen+Antique+Soft&display=swap');
 
 :root {
   --primary: #00A3E1;
@@ -12,6 +12,7 @@
   
   --font-main: 'Plus Jakarta Sans', sans-serif;
   --font-heading: 'Lexend', sans-serif;
+  --font-logo: 'Zen Antique Soft', serif;
 }
 
 * {
@@ -276,6 +277,15 @@ body {
   align-items: center;
   justify-content: center;
   width: fit-content;
+}
+
+.logo-text {
+  font-family: var(--font-logo);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000;
+  margin-left: 8px;
+  letter-spacing: 0.5px;
 }
 
 .text-gradient {
