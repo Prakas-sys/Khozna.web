@@ -380,11 +380,27 @@ body {
     text-align: center !important;
   }
 
+  .footer-content>div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-content .logo-box {
+    margin: 0 auto 1.5rem !important;
+    justify-content: center;
+  }
+
   .footer-links-grid {
     flex-direction: column !important;
     gap: 3rem !important;
     width: 100% !important;
     align-items: center !important;
+  }
+
+  .footer-links-grid span {
+    padding-left: 0 !important;
+    text-align: center;
   }
 
   .footer-social-row {
