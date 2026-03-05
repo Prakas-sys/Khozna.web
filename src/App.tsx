@@ -4,7 +4,10 @@ import {
   Zap,
   ArrowRight,
   Cpu,
-  Layers
+  Layers,
+  Instagram,
+  Linkedin,
+  Facebook
 } from 'lucide-react';
 // --- Components ---
 
@@ -14,7 +17,7 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
 
   // PASTE YOUR FORMSPREE ID HERE
-  const FORMSPREE_ID = "YOUR_ID_HERE"; 
+  const FORMSPREE_ID = "YOUR_ID_HERE";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,7 +62,7 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
             exit={{ scale: 0.9, y: 20 }}
             className="glass"
             style={{ width: '100%', maxWidth: '500px', padding: '4rem 3rem', borderRadius: '32px', textAlign: 'center', position: 'relative' }}
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
             <button
               onClick={onClose}
@@ -75,12 +78,13 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
                 </div>
                 <h3 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>YOU'RE ON THE LIST!</h3>
                 <p style={{ color: 'var(--text-dim)', lineHeight: '1.6', marginBottom: '2rem' }}>We'll notify you the moment Khozna goes live. In the meantime, follow our journey.</p>
-                
+
                 <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
                    <a href="#" style={{ color: 'var(--primary)' }}><Instagram size={24} /></a>
                    <a href="#" style={{ color: 'var(--primary)' }}><Linkedin size={24} /></a>
-                   <a href="#" style={{ color: 'var(--primary)' }}><Facebook size={24} /></a>
+                   <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}><Facebook size={24} /></a>
                 </div>
+
               </motion.div>
             ) : (
               <>
@@ -94,11 +98,19 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
                     placeholder="Enter your email address"
                     required
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                     style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', padding: '1.2rem 1.5rem', borderRadius: '16px', color: 'white', fontSize: '1rem', outline: 'none' }}
                   />
-                  <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center', padding: '1.2rem' }}>
-                    Notify Me <ArrowRight size={20} />
+                  {status === "error" && (
+                    <p style={{ color: '#ef4444', fontSize: '0.85rem', marginTop: '-0.5rem' }}>Something went wrong. Please try again.</p>
+                  )}
+                  <button
+                    type="submit"
+                    className="btn-primary"
+                    style={{ width: '100%', justifyContent: 'center', padding: '1.2rem' }}
+                    disabled={status === "loading"}
+                  >
+                    {status === "loading" ? "Submitting..." : "Notify Me"} <ArrowRight size={20} />
                   </button>
                 </form>
               </>
@@ -419,11 +431,12 @@ function App() {
             </div>
             <div style={{ display: 'flex', gap: '6rem' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Socials</span>
-                <a href="#" className="footer-link">Instagram</a>
-                <a href="#" className="footer-link">LinkedIn</a>
-                <a href="#" className="footer-link">Facebook</a>
+                 <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Socials</span>
+                 <a href="#" className="footer-link">Instagram</a>
+                 <a href="#" className="footer-link">LinkedIn</a>
+                 <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" className="footer-link">Facebook</a>
               </div>
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Platform</span>
                 <a href="#" className="footer-link">The App</a>
