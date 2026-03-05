@@ -306,11 +306,14 @@ function App() {
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6rem' }}>
             <div>
-              <div className="logo-box" style={{ marginBottom: '2rem' }}>
+              <div className="logo-box" style={{ marginBottom: '1.5rem' }}>
                 <img src="/original_logo.png" style={{ height: '42px', objectFit: 'contain' }} alt="KHOZNA Icon" />
                 <span className="logo-text">KHOZNA</span>
               </div>
-              <p style={{ color: 'var(--text-dim)', maxWidth: '300px', lineHeight: '1.8' }}>The premier rental representation platform for Nepal's modern generation.</p>
+              <h5 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '2px', marginBottom: '0.5rem' }}>#1 NEPAL'S TRUSTED RENTAL PLATFORM</h5>
+              <p style={{ color: 'var(--text-dim)', maxWidth: '300px', lineHeight: '1.6', fontSize: '0.9rem' }}>
+                FIND YOUR NEXT HOME.<br/>NO MIDDLEMAN.
+              </p>
             </div>
             <div style={{ display: 'flex', gap: '6rem' }}>
                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
