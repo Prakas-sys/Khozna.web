@@ -152,7 +152,7 @@ const AppWalkthrough = () => {
   const screen3Y = useTransform(scrollYProgress, [0.55, 0.6], [100, 0]);
 
   return (
-    <section ref={targetRef} className="walkthrough-container" style={{ height: '400vh', background: '#000' }}>
+    <section ref={targetRef} className="walkthrough-container" style={{ height: '400vh', background: '#000', position: 'relative', zIndex: 1 }}>
       <div className="walkthrough-sticky" style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         <div className="container walkthrough-grid grid-2" style={{ alignItems: 'center' }}>
           
@@ -237,7 +237,7 @@ const Hero = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
 
   return (
-    <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', padding: '120px 0' }}>
+    <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', padding: '120px 0', zIndex: 100 }}>
       
       {/* Cinematic Background Video Layer */}
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden' }}>
