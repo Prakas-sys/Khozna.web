@@ -298,7 +298,7 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
           </div>
           <div style={{ display: 'flex', gap: '6rem' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Socials</span>
+              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px', paddingLeft: '0.5rem' }}>Socials</span>
               <div className="footer-social-row">
                 <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="footer-social-item">
                   <div className="social-btn"><Instagram size={14} /></div> Instagram
@@ -315,14 +315,14 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
               </div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Platform</span>
+              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px', paddingLeft: '0.5rem' }}>Platform</span>
               <Link to="/" className="footer-link">Home</Link>
               <button onClick={() => openLegal("safety")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Safe Rental Guide</button>
               <button onClick={() => openLegal("privacy")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Privacy Policy</button>
               <button onClick={() => openLegal("terms")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Terms of Service</button>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Contact</span>
+              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px', paddingLeft: '0.5rem' }}>Contact</span>
               <a href="https://wa.me/9705278379" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Phone size={16} /> 9705278379</a>
               <a href="mailto:khoznaapp@gmail.com" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Mail size={16} /> khoznaapp@gmail.com</a>
             </div>
