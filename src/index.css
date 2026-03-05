@@ -271,20 +271,21 @@ body {
 
 .logo-box {
   background: white;
-  padding: 6px 12px;
-  border-radius: 6px;
+  padding: 8px 16px;
+  border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: fit-content;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .logo-text {
   font-family: var(--font-logo);
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #000;
-  margin-left: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary); /* Use Sky Blue for the text to match the icon */
+  margin-left: 10px;
   letter-spacing: 0.5px;
 }
 
