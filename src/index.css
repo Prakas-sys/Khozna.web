@@ -232,9 +232,12 @@ body {
 
 /* Phone Mockup */
 .phone-mockup {
-  width: 280px;
-  height: 580px;
-  border: 10px solid #1a1a1a;
+  width: 300px;
+  /* Increased from 280px */
+  height: 620px;
+  /* Increased from 580px */
+  border: 12px solid #1a1a1a;
+  /* Thicker border */
   border-radius: 40px;
   background: #000;
   position: relative;
@@ -295,8 +298,9 @@ body {
 @media (max-width: 768px) {
 
   .grid-2,
-  .grid-3 {
-    grid-template-columns: 1fr;
+  .grid-3,
+  .walkthrough-grid {
+    grid-template-columns: 1fr !important;
     gap: 3rem;
   }
 
