@@ -317,17 +317,17 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
                 </a>
               </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <div className="footer-col" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Platform</span>
               <Link to="/" className="footer-link">Home</Link>
-              <button onClick={() => openLegal("safety")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Safe Rental Guide</button>
-              <button onClick={() => openLegal("privacy")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Privacy Policy</button>
-              <button onClick={() => openLegal("terms")} className="footer-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Terms of Service</button>
+              <button onClick={() => openLegal("safety")} className="footer-link footer-btn">Safe Rental Guide</button>
+              <button onClick={() => openLegal("privacy")} className="footer-link footer-btn">Privacy Policy</button>
+              <button onClick={() => openLegal("terms")} className="footer-link footer-btn">Terms of Service</button>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <div className="footer-col" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Contact</span>
-              <a href="https://wa.me/9705278379" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Phone size={16} /> 9705278379</a>
-              <a href="mailto:khoznaapp@gmail.com" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Mail size={16} /> khoznaapp@gmail.com</a>
+              <a href="https://wa.me/9705278379" target="_blank" rel="noopener noreferrer" className="footer-link footer-contact-link"><Phone size={16} /> 9705278379</a>
+              <a href="mailto:khoznaapp@gmail.com" className="footer-link footer-contact-link"><Mail size={16} /> khoznaapp@gmail.com</a>
             </div>
           </div>
         </div>

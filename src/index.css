@@ -519,6 +519,21 @@ body {
     text-align: center !important;
   }
 
+  /* ✅ Center all footer columns on mobile */
+  .footer-col {
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .footer-btn {
+    text-align: center !important;
+    width: 100%;
+  }
+
+  .footer-contact-link {
+    justify-content: center !important;
+  }
+
   .hero-buttons {
     width: 100%;
     max-width: 400px;
@@ -669,6 +684,23 @@ body {
 .footer-link:hover {
   color: white;
   padding-left: 8px;
+}
+
+/* Footer button (Platform links) */
+.footer-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  font-family: inherit;
+}
+
+/* Footer contact links (Phone, Email) */
+.footer-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .social-icon {
