@@ -80,7 +80,7 @@ const LegalModal = ({ isOpen, onClose, type }: { isOpen: boolean, onClose: () =>
         <div style={{ textAlign: 'left', fontSize: '0.95rem', lineHeight: '1.8', color: 'var(--text-dim)' }}>
           <p style={{ color: 'white', marginBottom: '1.5rem' }}>Welcome to Khozna. By accessing or using our website or services, you agree to comply with and be bound by these Terms & Conditions.</p>
           <h4 style={{ color: 'white', marginTop: '1.5rem' }}>1. Platform Purpose</h4>
-          <p>Khozna is a direct rental discovery platform that connects property owners and renters without brokers. We do not own, manage, or lease properties listed on the platform.</p>
+          <p>Khozna is a direct rental discovery platform that connects Owners and Guests without brokers. We do not own, manage, or lease properties listed on the platform.</p>
           <h4 style={{ color: 'white', marginTop: '1.5rem' }}>2. User Eligibility</h4>
           <p>You must be at least 18 years old to use Khozna. By using the platform, you confirm that the information you provide is accurate and lawful.</p>
           <h4 style={{ color: 'white', marginTop: '1.5rem' }}>3. Listings & Content</h4>
@@ -394,12 +394,12 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
             <div className="glass feature-box" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
               <img src="/icon-free.png" alt="Free for Everyone" className="icon-3d" />
               <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>Free for Everyone</h3>
-              <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Khozna is 100% free — for renters and Gharbetis alike. Always.</p>
+              <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Khozna is 100% free — for Owners and Guests alike. Always.</p>
             </div>
             <div className="glass feature-box default-active" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
               <img src="/icon-chat.png" alt="Direct Message" className="icon-3d" />
               <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>Direct Message</h3>
-              <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Message the Gharbeti directly inside our app and close the deal faster.</p>
+              <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Message the Owner directly inside our app and close the deal faster.</p>
             </div>
             <div className="glass feature-box" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
               <img src="/icon-verified.png" alt="Verified" className="icon-3d" />
@@ -480,17 +480,17 @@ const AppShowcase = () => {
               transition={{ type: "spring", stiffness: 100, damping: 30 }}
             >
               <div className="emotion-card" style={{ transform: 'translateZ(50px) translateY(-30px) rotate(5deg)', position: 'relative' }}>
-                <img src="/man.png" alt="Happy Gharbeti" className="emotion-image" style={{ objectPosition: 'top' }} />
+                <img src="/man.png" alt="Happy Owner" className="emotion-image" style={{ objectPosition: 'top' }} />
                 <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', background: 'rgba(5,5,5,0.7)', backdropFilter: 'blur(10px)', padding: '0.4rem 0.8rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <div style={{ width: '8px', height: '8px', background: '#10B981', borderRadius: '50%' }} />
-                  <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase' }}>Verified Gharbeti</span>
+                  <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase' }}>Verified Owner</span>
                 </div>
               </div>
               <div className="emotion-card" style={{ transform: 'translateZ(100px) rotate(-5deg)', position: 'relative' }}>
-                <img src="/boy.png" alt="Happy Renter" className="emotion-image" style={{ objectPosition: 'top' }} />
+                <img src="/boy.png" alt="Happy Guest" className="emotion-image" style={{ objectPosition: 'top' }} />
                 <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', background: 'rgba(5,5,5,0.7)', backdropFilter: 'blur(10px)', padding: '0.4rem 0.8rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <div style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%' }} />
-                  <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase' }}>Happy Renter</span>
+                  <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase' }}>Happy Guest</span>
                 </div>
               </div>
             </motion.div>
@@ -520,7 +520,7 @@ const VisionPage = () => {
               <div>
                 <Reveal delay={0.1}><p style={{ fontSize: '1.4rem', color: 'white', lineHeight: '1.6', marginBottom: '3rem', fontWeight: 500 }}>At Khozna, our vision is to eliminate brokers, reduce rental friction, and bring transparency to Nepal’s rental market.</p></Reveal>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                  <Reveal delay={0.2}><div style={{ display: 'flex', gap: '1.5rem' }}><div className="glass" style={{ width: '40px', height: '40px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><CheckCircle2 size={20} color="var(--primary)" /></div><p style={{ color: 'var(--text-dim)', lineHeight: '1.6' }}>Connecting renters and owners directly without any hidden fees or exploitation.</p></div></Reveal>
+                  <Reveal delay={0.2}><div style={{ display: 'flex', gap: '1.5rem' }}><div className="glass" style={{ width: '40px', height: '40px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><CheckCircle2 size={20} color="var(--primary)" /></div><p style={{ color: 'var(--text-dim)', lineHeight: '1.6' }}>Connecting Guests and Owners directly without any hidden fees or exploitation.</p></div></Reveal>
                   <Reveal delay={0.3}><div style={{ display: 'flex', gap: '1.5rem' }}><div className="glass" style={{ width: '40px', height: '40px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><CheckCircle2 size={20} color="var(--primary)" /></div><p style={{ color: 'var(--text-dim)', lineHeight: '1.6' }}>Building a digital rental ecosystem specifically engineered for the needs of Nepal.</p></div></Reveal>
                 </div>
               </div>
@@ -557,17 +557,17 @@ const AppWalkthrough = () => {
             <motion.div style={{ position: 'absolute', opacity: useTransform(scrollYProgress, [0, 0.2], [1, 0]) }}>
               <span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase' }}>Step 01</span>
               <h2 className="section-title" style={{ marginTop: '1rem' }}>SEARCH.<br />SIMPLE.</h2>
-              <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', maxWidth: '400px', lineHeight: '1.8' }}>Browse real homes from real Gharbetis across Nepal. No broker, no headache.</p>
+              <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', maxWidth: '400px', lineHeight: '1.8' }}>Browse real homes from real Owners across Nepal. No broker, no headache.</p>
             </motion.div>
             <motion.div style={{ position: 'absolute', opacity: screen2Opacity }}>
               <span style={{ color: '#10B981', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase' }}>Step 02</span>
               <h2 className="section-title" style={{ marginTop: '1rem' }}>DIRECT<br />CONNECTION.</h2>
-              <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', maxWidth: '400px', lineHeight: '1.8' }}>Skip the dalal. Chat directly with the Gharbeti in real-time. Negotiate, ask, and finalize — completely free.</p>
+              <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', maxWidth: '400px', lineHeight: '1.8' }}>Skip the dalal. Message the Owner in real-time. Negotiate, ask, and finalize — completely free.</p>
             </motion.div>
             <motion.div style={{ position: 'absolute', opacity: screen3Opacity }}>
               <span style={{ color: '#F59E0B', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase' }}>Step 03</span>
               <h2 className="section-title" style={{ marginTop: '1rem' }}>VERIFIED<br />TRUST.</h2>
-              <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', maxWidth: '400px', lineHeight: '1.8' }}>Our verification ensures every Gharbeti and renter is exactly who they say they are. Real people, real homes.</p>
+              <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', maxWidth: '400px', lineHeight: '1.8' }}>Our verification ensures every Owner and Guest is exactly who they say they are. Real people, real homes.</p>
             </motion.div>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
