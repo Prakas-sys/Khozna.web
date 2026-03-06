@@ -300,7 +300,7 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
             <p style={{ color: 'var(--text-dim)', maxWidth: '300px', lineHeight: '1.6', fontSize: '0.9rem' }}>FIND YOUR NEXT HOME.<br />NO MIDDLEMAN.</p>
           </div>
           <div className="footer-links-grid" style={{ display: 'flex', gap: '6rem' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <div className="footer-col" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Socials</span>
               <div className="footer-social-row">
                 <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="footer-social-item">

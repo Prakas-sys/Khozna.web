@@ -553,6 +553,17 @@ body {
     justify-content: center !important;
   }
 
+  /* ✅ Center social items on mobile */
+  .footer-social-row {
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .footer-social-item {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
   .hero-buttons {
     width: 100%;
     max-width: 400px;
