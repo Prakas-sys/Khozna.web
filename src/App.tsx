@@ -350,9 +350,12 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
     <main>
       <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', zIndex: 100 }}>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden' }}>
-          <video autoPlay muted loop playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.6, filter: 'brightness(0.8) contrast(1.1)' }}>
+          {/* Video for desktop */}
+          <video autoPlay muted loop playsInline className="hero-video" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.6, filter: 'brightness(0.8) contrast(1.1)' }}>
             <source src="/view of ktm.mp4" type="video/mp4" />
           </video>
+          {/* Fallback gradient for mobile */}
+          <div className="hero-fallback" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'radial-gradient(ellipse at 60% 40%, rgba(0,163,225,0.25) 0%, rgba(0,0,0,0.95) 70%)' }} />
         </div>
         <div style={{ textAlign: 'center', zIndex: 10, width: '100%' }}>
           <h1 className="hero-title">

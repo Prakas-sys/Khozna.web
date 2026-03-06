@@ -109,6 +109,16 @@ body {
   overflow: visible !important;
 }
 
+/* Hero video — desktop only */
+.hero-video {
+  display: block;
+}
+
+/* Hero gradient fallback — mobile only (hidden on desktop) */
+.hero-fallback {
+  display: none;
+}
+
 .hero-line {
   white-space: nowrap;
   /* Prevents words from breaking into new lines */
@@ -288,6 +298,15 @@ body {
   .grid-3 {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+
+  /* ✅ Hide video on mobile, show gradient fallback instead */
+  .hero-video {
+    display: none !important;
+  }
+
+  .hero-fallback {
+    display: block !important;
   }
 
   .emotion-slider-mobile {
