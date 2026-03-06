@@ -546,7 +546,7 @@ const AppWalkthrough = () => {
   const screen1Opacity = useTransform(scrollYProgress, [0.2, 0.25], [1, 0]);
   const screen2Opacity = useTransform(scrollYProgress, [0.25, 0.3, 0.5, 0.55], [0, 1, 1, 0]);
   const screen2Y = useTransform(scrollYProgress, [0.25, 0.3], [100, 0]);
-  const screen3Opacity = useTransform(scrollYProgress, [0.55, 0.6, 0.8, 0.85], [0, 1, 1, 0]);
+  const screen3Opacity = useTransform(scrollYProgress, [0.55, 0.6, 0.9, 1], [0, 1, 1, 1]);
   const screen3Y = useTransform(scrollYProgress, [0.55, 0.6], [100, 0]);
 
   return (
