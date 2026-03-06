@@ -389,9 +389,9 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
           </div>
           <div className="grid-3 features-container">
             <div className="glass feature-box" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
-              <img src="/icon-free.png" alt="100% Free For Everyone" className="icon-3d" />
-              <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>100% Free</h3>
-              <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Khozna is completely free for everyone. No hidden fees, ever.</p>
+              <img src="/icon-free.png" alt="Free for Everyone" className="icon-3d" />
+              <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>Free for Everyone</h3>
+              <p style={{ color: 'var(--text-dim)', lineHeight: '1.8' }}>Khozna is 100% free — for renters and Gharbetis alike. Always.</p>
             </div>
             <div className="glass feature-box default-active" style={{ padding: '4rem 3rem', borderRadius: '40px', textAlign: 'center' }}>
               <img src="/icon-chat.png" alt="Direct Chat" className="icon-3d" />
