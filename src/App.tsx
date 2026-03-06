@@ -552,21 +552,21 @@ const AppWalkthrough = () => {
   return (
     <section id="walkthrough" ref={targetRef} className="walkthrough-container" style={{ background: '#000', position: 'relative', zIndex: 1 }}>
       <div className="walkthrough-sticky" style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-        <div className="container walkthrough-grid grid-2" style={{ alignItems: 'center' }}>
+        <div className="container walkthrough-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 0.8fr)', gap: '4rem', alignItems: 'center' }}>
           <div className="walkthrough-text-side" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
             <motion.div style={{ position: 'absolute', opacity: useTransform(scrollYProgress, [0, 0.25], [1, 0]), top: '50%', transform: 'translateY(-50%)', width: '100%' }}>
               <span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase' }}>Step 01</span>
-              <h2 className="section-title" style={{ marginTop: '1rem' }}>SEARCH.<br />SIMPLE.</h2>
+              <h2 className="section-title" style={{ marginTop: '1rem', fontSize: 'clamp(2rem, 5vw, 4rem)' }}>SEARCH.<br />SIMPLE.</h2>
               <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', maxWidth: '400px', lineHeight: '1.8' }}>Browse real homes from real Owners across Nepal. No broker, no headache.</p>
             </motion.div>
             <motion.div style={{ position: 'absolute', opacity: useTransform(scrollYProgress, [0.25, 0.35, 0.55, 0.65], [0, 1, 1, 0]), top: '50%', transform: 'translateY(-50%)', width: '100%' }}>
               <span style={{ color: '#10B981', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase' }}>Step 02</span>
-              <h2 className="section-title" style={{ marginTop: '1rem' }}>DIRECT<br />CONNECTION.</h2>
+              <h2 className="section-title" style={{ marginTop: '1rem', fontSize: 'clamp(2rem, 5vw, 4rem)' }}>MESSAGE.<br />DIRECT.</h2>
               <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', maxWidth: '400px', lineHeight: '1.8' }}>Skip the dalal. Message the Owner in real-time. Negotiate, ask, and finalize — completely free.</p>
             </motion.div>
             <motion.div style={{ position: 'absolute', opacity: useTransform(scrollYProgress, [0.65, 0.75, 0.9, 1], [0, 1, 1, 1]), top: '50%', transform: 'translateY(-50%)', width: '100%' }}>
               <span style={{ color: '#F59E0B', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase' }}>Step 03</span>
-              <h2 className="section-title" style={{ marginTop: '1rem' }}>VERIFIED<br />TRUST.</h2>
+              <h2 className="section-title" style={{ marginTop: '1rem', fontSize: 'clamp(2rem, 5vw, 4rem)' }}>VERIFIED.<br />TRUST.</h2>
               <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', maxWidth: '400px', lineHeight: '1.8' }}>Our verification ensures every Owner and Guest is exactly who they say they are. Real people, real homes.</p>
             </motion.div>
           </div>
