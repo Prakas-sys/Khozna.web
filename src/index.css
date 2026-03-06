@@ -232,17 +232,15 @@ body {
 
 /* Phone Mockup */
 .phone-mockup {
-  width: 300px;
-  /* Increased from 280px */
-  height: 620px;
-  /* Increased from 580px */
+  width: min(320px, 42vh);
+  height: min(650px, 82vh);
   border: 12px solid #1a1a1a;
-  /* Thicker border */
-  border-radius: 40px;
+  border-radius: 44px;
   background: #000;
   position: relative;
   overflow: hidden;
   box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8);
+  flex-shrink: 0;
 }
 
 .phone-screen {

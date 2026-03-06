@@ -552,7 +552,7 @@ const AppWalkthrough = () => {
   return (
     <section id="walkthrough" ref={targetRef} className="walkthrough-container" style={{ background: '#000', position: 'relative', zIndex: 1 }}>
       <div className="walkthrough-sticky" style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-        <div className="container walkthrough-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+        <div className="walkthrough-grid" style={{ width: '90%', maxWidth: '1600px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'center' }}>
           <div className="walkthrough-text-side" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
             <motion.div style={{ position: 'absolute', opacity: useTransform(scrollYProgress, [0, 0.25], [1, 0]), top: '50%', transform: 'translateY(-50%)', width: '100%' }}>
               <span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase' }}>Step 01</span>
