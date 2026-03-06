@@ -553,8 +553,8 @@ const AppWalkthrough = () => {
           <div className="walkthrough-text-side" style={{ position: 'relative', height: '50vh' }}>
             <motion.div style={{ position: 'absolute', opacity: useTransform(scrollYProgress, [0, 0.2], [1, 0]) }}>
               <span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase' }}>Step 01</span>
-              <h2 className="section-title" style={{ marginTop: '1rem' }}>DISCOVER<br />BEYOND.</h2>
-              <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', maxWidth: '400px', lineHeight: '1.8' }}>Browse a curated feed of verified properties. No brokers, no noise. Just real places for real people.</p>
+              <h2 className="section-title" style={{ marginTop: '1rem' }}>SEARCH.<br />SIMPLE.</h2>
+              <p style={{ fontSize: '1.2rem', color: 'var(--text-dim)', maxWidth: '400px', lineHeight: '1.8' }}>Browse real homes from real Gharbetis across Nepal. No broker, no headache.</p>
             </motion.div>
             <motion.div style={{ position: 'absolute', opacity: screen2Opacity }}>
               <span style={{ color: '#10B981', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase' }}>Step 02</span>
