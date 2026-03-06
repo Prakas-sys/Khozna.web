@@ -109,14 +109,9 @@ body {
   overflow: visible !important;
 }
 
-/* Hero video — desktop only */
+/* Hero video */
 .hero-video {
   display: block;
-}
-
-/* Hero gradient fallback — mobile only (hidden on desktop) */
-.hero-fallback {
-  display: none;
 }
 
 .hero-line {
@@ -302,14 +297,7 @@ body {
     gap: 3rem;
   }
 
-  /* ✅ Hide video on mobile, show gradient fallback instead */
-  .hero-video {
-    display: none !important;
-  }
-
-  .hero-fallback {
-    display: block !important;
-  }
+  /* Removed hero-video hide and hero-fallback show for mobile */
 
   .emotion-slider-mobile {
     position: relative !important;
