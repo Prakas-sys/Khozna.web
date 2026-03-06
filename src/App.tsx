@@ -572,9 +572,9 @@ const AppWalkthrough = () => {
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
             <motion.div className="phone-mockup" style={{ scale: screen1Scale }}>
-              <motion.img src="/Home screeen.jpeg" className="phone-screen" style={{ opacity: screen1Opacity }} />
-              <motion.img src="/meesage setion.jpeg" className="phone-screen" style={{ opacity: screen2Opacity, position: 'absolute', top: 0, left: 0, y: screen2Y }} />
-              <motion.img src="/kyc screen.jpeg" className="phone-screen" style={{ opacity: screen3Opacity, position: 'absolute', top: 0, left: 0, y: screen3Y }} />
+              <motion.img src="/new Home.jpeg" className="phone-screen" style={{ opacity: screen1Opacity }} />
+              <motion.img src="/New message.jpeg" className="phone-screen" style={{ opacity: screen2Opacity, position: 'absolute', top: 0, left: 0, y: screen2Y }} />
+              <motion.img src="/New Kyc.jpeg" className="phone-screen" style={{ opacity: screen3Opacity, position: 'absolute', top: 0, left: 0, y: screen3Y }} />
             </motion.div>
           </div>
         </div>
