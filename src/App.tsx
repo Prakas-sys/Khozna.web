@@ -412,7 +412,7 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
 
       <section style={{ padding: 'clamp(6rem, 20vh, 15rem) 0', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
-          <Reveal><h2 className="section-title" style={{ fontSize: 'clamp(2.5rem, 12vw, 10rem)', lineHeight: 0.8, marginBottom: '4rem' }}>JOIN THE<br />REVOLUTION.</h2></Reveal>
+          <Reveal><h2 className="section-title" style={{ fontSize: 'clamp(2.5rem, 12vw, 10rem)', lineHeight: 0.8, marginBottom: '4rem' }}>JOIN THE<br />FUTURE.</h2></Reveal>
           <p style={{ color: 'var(--text-dim)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto 4rem', lineHeight: '1.8', padding: '0 1rem' }}>We're not just building an app. We're building the future of how people live and connect in Nepal.</p>
           <div style={{ display: 'flex', justifyContent: 'center' }}><img src="/original_logo.png" style={{ height: '80px', objectFit: 'contain' }} alt="KHOZNA Quality Stamp" /></div>
         </div>
@@ -454,7 +454,7 @@ const AppShowcase = () => {
                 THE FUTURE <br /> IN YOUR POCKET.
               </h2></Reveal>
               <p style={{ fontSize: '1.1rem', color: 'var(--text-dim)', marginBottom: '3rem', maxWidth: '450px' }}>
-                The Khozna app is coming soon to revolutionize how you live. Simple, fast, and secure.
+                The Khozna app is coming soon to change how you live. Simple, fast, and secure.
               </p>
 
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
