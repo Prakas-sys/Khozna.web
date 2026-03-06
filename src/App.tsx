@@ -351,7 +351,7 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
       <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', zIndex: 100 }}>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden' }}>
           <video autoPlay muted loop playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.6, filter: 'brightness(0.8) contrast(1.1)' }}>
-            <source src="/valley of KTM.mp4" type="video/mp4" />
+            <source src="/view of ktm.mp4" type="video/mp4" />
           </video>
         </div>
         <div style={{ textAlign: 'center', zIndex: 10, width: '100%' }}>
