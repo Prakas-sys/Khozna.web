@@ -455,6 +455,7 @@ body {
     position: absolute !important;
     height: 100% !important;
     border-radius: 12px;
+    opacity: 1 !important;
   }
 
   /* Simplify mobile view by showing only the primary screen statically */
