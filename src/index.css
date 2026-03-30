@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Lexend:wght@300;400;500;700;900&family=Zen+Antique+Soft&display=swap');
 
 :root {
-  --primary: #00A3E1;
-  --primary-glow: rgba(0, 163, 225, 0.4);
-  --bg: #050505;
-  --text: #FFFFFF;
-  --text-dim: #94A3B8;
-  --surface: #0F172A;
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --border: rgba(255, 255, 255, 0.1);
+  --primary: #00A3E1; /* Sky Blue */
+  --primary-glow: rgba(0, 163, 225, 0.15);
+  --bg: #FFFFFF;
+  --text: #0F172A; /* Deep Slate Navy */
+  --text-dim: #64748B; /* Slate Grey */
+  --surface: #F8FAFC;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --border: rgba(15, 23, 42, 0.08);
 
   --font-main: 'Plus Jakarta Sans', sans-serif;
   --font-heading: 'Lexend', sans-serif;
@@ -47,11 +47,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg);
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #222;
+  background: #CBD5E1;
   border-radius: 10px;
 }
 
@@ -129,16 +129,17 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Glassmorphism */
+/* Glassmorphism - Light Mode */
 .glass {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
 }
 
 .glass-nav {
-  background: rgba(5, 5, 5, 0.7);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
@@ -175,7 +176,7 @@ body {
 
 .btn-outline {
   background: transparent;
-  color: white;
+  color: var(--text);
   padding: 1rem 2.5rem;
   border-radius: 12px;
   font-weight: 700;
@@ -186,8 +187,8 @@ body {
 }
 
 .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: white;
+  background: rgba(0, 0, 0, 0.02);
+  border-color: var(--text);
 }
 
 /* Property Cards */
@@ -786,7 +787,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+  background: linear-gradient(135deg, var(--text) 0%, var(--primary) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

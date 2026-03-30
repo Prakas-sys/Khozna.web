@@ -137,7 +137,7 @@ const LegalModal = ({ isOpen, onClose, type }: { isOpen: boolean, onClose: () =>
       {isOpen && (
         <motion.div
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-          style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.9)', backdropFilter: 'blur(15px)', zIndex: 3000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}
+          style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(20px)', zIndex: 3000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}
           onClick={onClose}
         >
           <motion.div
@@ -146,9 +146,9 @@ const LegalModal = ({ isOpen, onClose, type }: { isOpen: boolean, onClose: () =>
             style={{ width: '100%', maxWidth: '700px', maxHeight: '80vh', overflowY: 'auto', padding: '3rem', borderRadius: '32px', position: 'relative' }}
             onClick={(e) => e.stopPropagation()}
           >
-            <button onClick={onClose} style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'transparent', border: 'none', color: 'white', cursor: 'pointer', opacity: 0.5 }}>✕</button>
+            <button onClick={onClose} style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'transparent', border: 'none', color: 'var(--text)', cursor: 'pointer', opacity: 0.5 }}>✕</button>
             <span style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.7rem' }}>{content[type].date}</span>
-            <h3 style={{ fontSize: '2.5rem', fontWeight: 900, marginTop: '0.5rem', marginBottom: '2rem' }}>{content[type].title}</h3>
+            <h3 style={{ fontSize: '2.5rem', fontWeight: 900, marginTop: '0.5rem', marginBottom: '2rem', color: 'var(--text)' }}>{content[type].title}</h3>
             {content[type].body}
           </motion.div>
         </motion.div>
@@ -196,7 +196,7 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
       {isOpen && (
         <motion.div
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-          style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(10px)', zIndex: 2000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}
+          style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(15px)', zIndex: 2000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}
           onClick={onClose}
         >
           <motion.div
@@ -205,7 +205,7 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
             style={{ width: '100%', maxWidth: '500px', padding: 'clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 3rem)', borderRadius: '32px', textAlign: 'center', position: 'relative' }}
             onClick={(e) => e.stopPropagation()}
           >
-            <button onClick={onClose} style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'transparent', border: 'none', color: 'white', cursor: 'pointer', opacity: 0.5 }}>✕</button>
+            <button onClick={onClose} style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'transparent', border: 'none', color: 'var(--text)', cursor: 'pointer', opacity: 0.5 }}>✕</button>
 
             {isSubmitted ? (
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
@@ -227,9 +227,9 @@ const WaitlistModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
                 <h3 style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', fontWeight: 900, marginTop: '1rem', marginBottom: '1.5rem' }}>JOIN THE<br />ECOSYSTEM.</h3>
                 <p style={{ color: 'var(--text-dim)', marginBottom: 'clamp(1.5rem, 5vw, 3rem)', lineHeight: '1.6' }}>Enter your details to get verified for early access to Nepal's #1 most trusted rental platform.</p>
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  <input type="text" placeholder="Your Full Name" required value={name} onChange={(e) => setName(e.target.value)} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', padding: '1.2rem 1.5rem', borderRadius: '16px', color: 'white', fontSize: '1rem', outline: 'none' }} />
-                  <input type="tel" placeholder="WhatsApp Number" required value={phone} onChange={(e) => setPhone(e.target.value)} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', padding: '1.2rem 1.5rem', borderRadius: '16px', color: 'white', fontSize: '1rem', outline: 'none' }} />
-                  <input type="email" placeholder="Email Address" required value={email} onChange={(e) => setEmail(e.target.value)} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', padding: '1.2rem 1.5rem', borderRadius: '16px', color: 'white', fontSize: '1rem', outline: 'none' }} />
+                  <input type="text" placeholder="Your Full Name" required value={name} onChange={(e) => setName(e.target.value)} style={{ background: 'rgba(0,0,0,0.03)', border: '1px solid var(--border)', padding: '1.2rem 1.5rem', borderRadius: '16px', color: 'var(--text)', fontSize: '1rem', outline: 'none' }} />
+                  <input type="tel" placeholder="WhatsApp Number" required value={phone} onChange={(e) => setPhone(e.target.value)} style={{ background: 'rgba(0,0,0,0.03)', border: '1px solid var(--border)', padding: '1.2rem 1.5rem', borderRadius: '16px', color: 'var(--text)', fontSize: '1rem', outline: 'none' }} />
+                  <input type="email" placeholder="Email Address" required value={email} onChange={(e) => setEmail(e.target.value)} style={{ background: 'rgba(0,0,0,0.03)', border: '1px solid var(--border)', padding: '1.2rem 1.5rem', borderRadius: '16px', color: 'var(--text)', fontSize: '1rem', outline: 'none' }} />
                   {status === "error" && <p style={{ color: '#ef4444', fontSize: '0.85rem', marginTop: '-0.5rem' }}>Something went wrong. Please try again.</p>}
                   <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center', padding: '1.2rem', background: 'var(--primary)', fontWeight: 800 }} disabled={status === "loading"}>
                     {status === "loading" ? "VERIFYING..." : "VERIFY & JOIN"} <ArrowRight size={20} />
@@ -288,7 +288,7 @@ const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
 
 const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety") => void }) => {
   return (
-    <footer id="contact" style={{ padding: 'clamp(4rem, 10vh, 8rem) 0 4rem', background: '#000', borderTop: '1px solid var(--border)' }}>
+    <footer id="contact" style={{ padding: 'clamp(4rem, 10vh, 8rem) 0 4rem', background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
       <div className="container">
         <div className="footer-content" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6rem' }}>
           <div>
@@ -301,7 +301,7 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
           </div>
           <div className="footer-links-grid" style={{ display: 'flex', gap: '6rem' }}>
             <div className="footer-col" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Socials</span>
+              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'var(--text)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Socials</span>
               <div className="footer-social-row">
                 <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="footer-social-item">
                   <div className="social-btn"><Instagram size={14} /></div> Instagram
@@ -318,14 +318,14 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
               </div>
             </div>
             <div className="footer-col" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Platform</span>
+              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'var(--text)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Platform</span>
               <Link to="/" className="footer-link">Home</Link>
               <button onClick={() => openLegal("safety")} className="footer-link footer-btn">Safe Rental Guide</button>
               <button onClick={() => openLegal("privacy")} className="footer-link footer-btn">Privacy Policy</button>
               <button onClick={() => openLegal("terms")} className="footer-link footer-btn">Terms of Service</button>
             </div>
             <div className="footer-col" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Contact</span>
+              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'var(--text)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Contact</span>
               <a href="https://wa.me/9705278379" target="_blank" rel="noopener noreferrer" className="footer-link footer-contact-link"><Phone size={16} /> 9705278379</a>
               <a href="mailto:khoznaapp@gmail.com" className="footer-link footer-contact-link"><Mail size={16} /> khoznaapp@gmail.com</a>
             </div>
@@ -350,7 +350,7 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
     <main>
       <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', zIndex: 100 }}>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden' }}>
-          <video autoPlay muted loop playsInline webkit-playsinline="true" className="hero-video" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.6, filter: 'brightness(0.8) contrast(1.1)' }}>
+          <video autoPlay muted loop playsInline webkit-playsinline="true" className="hero-video" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.4, filter: 'brightness(1.1) contrast(1.1) saturate(1.2)' }}>
             <source src="/view%20of%20ktm.mp4" type="video/mp4" />
           </video>
         </div>
@@ -367,14 +367,14 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
           </Reveal>
         </div>
         <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} style={{ position: 'absolute', bottom: '5%', left: '50%', transform: 'translateX(-50%)', opacity: 0.5 }}>
-          <div style={{ width: '30px', height: '50px', border: '2px solid white', borderRadius: '15px', position: 'relative' }}>
-            <motion.div animate={{ y: [0, 20, 0] }} transition={{ duration: 2, repeat: Infinity }} style={{ width: '4px', height: '10px', background: 'white', borderRadius: '2px', position: 'absolute', top: '10px', left: '50%', marginLeft: '-2px' }} />
+          <div style={{ width: '30px', height: '50px', border: '2px solid var(--text)', borderRadius: '15px', position: 'relative' }}>
+            <motion.div animate={{ y: [0, 20, 0] }} transition={{ duration: 2, repeat: Infinity }} style={{ width: '4px', height: '10px', background: 'var(--text)', borderRadius: '2px', position: 'absolute', top: '10px', left: '50%', marginLeft: '-2px' }} />
           </div>
         </motion.div>
       </section>
 
-      <div className="marquee-container" style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '3rem 0', background: 'rgba(255,255,255,0.01)', overflow: 'hidden' }}>
-        <motion.div animate={{ x: [0, -2000] }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} style={{ display: 'flex', gap: '6rem', whiteSpace: 'nowrap', fontSize: '1.5rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '8px', opacity: 0.2 }}>
+      <div className="marquee-container" style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '3rem 0', background: 'rgba(0,0,0,0.01)', overflow: 'hidden' }}>
+        <motion.div animate={{ x: [0, -2000] }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} style={{ display: 'flex', gap: '6rem', whiteSpace: 'nowrap', fontSize: '1.5rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '8px', opacity: 0.1 }}>
           {[1, 2, 3, 4, 5].map(i => (<React.Fragment key={i}><span>NO SCAMS</span><span>FREE FOR EVERYONE</span><span>VERIFIED LISTINGS</span></React.Fragment>))}
         </motion.div>
       </div>
@@ -382,7 +382,7 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
       <AppWalkthrough />
       <AppShowcase />
 
-      <section style={{ padding: 'clamp(5rem, 15vh, 15rem) 0', background: '#050505', position: 'relative' }}>
+      <section style={{ padding: 'clamp(5rem, 15vh, 15rem) 0', background: 'var(--surface)', position: 'relative' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '8rem' }}>
             <Reveal><h2 className="section-title" style={{ fontSize: 'clamp(3rem, 10vw, 8rem)', margin: '0 auto' }}>THE NEW WAY<br />TO RENT.</h2></Reveal>
@@ -413,7 +413,7 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
           <p style={{ color: 'var(--text-dim)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto 4rem', lineHeight: '1.8', padding: '0 1rem' }}>We're not just building an app. We're building the future of how people live and connect in Nepal.</p>
           <div style={{ display: 'flex', justifyContent: 'center' }}><img src="/original_logo.png" style={{ height: '80px', objectFit: 'contain' }} alt="KHOZNA Quality Stamp" /></div>
         </div>
-        <div style={{ position: 'absolute', bottom: '-20%', left: '50%', transform: 'translateX(-50%)', width: '80vw', height: '80vw', background: 'var(--primary-glow)', filter: 'blur(200px)', borderRadius: '50%', opacity: 0.3, zIndex: -1 }} />
+        <div style={{ position: 'absolute', bottom: '-20%', left: '50%', transform: 'translateX(-50%)', width: '80vw', height: '80vw', background: 'var(--primary-glow)', filter: 'blur(200px)', borderRadius: '50%', opacity: 0.15, zIndex: -1 }} />
       </section>
     </main>
   );
@@ -478,16 +478,16 @@ const AppShowcase = () => {
             >
               <div className="emotion-card" style={{ transform: 'translateZ(50px) translateY(-30px) rotate(5deg)', position: 'relative' }}>
                 <img src="/man.png" alt="Happy Owner" className="emotion-image" style={{ objectPosition: 'top' }} />
-                <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', background: 'rgba(5,5,5,0.7)', backdropFilter: 'blur(10px)', padding: '0.4rem 0.8rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(10px)', padding: '0.4rem 0.8rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <div style={{ width: '8px', height: '8px', background: '#10B981', borderRadius: '50%' }} />
-                  <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase' }}>Verified Owner</span>
+                  <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--text)' }}>Verified Owner</span>
                 </div>
               </div>
               <div className="emotion-card" style={{ transform: 'translateZ(100px) rotate(-5deg)', position: 'relative' }}>
                 <img src="/boy.png" alt="Happy Guest" className="emotion-image" style={{ objectPosition: 'top' }} />
-                <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', background: 'rgba(5,5,5,0.7)', backdropFilter: 'blur(10px)', padding: '0.4rem 0.8rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(10px)', padding: '0.4rem 0.8rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <div style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%' }} />
-                  <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase' }}>Happy Guest</span>
+                  <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--text)' }}>Happy Guest</span>
                 </div>
               </div>
             </motion.div>
@@ -503,8 +503,8 @@ const AppShowcase = () => {
 
 const VisionPage = () => {
   return (
-    <main style={{ padding: '120px 0 0', background: '#000' }}>
-      <section style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', background: '#0a0a0a', position: 'relative', overflow: 'hidden', padding: '10vh 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+    <main style={{ padding: '120px 0 0', background: 'var(--bg)' }}>
+      <section style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', background: 'var(--surface)', position: 'relative', overflow: 'hidden', padding: '10vh 0', borderTop: '1px solid var(--border)' }}>
         <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '50vw', height: '50vw', background: 'rgba(0, 163, 225, 0.03)', filter: 'blur(150px)', borderRadius: '50%', pointerEvents: 'none' }} />
         <div className="container">
           <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
@@ -515,17 +515,17 @@ const VisionPage = () => {
             <Reveal><h2 className="section-title" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', lineHeight: 0.9, marginBottom: '4rem' }}>OUR<br />VISION.</h2></Reveal>
             <div className="grid-2" style={{ gap: '6rem', alignItems: 'start' }}>
               <div>
-                <Reveal delay={0.1}><p style={{ fontSize: '1.4rem', color: 'white', lineHeight: '1.6', marginBottom: '3rem', fontWeight: 500 }}>At Khozna, our vision is to eliminate brokers, reduce rental friction, and bring transparency to Nepal’s rental market.</p></Reveal>
+                <Reveal delay={0.1}><p style={{ fontSize: '1.4rem', color: 'var(--text)', lineHeight: '1.6', marginBottom: '3rem', fontWeight: 500 }}>At Khozna, our vision is to eliminate brokers, reduce rental friction, and bring transparency to Nepal’s rental market.</p></Reveal>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                   <Reveal delay={0.2}><div style={{ display: 'flex', gap: '1.5rem' }}><div className="glass" style={{ width: '40px', height: '40px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><CheckCircle2 size={20} color="var(--primary)" /></div><p style={{ color: 'var(--text-dim)', lineHeight: '1.6' }}>Connecting Guests and Owners directly without any hidden fees or exploitation.</p></div></Reveal>
                   <Reveal delay={0.3}><div style={{ display: 'flex', gap: '1.5rem' }}><div className="glass" style={{ width: '40px', height: '40px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><CheckCircle2 size={20} color="var(--primary)" /></div><p style={{ color: 'var(--text-dim)', lineHeight: '1.6' }}>Building a digital rental ecosystem specifically engineered for the needs of Nepal.</p></div></Reveal>
                 </div>
               </div>
               <Reveal delay={0.4}>
-                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '3rem', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.05)', height: '100%' }}>
-                  <h4 style={{ fontWeight: 800, color: 'white', marginBottom: '1.5rem', fontSize: '1.2rem' }}>The Principle</h4>
+                <div style={{ background: 'rgba(0,0,0,0.02)', padding: '3rem', borderRadius: '32px', border: '1px solid var(--border)', height: '100%' }}>
+                  <h4 style={{ fontWeight: 800, color: 'var(--text)', marginBottom: '1.5rem', fontSize: '1.2rem' }}>The Principle</h4>
                   <p style={{ color: 'var(--text-dim)', lineHeight: '1.8', marginBottom: '2rem' }}>Finding a rental place in Nepal is unnecessarily expensive. We believe renting should be direct, honest, and accessible for everyone.</p>
-                  <div style={{ paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}><h3 style={{ fontSize: '1.8rem', fontWeight: 900, color: 'white' }}>SIMPLE. FAIR.<br /><span className="text-gradient">BROKER-FREE.</span></h3></div>
+                  <div style={{ paddingTop: '2rem', borderTop: '1px solid var(--border)' }}><h3 style={{ fontSize: '1.8rem', fontWeight: 900, color: 'var(--text)' }}>SIMPLE. FAIR.<br /><span className="text-gradient">BROKER-FREE.</span></h3></div>
                 </div>
               </Reveal>
             </div>
@@ -547,7 +547,7 @@ const AppWalkthrough = () => {
   const screen3Y = useTransform(scrollYProgress, [0.55, 0.6], [100, 0]);
 
   return (
-    <section id="walkthrough" ref={targetRef} className="walkthrough-container" style={{ background: '#000', position: 'relative', zIndex: 1 }}>
+    <section id="walkthrough" ref={targetRef} className="walkthrough-container" style={{ background: 'var(--bg)', position: 'relative', zIndex: 1 }}>
       <div className="walkthrough-sticky" style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         <div className="walkthrough-grid" style={{ width: '90%', maxWidth: '1600px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'center' }}>
           <div className="walkthrough-text-side" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
@@ -652,7 +652,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <TopProgressBar />
-      <div style={{ position: 'relative', background: '#000' }}>
+      <div style={{ position: 'relative', background: 'var(--bg)' }}>
         <CustomCursor />
         <WaitlistModal isOpen={isWaitlistOpen} onClose={() => setIsWaitlistOpen(false)} />
         <LegalModal isOpen={legalModal.open} type={legalModal.type} onClose={() => setLegalModal({ ...legalModal, open: false })} />
