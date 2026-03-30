@@ -288,54 +288,54 @@ const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
 
 const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety") => void }) => {
   return (
-    <footer id="contact" style={{ padding: 'clamp(4rem, 10vh, 8rem) 0 4rem', background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
+    <footer id="contact" style={{ padding: 'clamp(4rem, 10vh, 8rem) 0 4rem', background: 'var(--text)', borderTop: '1px solid var(--border)' }}>
       <div className="container">
         <div className="footer-content" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6rem' }}>
           <div>
             <div className="logo-box" style={{ marginBottom: '1.5rem' }}>
               <img src="/original_logo.png" style={{ height: '32px', objectFit: 'contain' }} alt="KHOZNA Icon" />
-              <span className="logo-text">KHOZNA</span>
+              <span className="logo-text" style={{ color: 'white' }}>KHOZNA</span>
             </div>
             <h5 style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '2px', marginBottom: '0.5rem' }}>#1 NEPAL'S TRUSTED RENTAL PLATFORM</h5>
-            <p style={{ color: 'var(--text-dim)', maxWidth: '300px', lineHeight: '1.6', fontSize: '0.9rem' }}>FIND YOUR NEXT HOME.<br />NO MIDDLEMAN.</p>
+            <p style={{ color: '#E2E8F0', maxWidth: '300px', lineHeight: '1.6', fontSize: '0.9rem' }}>FIND YOUR NEXT HOME.<br />NO MIDDLEMAN.</p>
           </div>
           <div className="footer-links-grid" style={{ display: 'flex', gap: '6rem' }}>
             <div className="footer-col" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'var(--text)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Socials</span>
+              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Socials</span>
               <div className="footer-social-row">
-                <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="footer-social-item">
-                  <div className="social-btn"><Instagram size={14} /></div> Instagram
+                <a href="https://www.instagram.com/khozna_/" target="_blank" rel="noopener noreferrer" className="footer-social-item" style={{ color: '#E2E8F0' }}>
+                  <div className="social-btn" style={{ color: 'white', background: 'rgba(255,255,255,0.1)' }}><Instagram size={14} /></div> Instagram
                 </a>
-                <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" className="footer-social-item">
-                  <div className="social-btn"><Linkedin size={14} /></div> LinkedIn
+                <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" className="footer-social-item" style={{ color: '#E2E8F0' }}>
+                  <div className="social-btn" style={{ color: 'white', background: 'rgba(255,255,255,0.1)' }}><Linkedin size={14} /></div> LinkedIn
                 </a>
-                <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" className="footer-social-item">
-                  <div className="social-btn"><Facebook size={14} /></div> Facebook
+                <a href="https://www.facebook.com/profile.php?id=61587497082072" target="_blank" rel="noopener noreferrer" className="footer-social-item" style={{ color: '#E2E8F0' }}>
+                  <div className="social-btn" style={{ color: 'white', background: 'rgba(255,255,255,0.1)' }}><Facebook size={14} /></div> Facebook
                 </a>
-                <a href="https://www.tiktok.com/@khozna_" target="_blank" rel="noopener noreferrer" className="footer-social-item">
-                  <div className="social-btn"><Music2 size={14} /></div> TikTok
+                <a href="https://www.tiktok.com/@khozna_" target="_blank" rel="noopener noreferrer" className="footer-social-item" style={{ color: '#E2E8F0' }}>
+                  <div className="social-btn" style={{ color: 'white', background: 'rgba(255,255,255,0.1)' }}><Music2 size={14} /></div> TikTok
                 </a>
               </div>
             </div>
             <div className="footer-col" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'var(--text)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Platform</span>
-              <Link to="/" className="footer-link">Home</Link>
-              <button onClick={() => openLegal("safety")} className="footer-link footer-btn">Safe Rental Guide</button>
-              <button onClick={() => openLegal("privacy")} className="footer-link footer-btn">Privacy Policy</button>
-              <button onClick={() => openLegal("terms")} className="footer-link footer-btn">Terms of Service</button>
+              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Platform</span>
+              <Link to="/" className="footer-link" style={{ color: '#E2E8F0' }}>Home</Link>
+              <button onClick={() => openLegal("safety")} className="footer-link footer-btn" style={{ color: '#E2E8F0' }}>Safe Rental Guide</button>
+              <button onClick={() => openLegal("privacy")} className="footer-link footer-btn" style={{ color: '#E2E8F0' }}>Privacy Policy</button>
+              <button onClick={() => openLegal("terms")} className="footer-link footer-btn" style={{ color: '#E2E8F0' }}>Terms of Service</button>
             </div>
             <div className="footer-col" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'var(--text)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Contact</span>
-              <a href="https://wa.me/9705278379" target="_blank" rel="noopener noreferrer" className="footer-link footer-contact-link"><Phone size={16} /> 9705278379</a>
-              <a href="mailto:khoznaapp@gmail.com" className="footer-link footer-contact-link"><Mail size={16} /> khoznaapp@gmail.com</a>
+              <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Contact</span>
+              <a href="https://wa.me/9705278379" target="_blank" rel="noopener noreferrer" className="footer-link footer-contact-link" style={{ color: '#E2E8F0' }}><Phone size={16} /> 9705278379</a>
+              <a href="mailto:khoznaapp@gmail.com" className="footer-link footer-contact-link" style={{ color: '#E2E8F0' }}><Mail size={16} /> khoznaapp@gmail.com</a>
             </div>
           </div>
         </div>
-        <div className="footer-bottom-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '4rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-          <p style={{ color: 'var(--text-dim)', fontSize: '0.8rem' }}>© 2026 KHOZNA. THE RENTAL ECOSYSTEM.</p>
+        <div className="footer-bottom-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '4rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+          <p style={{ color: '#94A3B8', fontSize: '0.8rem' }}>© 2026 KHOZNA. THE RENTAL ECOSYSTEM.</p>
           <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%' }} />
-            <span style={{ color: 'var(--text-dim)', fontSize: '0.8rem', fontWeight: 700 }}>KATHMANDU, NEPAL</span>
+            <span style={{ color: '#94A3B8', fontSize: '0.8rem', fontWeight: 700 }}>KATHMANDU, NEPAL</span>
           </div>
         </div>
       </div>

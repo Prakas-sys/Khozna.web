@@ -447,14 +447,13 @@ body {
     width: 240px;
     height: 480px;
     margin: 3rem auto;
+    position: relative;
+    overflow: hidden;
   }
 
   .phone-screen {
-    position: relative !important;
-    opacity: 1 !important;
-    height: auto !important;
-    display: block !important;
-    margin-bottom: 1rem;
+    position: absolute !important;
+    height: 100% !important;
     border-radius: 12px;
   }
 }
