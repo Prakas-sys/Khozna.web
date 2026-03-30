@@ -230,12 +230,12 @@ body {
 .phone-mockup {
   width: min(320px, 42vh);
   height: min(650px, 82vh);
-  border: 12px solid #1a1a1a;
+  border: 12px solid #E2E8F0;
   border-radius: 44px;
-  background: #000;
+  background: #FFFFFF;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 40px 80px rgba(15, 23, 42, 0.12);
   flex-shrink: 0;
 }
 
@@ -455,6 +455,11 @@ body {
     position: absolute !important;
     height: 100% !important;
     border-radius: 12px;
+  }
+
+  /* Simplify mobile view by showing only the primary screen statically */
+  .phone-screen:not(:first-child) {
+    display: none !important;
   }
 }
 
