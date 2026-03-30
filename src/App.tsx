@@ -350,9 +350,10 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
     <main>
       <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', zIndex: 100 }}>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden' }}>
-          <video autoPlay muted loop playsInline webkit-playsinline="true" className="hero-video" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.4, filter: 'brightness(1.1) contrast(1.1) saturate(1.2)' }}>
+          <video autoPlay muted loop playsInline webkit-playsinline="true" className="hero-video" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.6, filter: 'brightness(0.95) contrast(1.1) saturate(1.1)' }}>
             <source src="/view%20of%20ktm.mp4" type="video/mp4" />
           </video>
+          <div className="hero-overlay" />
         </div>
         <div style={{ textAlign: 'center', zIndex: 10, width: '100%' }}>
           <h1 className="hero-title">
@@ -373,8 +374,8 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
         </motion.div>
       </section>
 
-      <div className="marquee-container" style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '3rem 0', background: 'rgba(0,0,0,0.01)', overflow: 'hidden' }}>
-        <motion.div animate={{ x: [0, -2000] }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} style={{ display: 'flex', gap: '6rem', whiteSpace: 'nowrap', fontSize: '1.5rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '8px', opacity: 0.1 }}>
+      <div className="marquee-container" style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '2rem 0', background: 'var(--surface)', overflow: 'hidden' }}>
+        <motion.div animate={{ x: [0, -2000] }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} style={{ display: 'flex', gap: '6rem', whiteSpace: 'nowrap', fontSize: '1.2rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '6px', opacity: 0.3, color: 'var(--text-dim)' }}>
           {[1, 2, 3, 4, 5].map(i => (<React.Fragment key={i}><span>NO SCAMS</span><span>FREE FOR EVERYONE</span><span>VERIFIED LISTINGS</span></React.Fragment>))}
         </motion.div>
       </div>
