@@ -75,39 +75,86 @@ const LegalModal = ({ isOpen, onClose, type }: { isOpen: boolean, onClose: () =>
   const content = {
     terms: {
       title: "Terms & Conditions",
-      date: "Last Updated: March 2026",
+      date: "Effective Date: May 20, 2026",
       body: (
         <div style={{ textAlign: 'left', fontSize: '0.95rem', lineHeight: '1.8', color: 'var(--text-dim)' }}>
-          <p style={{ color: 'white', marginBottom: '1.5rem' }}>Welcome to Khozna. By accessing or using our website or services, you agree to comply with and be bound by these Terms & Conditions.</p>
-          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>1. Platform Purpose</h4>
-          <p>Khozna is a direct rental discovery platform that connects Owners and Guests without brokers. We do not own, manage, or lease properties listed on the platform.</p>
-          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>2. User Eligibility</h4>
-          <p>You must be at least 18 years old to use Khozna. By using the platform, you confirm that the information you provide is accurate and lawful.</p>
-          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>3. Listings & Content</h4>
-          <ul style={{ paddingLeft: '1.5rem' }}>
-            <li>Property owners are responsible for the accuracy of listings</li>
-            <li>Fake, misleading, or duplicate listings are strictly prohibited</li>
-            <li>Khozna reserves the right to remove any content without prior notice</li>
-          </ul>
-          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>4. No Brokerage Guarantee</h4>
-          <p>Khozna does not act as a broker, handle payments, or guarantee rental outcomes. All transactions occur directly between users.</p>
-          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>5. User Conduct</h4>
-          <p>Violation of platform safeguards or attempting to scam users may result in a permanent ban.</p>
-          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>6. Limitation of Liability</h4>
-          <p>Khozna is not responsible for property disputes, financial loss, or damages. Use the platform at your own risk.</p>
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>1. Agreement to Terms</h4>
+          <p>These Terms and Conditions constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and <strong>Khozna</strong> ("we," "us" or "our"), concerning your access to and use of our website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the “Site”).</p>
+          <p>You agree that by accessing the Site, you have read, understood, and agree to be bound by all of these Terms and Conditions. If you do not agree with all of these Terms and Conditions, then you are expressly prohibited from using the Site and you must discontinue use immediately.</p>
+          
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>2. Intellectual Property Rights</h4>
+          <p>Unless otherwise indicated, the Site is our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the Site (collectively, the “Content”) and the trademarks, service marks, and logos contained therein (the “Marks”) are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws and various other intellectual property rights and unfair competition laws.</p>
+          
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>3. User Representations</h4>
+          <p>By using the Site, you represent and warrant that:<br/>(1) all registration information you submit will be true, accurate, current, and complete;<br/>(2) you will maintain the accuracy of such information and promptly update such registration information as necessary;<br/>(3) you have the legal capacity and you agree to comply with these Terms and Conditions;<br/>(4) you are not a minor in the jurisdiction in which you reside;<br/>(5) you will not access the Site through automated or non-human means, whether through a bot, script or otherwise;<br/>(6) you will not use the Site for any illegal or unauthorized purpose; and<br/>(7) your use of the Site will not violate any applicable law or regulation.</p>
+          
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>4. User Registration</h4>
+          <p>You may be required to register with the Site. You agree to keep your password confidential and will be responsible for all use of your account and password. We reserve the right to remove, reclaim, or change a username you select if we determine, in our sole discretion, that such username is inappropriate, obscene, or otherwise objectionable.</p>
+          
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>5. Prohibited Activities</h4>
+          <p>You may not access or use the Site for any purpose other than that for which we make the Site available. The Site may not be used in connection with any commercial endeavors except those that are specifically endorsed or approved by us.</p>
+          
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>6. Modifications and Interruptions</h4>
+          <p>We reserve the right to change, modify, or remove the contents of the Site at any time or for any reason at our sole discretion without notice. However, we have no obligation to update any information on our Site. We also reserve the right to modify or discontinue all or part of the Site without notice at any time.</p>
+          
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>7. Governing Law</h4>
+          <p>These Terms shall be governed by and defined following the laws of Nepal. <strong>Khozna</strong> and yourself irrevocably consent that the courts of Nepal shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these terms.</p>
+          
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>8. Dispute Resolution</h4>
+          <p>Any dispute arising out of or in connection with this contract, including any question regarding its existence, validity or termination, shall be referred to and finally resolved by arbitration.</p>
+          
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>9. Contact Us</h4>
+          <p>In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at:</p>
+          <p><strong>Khozna</strong><br/>support@khozna.com<br/>Phone: 9705278379<br/>Dhapa-Khasibazar, Kirtipur, Nepal</p>
         </div>
       )
     },
     privacy: {
       title: "Privacy Policy",
-      date: "Last Updated: March 2026",
+      date: "Effective Date: May 20, 2026",
       body: (
         <div style={{ textAlign: 'left', fontSize: '0.95rem', lineHeight: '1.8', color: 'var(--text-dim)' }}>
-          <p style={{ color: 'white', marginBottom: '1.5rem' }}>Your privacy matters. We collect only what is necessary to operate the platform.</p>
-          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>Information We Collect</h4>
-          <p>Name, phone number, email, and property listing details for platform operations and fraud prevention.</p>
-          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>Data Protection</h4>
-          <p>We do not sell user data. We apply reasonable security measures and only share data when legally required.</p>
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>1. Introduction</h4>
+          <p>Welcome to <strong>Khozna</strong> ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our mobile application, or use any of our services.</p>
+          
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>2. Information We Collect</h4>
+          <p>We may collect personal information that you voluntarily provide to us when registering at the Services, expressing an interest in obtaining information about us or our products and services, when participating in activities on the Services or otherwise contacting us.</p>
+          <p>The personal information that we collect depends on the context of your interactions with us and the Services, the choices you make and the products and features you use. The personal information we collect can include the following:</p>
+          <ul style={{ paddingLeft: '1.5rem', marginBottom: '1rem' }}>
+            <li><strong>Personal Info Provided by You:</strong> Names; phone numbers; email addresses; mailing addresses; usernames; passwords; contact preferences; billing addresses; debit/credit card numbers; and other similar information.</li>
+            <li><strong>Automatically Collected Info:</strong> We automatically collect certain information when you visit, use or navigate the Services. This information does not reveal your specific identity (like your name or contact information) but may include device and usage information, such as your IP address, browser and device characteristics, operating system, language preferences, referring URLs, device name, country, location, information about how and when you use our Services and other technical information.</li>
+          </ul>
+
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>3. How We Use Your Information</h4>
+          <p>We use personal information collected via our Services for a variety of business purposes described below. We process your personal information for these purposes in reliance on our legitimate business interests, in order to enter into or perform a contract with you, with your consent, and/or for compliance with our legal obligations.</p>
+          <p>We use the information we collect or receive:</p>
+          <ul style={{ paddingLeft: '1.5rem', marginBottom: '1rem' }}>
+            <li>To facilitate account creation and logon process.</li>
+            <li>To send you marketing and promotional communications.</li>
+            <li>To fulfill and manage your orders.</li>
+            <li>To deliver targeted advertising to you.</li>
+            <li>To request feedback and to contact you about your use of our Services.</li>
+            <li>To protect our Services.</li>
+          </ul>
+
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>4. Will Your Information be Shared with Anyone?</h4>
+          <p>We only share information with your consent, to comply with laws, to provide you with services, to protect your rights, or to fulfill business obligations.</p>
+
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>5. How Long Do We Keep Your Information?</h4>
+          <p>We will only keep your personal information for as long as it is necessary for the purposes set out in this privacy notice, unless a longer retention period is required or permitted by law.</p>
+
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>6. Do We Collect Information from Minors?</h4>
+          <p>We do not knowingly solicit data from or market to children under 18 years of age. By using the Services, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent’s use of the Services.</p>
+
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>7. Your Privacy Rights</h4>
+          <p>In some regions, such as the European Economic Area (EEA) and United Kingdom (UK), you have rights that allow you greater access to and control over your personal information. You may review, change, or terminate your account at any time.</p>
+
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>8. Updates to This Notice</h4>
+          <p>We may update this privacy notice from time to time. The updated version will be indicated by an updated "Revised" date and the updated version will be effective as soon as it is accessible.</p>
+
+          <h4 style={{ color: 'white', marginTop: '1.5rem' }}>9. Contact Us</h4>
+          <p>If you have questions or comments about this notice, you may email us at support@khozna.com or by post to:</p>
+          <p><strong>Khozna</strong><br/>Phone: 9705278379<br/>Dhapa-Khasibazar, Kirtipur<br/>Bagmati Province<br/>Nepal</p>
         </div>
       )
     },
