@@ -396,8 +396,8 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
   return (
     <main>
       <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', zIndex: 100 }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden' }}>
-          <video autoPlay muted loop playsInline webkit-playsinline="true" className="hero-video" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.6, filter: 'brightness(0.95) contrast(1.1) saturate(1.1)' }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden', background: '#000' }}>
+          <video autoPlay muted loop playsInline webkit-playsinline="true" preload="auto" className="hero-video" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.85, filter: 'brightness(0.7) contrast(1.15) saturate(1.1)' }}>
             <source src="/view%20of%20ktm.mp4" type="video/mp4" />
           </video>
           <div className="hero-overlay" />
@@ -525,14 +525,14 @@ const AppShowcase = () => {
               transition={{ type: "spring", stiffness: 100, damping: 30 }}
             >
               <div className="emotion-card" style={{ transform: 'translateZ(50px) translateY(-30px) rotate(5deg)', position: 'relative' }}>
-                <img src="/man.png" alt="Happy Owner" className="emotion-image" style={{ objectPosition: 'top' }} />
+                <img loading="lazy" src="/man.png" alt="Happy Owner" className="emotion-image" style={{ objectPosition: 'top' }} />
                 <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(10px)', padding: '0.4rem 0.8rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <div style={{ width: '8px', height: '8px', background: '#10B981', borderRadius: '50%' }} />
                   <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--text)' }}>Verified Owner</span>
                 </div>
               </div>
               <div className="emotion-card" style={{ transform: 'translateZ(100px) rotate(-5deg)', position: 'relative' }}>
-                <img src="/boy.png" alt="Happy Guest" className="emotion-image" style={{ objectPosition: 'top' }} />
+                <img loading="lazy" src="/boy.png" alt="Happy Guest" className="emotion-image" style={{ objectPosition: 'top' }} />
                 <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(10px)', padding: '0.4rem 0.8rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <div style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%' }} />
                   <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--text)' }}>Happy Guest</span>
@@ -617,9 +617,9 @@ const AppWalkthrough = () => {
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
             <motion.div className="phone-mockup" style={{ scale: screen1Scale }}>
-              <motion.img src="/new Home.jpeg" className="phone-screen" style={{ opacity: screen1Opacity }} />
-              <motion.img src="/New message.jpeg" className="phone-screen" style={{ opacity: screen2Opacity, position: 'absolute', top: 0, left: 0, y: screen2Y }} />
-              <motion.img src="/New Kyc.jpeg" className="phone-screen" style={{ opacity: screen3Opacity, position: 'absolute', top: 0, left: 0, y: screen3Y }} />
+              <motion.img loading="lazy" src="/new Home.jpeg" className="phone-screen" style={{ opacity: screen1Opacity }} />
+              <motion.img loading="lazy" src="/New message.jpeg" className="phone-screen" style={{ opacity: screen2Opacity, position: 'absolute', top: 0, left: 0, y: screen2Y }} />
+              <motion.img loading="lazy" src="/New Kyc.jpeg" className="phone-screen" style={{ opacity: screen3Opacity, position: 'absolute', top: 0, left: 0, y: screen3Y }} />
             </motion.div>
           </div>
         </div>
