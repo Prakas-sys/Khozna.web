@@ -171,7 +171,7 @@ const LegalModal = ({ isOpen, onClose, type }: { isOpen: boolean, onClose: () =>
           </ul>
           <div style={{ background: 'rgba(239, 68, 68, 0.1)', padding: '1.5rem', borderRadius: '16px', border: '1px solid rgba(239, 68, 68, 0.2)' }}>
             <h4 style={{ color: '#ef4444', marginBottom: '0.5rem' }}>Report a Scammer</h4>
-            <p style={{ fontSize: '0.85rem' }}>Email: khoznaapp@gmail.com<br />Phone: +977 9705278379</p>
+            <p style={{ fontSize: '0.85rem' }}>Email: support@khozna.com<br />Phone: +977 9705278379</p>
           </div>
           <p style={{ marginTop: '2rem', fontSize: '0.8rem', fontStyle: 'italic' }}>Disclaimer: Khozna is a technology platform, not a real estate agency. Users are solely responsible for their interactions.</p>
         </div>
@@ -374,7 +374,7 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
             <div className="footer-col" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'white', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Contact</span>
               <a href="https://wa.me/9705278379" target="_blank" rel="noopener noreferrer" className="footer-link footer-contact-link" style={{ color: '#E2E8F0' }}><Phone size={16} /> 9705278379</a>
-              <a href="mailto:khoznaapp@gmail.com" className="footer-link footer-contact-link" style={{ color: '#E2E8F0' }}><Mail size={16} /> khoznaapp@gmail.com</a>
+              <a href="mailto:support@khozna.com" className="footer-link footer-contact-link" style={{ color: '#E2E8F0' }}><Mail size={16} /> support@khozna.com</a>
             </div>
           </div>
         </div>
