@@ -403,7 +403,7 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
         </div>
         <div style={{ textAlign: 'center', zIndex: 10, width: '100%' }}>
           <h1 className="hero-title">
-            <span className="hero-line"><Reveal>#1 NEPAL'S TRUSTED</Reveal></span>
+            <span className="hero-line" style={{ color: '#FFFFFF' }}><Reveal>#1 NEPAL'S TRUSTED</Reveal></span>
             <span className="hero-line"><Reveal delay={0.1}><span className="text-gradient">RENTAL PLATFORM.</span></Reveal></span>
           </h1>
           <Reveal delay={0.3}>
