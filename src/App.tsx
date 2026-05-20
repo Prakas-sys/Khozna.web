@@ -396,11 +396,10 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
   return (
     <main>
       <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', zIndex: 100 }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden', background: '#000' }}>
-          <video autoPlay muted loop playsInline webkit-playsinline="true" preload="auto" className="hero-video" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.85, filter: 'brightness(0.7) contrast(1.15) saturate(1.1)' }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden' }}>
+          <video autoPlay muted loop playsInline webkit-playsinline="true" preload="auto" className="hero-video" style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
             <source src="/view%20of%20ktm.mp4" type="video/mp4" />
           </video>
-          <div className="hero-overlay" />
         </div>
         <div style={{ textAlign: 'center', zIndex: 10, width: '100%' }}>
           <h1 className="hero-title">
