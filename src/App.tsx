@@ -409,7 +409,7 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
           <Reveal delay={0.3}>
             <div style={{ marginTop: '4rem', display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }} className="hero-buttons">
               <MagneticElement><button onClick={onJoinWaitlist} className="btn-primary" style={{ padding: '1.2rem 3rem' }}>JOIN NOW <ArrowRight size={20} /></button></MagneticElement>
-              <Link to="/vision" className="btn-outline" style={{ padding: '1.2rem 3rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>The Vision</Link>
+              <Link to="/vision" className="btn-outline" style={{ padding: '1.2rem 3rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', color: 'white', borderColor: 'rgba(255,255,255,0.5)' }}>The Vision</Link>
             </div>
           </Reveal>
         </div>
