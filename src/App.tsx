@@ -440,7 +440,7 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
         </div>
         <div className="footer-bottom-bar">
           <div className="footer-warm">
-            <p className="footer-copyright">© 2026 KHOZNA. Built with ❤️ in Kathmandu.</p>
+            <p className="footer-copyright">© 2026 KHOZNA. Built with ❤️ in Kathmandu, Nepal.</p>
           </div>
           <div className="footer-location">
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -771,13 +771,57 @@ const TopProgressBar = () => {
   );
 };
 
-function App() {
+const InstagramAnim = () => {
+  return (
+    <div className="insta-anim-container">
+      <div className="insta-glow-bg" />
+      <motion.div 
+        className="insta-logo-wrapper"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ 
+          type: "spring", 
+          stiffness: 100, 
+          damping: 20,
+          delay: 0.5 
+        }}
+      >
+        <motion.div
+          animate={{ y: [-10, 10, -10] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <img src="/original_logo.png" alt="Khozna Logo" className="insta-logo-img" />
+        </motion.div>
+      </motion.div>
+      
+      <motion.div
+        className="insta-text"
+        initial={{ opacity: 0, letterSpacing: "10px", y: 20 }}
+        animate={{ opacity: 1, letterSpacing: "2px", y: 0 }}
+        transition={{ duration: 1.5, delay: 1.2, ease: [0.19, 1, 0.22, 1] }}
+      >
+        KHOZNA
+      </motion.div>
+
+      <motion.div
+        className="insta-subtitle"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 2.5 }}
+      >
+        THE FUTURE OF RENTING IN NEPAL
+      </motion.div>
+    </div>
+  );
+};
+
+function MainApp() {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
   const [legalModal, setLegalModal] = useState<{ open: boolean, type: "terms" | "privacy" | "safety" }>({ open: false, type: "terms" });
   const openLegal = (type: "terms" | "privacy" | "safety") => setLegalModal({ open: true, type });
 
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <TopProgressBar />
       <div style={{ position: 'relative', background: 'var(--bg)' }}>
@@ -796,6 +840,17 @@ function App() {
 
         <Footer openLegal={openLegal} />
       </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/insta-anim" element={<InstagramAnim />} />
+        <Route path="*" element={<MainApp />} />
+      </Routes>
     </Router>
   );
 }
