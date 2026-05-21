@@ -440,12 +440,12 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
         </div>
         <div className="footer-bottom-bar">
           <div className="footer-warm">
-            <p className="footer-copyright">© 2026 KHOZNA. Built with ❤️ in Kathmandu, Nepal.</p>
+            <p className="footer-copyright">© 2026 KHOZNA. Built with ❤️ in Nepal.</p>
           </div>
           <div className="footer-location">
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <div className="footer-dot" />
-              <span className="footer-location-text">KATHMANDU, NEPAL</span>
+              <span className="footer-location-text">NEPAL</span>
             </div>
             <button onClick={scrollToTop} className="back-to-top" aria-label="Scroll to top">
               <ArrowUp size={20} />
