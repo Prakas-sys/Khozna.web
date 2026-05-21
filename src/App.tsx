@@ -594,9 +594,6 @@ const AppShowcase = () => {
 
               <div className="store-badges">
                 <div className="glass store-badge">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on App Store" loading="lazy" />
-                </div>
-                <div className="glass store-badge">
                   <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" loading="lazy" />
                 </div>
               </div>
