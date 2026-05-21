@@ -356,7 +356,7 @@ const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
           <a href="/#contact" onClick={(e) => handleNavClick(e, "contact")} className="nav-link">Contact</a>
         </div>
         <div className="nav-actions">
-          <button onClick={onJoinWaitlist} className="nav-btn-premium">JOIN FREE</button>
+          <button onClick={onJoinWaitlist} className="nav-btn-premium">DOWNLOAD APP</button>
           <button 
             className={`hamburger ${menuOpen ? 'active' : ''}`} 
             onClick={() => setMenuOpen(!menuOpen)}
@@ -378,7 +378,7 @@ const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
           <Link to="/vision" onClick={() => setMenuOpen(false)} className="mobile-drawer-link">Vision</Link>
           <a href="/#contact" onClick={(e) => handleNavClick(e, "contact")} className="mobile-drawer-link">Contact</a>
         </div>
-        <button onClick={() => { setMenuOpen(false); onJoinWaitlist(); }} className="btn-primary mobile-drawer-cta">JOIN FREE</button>
+        <button onClick={() => { setMenuOpen(false); onJoinWaitlist(); }} className="btn-primary mobile-drawer-cta">DOWNLOAD APP</button>
         <div className="mobile-drawer-socials">
           <a href="https://www.instagram.com/khozna.np/" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="Instagram"><Instagram size={18} /></a>
           <a href="https://www.linkedin.com/company/khozna/" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="LinkedIn"><Linkedin size={18} /></a>
@@ -479,7 +479,7 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
           </Reveal>
           <Reveal delay={0.4}>
             <div className="hero-buttons">
-              <MagneticElement><button onClick={onJoinWaitlist} className="btn-primary hero-cta">JOIN NOW <ArrowRight size={20} /></button></MagneticElement>
+              <MagneticElement><button onClick={onJoinWaitlist} className="btn-primary hero-cta">DOWNLOAD APP <ArrowRight size={20} /></button></MagneticElement>
               <Link to="/vision" className="btn-outline hero-btn-outline">The Vision</Link>
             </div>
           </Reveal>
