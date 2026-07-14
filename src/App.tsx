@@ -9,14 +9,12 @@ import {
   Mail,
   Phone,
   CheckCircle2,
-  ArrowLeft,
   Music2,
   ArrowUp,
   MessageSquare,
   Compass,
   MapPin,
   ChevronDown,
-  Smartphone,
 } from 'lucide-react';
 
 // --- Config ---
@@ -238,11 +236,10 @@ const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
       <nav className={`glass-nav ${scrolled ? 'glass-nav--scrolled' : ''}`} role="navigation" aria-label="Main navigation">
         <Link to="/" className="nav-logo-link" aria-label="Khozna Home">
           <img src="/original_logo.png" className="nav-logo-img" alt="Khozna" />
-          <span className="nav-wordmark">Khozna</span>
+          <span className="nav-wordmark">KHOZNA</span>
         </Link>
         <div className="nav-links">
           <a href="/#walkthrough" onClick={(e) => handleNavClick(e, "walkthrough")} className="nav-link">The Platform</a>
-          <Link to="/vision" className="nav-link">Vision</Link>
           <a href="/#contact" onClick={(e) => handleNavClick(e, "contact")} className="nav-link">Contact</a>
         </div>
         <div className="nav-actions">
@@ -256,7 +253,6 @@ const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
       <div className={`mobile-drawer ${menuOpen ? 'active' : ''}`} role="dialog" aria-modal="true">
         <div className="mobile-drawer-links">
           <a href="/#walkthrough" onClick={(e) => handleNavClick(e, "walkthrough")} className="mobile-drawer-link">The Platform</a>
-          <Link to="/vision" onClick={() => setMenuOpen(false)} className="mobile-drawer-link">Vision</Link>
           <a href="/#contact" onClick={(e) => handleNavClick(e, "contact")} className="mobile-drawer-link">Contact</a>
         </div>
         <button onClick={() => { setMenuOpen(false); onJoinWaitlist(); }} className="btn-primary mobile-drawer-cta">JOIN WAITLIST</button>
@@ -623,10 +619,6 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => (
         <Reveal delay={0.4}>
           <div className="hero-buttons">
             <MagneticElement><button onClick={onJoinWaitlist} className="btn-primary hero-cta">JOIN WAITLIST <ArrowRight size={20} /></button></MagneticElement>
-            <a href="/vision" className="btn-outline hero-btn-outline">
-              <Smartphone size={18} />
-              <span style={{ marginLeft: '8px' }}>Download APK (Beta)</span>
-            </a>
           </div>
         </Reveal>
       </div>
@@ -657,86 +649,6 @@ const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => (
     {/* New Feature Showcases */}
     <VideoToursShowcase />
     <MapDiscoveryShowcase />
-
-    {/* Original Feature Cards */}
-    <section className="section-features">
-      <div className="container">
-        <div className="section-header">
-          <Reveal><h2 className="section-title section-title--large">THE NEW WAY<br />TO FIND HOME.</h2></Reveal>
-        </div>
-        <div className="grid-3 features-container">
-          <div className="glass feature-card" data-number="01">
-            <img src="/icon-free.png" alt="" className="icon-3d" loading="lazy" />
-            <h3 className="feature-card-title">Zero Commission</h3>
-            <p className="feature-card-desc">Khozna is 100% free — for Owners and Guests, no hidden charges. Ever.</p>
-          </div>
-          <div className="glass feature-card default-active" data-number="02">
-            <img src="/icon-chat.png" alt="" className="icon-3d" loading="lazy" />
-            <h3 className="feature-card-title">Message Directly</h3>
-            <p className="feature-card-desc">Skip the broker. Chat with the owner in-app, negotiate, and seal the deal — completely free.</p>
-          </div>
-          <div className="glass feature-card" data-number="03">
-            <img src="/icon-verified.png" alt="" className="icon-3d" loading="lazy" />
-            <h3 className="feature-card-title">Verified Listings</h3>
-            <p className="feature-card-desc">Every listing is manually checked. If it's on Khozna, it's a real home — no scams.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* Inline Waitlist Form */}
-    <WaitlistSection onJoinWaitlist={onJoinWaitlist} />
-
-    {/* FAQ */}
-    <FaqSection />
-
-    {/* Original CTA */}
-    <section className="section-cta">
-      <div className="container">
-        <Reveal><h2 className="section-title section-title--cta"><span className="text-gradient">NO BROKER.</span><br />JUST HOME.</h2></Reveal>
-        <p className="cta-desc">Thousands of Nepalis are done paying brokers for nothing. Khozna cuts out the middleman — connect directly, rent honestly.</p>
-        <div className="cta-social-proof"><div className="cta-social-proof-dot" />2,000+ Nepalis already on early access</div>
-        <Reveal delay={0.3}>
-          <div className="cta-action-row">
-            <MagneticElement><button onClick={onJoinWaitlist} className="btn-primary cta-action-btn">GET EARLY ACCESS <ArrowRight size={20} /></button></MagneticElement>
-            <a href="https://www.instagram.com/khozna.np/" target="_blank" rel="noopener noreferrer" className="cta-follow-link">Follow us on Instagram →</a>
-          </div>
-        </Reveal>
-      </div>
-      <div className="cta-glow" />
-    </section>
-  </main>
-);
-
-// --- Vision Page (original) ---
-const VisionPage = () => (
-  <main className="vision-page" role="main">
-    <section className="vision-hero">
-      <div className="vision-glow" />
-      <div className="container">
-        <div className="vision-content">
-          <Link to="/" className="back-link"><ArrowLeft size={16} /> Back to Home</Link>
-          <Reveal><span className="section-label">The Mission</span></Reveal>
-          <Reveal><h2 className="section-title section-title--large">OUR<br />VISION.</h2></Reveal>
-          <div className="grid-2 vision-grid">
-            <div>
-              <Reveal delay={0.1}><p className="vision-lead">At Khozna, our vision is to eliminate brokers, reduce rental friction, and bring transparency to Nepal's rental market.</p></Reveal>
-              <div className="vision-checklist">
-                <Reveal delay={0.2}><div className="vision-checklist-item"><div className="glass vision-check-icon"><CheckCircle2 size={20} color="var(--primary)" /></div><p className="vision-check-text">Connecting Guests and Owners directly without any hidden fees or exploitation.</p></div></Reveal>
-                <Reveal delay={0.3}><div className="vision-checklist-item"><div className="glass vision-check-icon"><CheckCircle2 size={20} color="var(--primary)" /></div><p className="vision-check-text">Building a digital rental ecosystem specifically engineered for the needs of Nepal.</p></div></Reveal>
-              </div>
-            </div>
-            <Reveal delay={0.4}>
-              <div className="vision-principle">
-                <h4 className="vision-principle-title">The Principle</h4>
-                <p className="vision-principle-text">Finding a rental place in Nepal is unnecessarily expensive. We believe renting should be direct, honest, and accessible for everyone.</p>
-                <div className="vision-principle-footer"><h3 className="vision-principle-cta">SIMPLE. FAIR.<br /><span className="text-gradient">BROKER-FREE.</span></h3></div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 );
 
@@ -771,7 +683,6 @@ function App() {
         <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<PageTransition><HomePage onJoinWaitlist={() => setIsWaitlistOpen(true)} /></PageTransition>} />
-            <Route path="/vision" element={<PageTransition><VisionPage /></PageTransition>} />
           </Routes>
         </AnimatePresence>
         <Footer openLegal={openLegal} />
