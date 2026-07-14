@@ -14,7 +14,6 @@ import {
   MessageSquare,
   Compass,
   MapPin,
-  ChevronDown,
 } from 'lucide-react';
 
 // --- Config ---
