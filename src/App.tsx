@@ -530,72 +530,7 @@ const MapDiscoveryShowcase = () => {
   );
 };
 
-// --- Inline Waitlist Form Section ---
-const WaitlistSection = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-10%" });
 
-  return (
-    <section ref={ref} id="waitlist-section" className="waitlist-inline-section">
-      <div className="container">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <span className="section-label">Early Access</span>
-          <h2 className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}>JOIN THE<br />WAITLIST.</h2>
-          <p style={{ color: 'var(--text-dim)', maxWidth: '500px', margin: '0 auto 2.5rem', lineHeight: '1.7' }}>
-            Be among the first Nepalis to rent and list properties directly — no broker, no commission.
-          </p>
-          <MagneticElement>
-            <button onClick={onJoinWaitlist} className="btn-primary" style={{ padding: '1.2rem 3rem', gap: '0.5rem' }}>
-              SECURE YOUR SPOT <ArrowRight size={20} />
-            </button>
-          </MagneticElement>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
-
-// --- FAQ Accordion ---
-const FaqSection = () => {
-  const [openIdx, setOpenIdx] = useState<number | null>(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-10%" });
-
-  const faqs = [
-    { q: "How is Khozna free of broker commissions?", a: "We link renters and property owners directly through integrated real-time chats. By cutting out middle agents entirely, landlords list rent costs honestly, and renters avoid paying broker cuts." },
-    { q: "What makes the listings verified?", a: "Owners locate landlord properties with exact GPS coordinates and register KYC documents. We verify structural papers and confirm landmark details before any listing goes live." },
-  ];
-
-  return (
-    <section ref={ref} id="faq-section" className="faq-section">
-      <div className="container">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} className="section-header">
-          <span className="section-label">Got Questions?</span>
-          <h2 className="section-title section-title--large" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)' }}>FAQ.</h2>
-        </motion.div>
-        <div className="faq-list">
-          {faqs.map((faq, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.1 }}>
-              <div className={`faq-item ${openIdx === i ? 'open' : ''}`}>
-                <button onClick={() => setOpenIdx(openIdx === i ? null : i)} className="faq-header">
-                  <span>{faq.q}</span>
-                  <ChevronDown size={18} className="faq-arrow" />
-                </button>
-                <AnimatePresence initial={false}>
-                  {openIdx === i && (
-                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} style={{ overflow: 'hidden' }}>
-                      <div className="faq-body">{faq.a}</div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
 
 // --- Home Page ---
 const HomePage = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => (
