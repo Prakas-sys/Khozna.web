@@ -17,7 +17,6 @@ import {
   MapPin,
   ChevronDown,
   Smartphone,
-  Sparkles,
 } from 'lucide-react';
 
 // --- Config ---
@@ -238,10 +237,8 @@ const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
     <>
       <nav className={`glass-nav ${scrolled ? 'glass-nav--scrolled' : ''}`} role="navigation" aria-label="Main navigation">
         <Link to="/" className="nav-logo-link" aria-label="Khozna Home">
-          <div className="logo-box">
-            <img src="/original_logo.png" className="nav-logo-img" alt="Khozna" />
-            <span className="logo-text">KHOZNA</span>
-          </div>
+          <img src="/original_logo.png" className="nav-logo-img" alt="Khozna" />
+          <span className="nav-wordmark">Khozna</span>
         </Link>
         <div className="nav-links">
           <a href="/#walkthrough" onClick={(e) => handleNavClick(e, "walkthrough")} className="nav-link">The Platform</a>
@@ -279,9 +276,9 @@ const Footer = ({ openLegal }: { openLegal: (type: "terms" | "privacy" | "safety
     <div className="container">
       <div className="footer-content">
         <div className="footer-brand">
-          <div className="logo-box" style={{ marginBottom: '1.5rem' }}>
-            <img src="/original_logo.png" style={{ height: '32px', objectFit: 'contain' }} alt="KHOZNA Icon" />
-            <span className="logo-text" style={{ color: 'white' }}>KHOZNA</span>
+          <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+            <img src="/original_logo.png" style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} alt="KHOZNA Icon" />
+            <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '1.2rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.5px' }}>Khozna</span>
           </div>
           <h5 className="footer-tagline">#1 NEPAL'S TRUSTED RENTAL PLATFORM</h5>
           <p className="footer-description">FIND YOUR NEXT HOME.<br />NO MIDDLEMAN.</p>

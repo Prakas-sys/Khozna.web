@@ -272,27 +272,39 @@ body {
   text-decoration: none;
   display: flex;
   align-items: center;
+  gap: 0.6rem;
+}
+
+.nav-wordmark {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.5px;
+  line-height: 1;
 }
 
 .nav-logo-img {
-  height: 32px;
+  height: 36px;
   object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
 .logo-box {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   background: transparent;
   padding: 0;
   width: fit-content;
 }
 
 .logo-box img {
-  border-radius: 10px;
+  border-radius: 0;
   background: transparent;
   padding: 0;
   object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
 .logo-text {
