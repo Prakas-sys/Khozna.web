@@ -20,15 +20,17 @@ function initNavbar() {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      navbar.classList.toggle('scrolled', !entry.isIntersecting);
-    },
-    { threshold: 0.05 }
-  );
+  function update() {
+    if (window.scrollY > 60) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }
 
-  const hero = document.getElementById('hero');
-  if (hero) observer.observe(hero);
+  // Run immediately on load so initial state is correct
+  update();
+  window.addEventListener('scroll', update, { passive: true });
 }
 
 /* ══ 2. Waitlist forms ══ */
