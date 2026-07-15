@@ -1,0 +1,163 @@
+# Khozna Landing Page — Implementation Plan
+
+Pre-launch waitlist marketing site for Khozna, Nepal's peer-to-peer rental marketplace. Single-page, mobile-first, no backend needed. Stack: plain **HTML + CSS + vanilla JS** for max speed on budget Android devices over slow connections.
+
+---
+
+## Assets Available (already in `/public`)
+
+| File | Used in |
+|---|---|
+| `original_logo.png` | Navbar + Footer logo |
+| `Home screen.jpeg` | Hero phone mockup |
+| `tour.jpeg` | Tour feature section |
+| `message.jpeg` | How it works — step 2 |
+| `profile section.jpeg` | Verified owner section |
+| `view of ktm.mp4` | Hero background (muted autoplay loop) |
+| `boy illustrate png.png` | Decoration / illustration |
+| `man illustrate png.png` | Decoration / illustration |
+
+---
+
+## Design System
+
+| Token | Value |
+|---|---|
+| Primary blue | `#00A3E1` |
+| Trust green | `#00C853` — *Verified badge only* |
+| Background | `#FFFFFF` |
+| Section break | `#F8F9FA` |
+| Text primary | `#111827` |
+| Text muted | `#6B7280` |
+| Headline font | Plus Jakarta Sans (ExtraBold 800) |
+| Body font | Inter (400 / 500) |
+| Stats font | Outfit (700) |
+| Grid | 8pt — spacing in 8/16/24/32/48/64px |
+| Radius | 16–24px on cards, 12px on buttons |
+| Glassmorphism | `backdrop-filter: blur(16px)`, `bg: rgba(255,255,255,0.12)` |
+
+---
+
+## File Structure
+
+```
+Khozna.web/
+├── public/               ← existing assets (untouched)
+├── index.html            ← single HTML file with all sections
+├── style.css             ← full design system + all component styles
+└── main.js               ← lightweight JS: waitlist form, nav scroll, counter
+```
+
+---
+
+## Section Breakdown
+
+### 1. Navbar
+- Logo left, "Join Waitlist" pill button right (Khozna Blue)
+- Transparent over hero, solid white on scroll (JS class toggle)
+- Hamburger menu on mobile
+
+### 2. Hero
+- **Background**: `view of ktm.mp4` as a full-viewport muted, looping video with a dark gradient overlay (`rgba(0,0,0,0.45)`) — no parallax, static position for performance
+- **Headline**: "Rent a home in Kathmandu. No dalal. No drama." — Plus Jakarta Sans ExtraBold, white, tight letter-spacing
+- **Subhead**: "Browse verified rooms, talk to the actual owner, visit on your terms." — Inter, white/80%
+- **Form**: email input + "Join the Waitlist" CTA button — side by side on desktop, stacked on mobile
+- **Trust line**: "We'll email you the moment Khozna opens in Kathmandu."
+- **Phone mockup**: `Home screen.jpeg` in a glass-bordered phone frame frame, floating right on desktop, below form on mobile
+
+### 3. The Problem (3 cards)
+- Section bg: `#F8F9FA`
+- Glassmorphism frosted cards, 3 columns on desktop / stacked on mobile
+- Card 1 — 📵 "No real photos" — you're paying for vibes described in a WhatsApp voice note
+- Card 2 — 💸 "Dalal fee for what exactly?" — broker takes Rs 3,000–10,000+, does 0 paperwork
+- Card 3 — ❓ "Who even is this owner?" — no way to check if the person listing even owns the place
+
+### 4. How It Works (3 steps)
+- Numbered step cards with icon + short label
+- Step 1 — 🔍 Browse verified listings (screenshot: Home screen)
+- Step 2 — 💬 Message the owner, request a visit (screenshot: message.jpeg)
+- Step 3 — 🏠 Move in. Zero broker fee.
+- Connector line between steps on desktop
+
+### 5. Tour Feature Spotlight
+- Two-column layout: left = text, right = `tour.jpeg` in phone frame
+- Headline: "See it before you visit."
+- Body: "Real video walkthroughs posted by the owner. Scroll, watch, decide. Like Reels — but for your next home."
+- CTA: "Get Early Access"
+
+### 6. Verified, Not Just Listed
+- Two-column: left = `profile section.jpeg` in phone frame, right = text
+- Green KYC badge explanation with the actual `#00C853` badge rendered inline in HTML
+- Short copy: "Every listing has a green ✓ badge. That means we've checked their ID. You're talking to a real person who actually owns the place."
+
+### 7. Built for Kathmandu
+- 4 feature chips (icon + label): रू Pricing in NPR · 🇳🇵 Nepali + English · 📍 Real local owners · 🚫 No franchise
+- Bg: white, subtle blue gradient border accent
+
+### 8. Waitlist Banner
+- Full-width CTA band, Khozna Blue background (this is the one exception to "no large fills" — it's a CTA band, intentional)
+- Counter: "**1,200+ people** already waiting" (editable number in JS)
+- Same email form, "Get Early Access" button in white
+
+### 9. FAQ (Accordion)
+- 4 questions, CSS-only accordion (no JS library needed)
+- Q1: When does Khozna launch?
+- Q2: Is it free to use?
+- Q3: Which city first?
+- Q4: I'm an owner — how do I list my property?
+
+### 10. Footer
+- Logo + tagline: "Nepal's rental market, fixed."
+- Waitlist form (third and final instance)
+- Social links: Instagram, Twitter/X, Facebook (icon + label, not icon-only)
+- Copyright line
+
+---
+
+## JS Behaviour (lightweight, no libraries)
+
+| Feature | Implementation |
+|---|---|
+| Navbar scroll | `IntersectionObserver` on hero section |
+| Waitlist form | `preventDefault`, simple email validation, swap button to "✓ You're on the list!" |
+| Waitlist counter | Editable `const WAITLIST_COUNT = 1200` in `main.js` — renders to all counter elements |
+| FAQ accordion | Pure CSS `details`/`summary` with custom chevron animation |
+| Mobile nav | JS class toggle on hamburger click |
+| Duplicate form sync | All three email forms submit to the same handler |
+
+---
+
+## Performance Considerations
+
+- Google Fonts loaded via `<link rel="preconnect">` + `display=swap`
+- Hero video: `preload="none"` with `playsinline muted autoplay loop` — won't block page paint
+- No heavy animation libraries — CSS transitions only (300ms ease)
+- No image lazy-load library needed — native `loading="lazy"` on `<img>`
+- Minified inline SVG icons instead of icon font library
+
+---
+
+## Open Questions
+
+> [!IMPORTANT]
+> **Social media handles** — Do you have Instagram / Facebook / Twitter handles to link in the footer? I'll use placeholder `#` links if not confirmed.
+
+> [!IMPORTANT]
+> **Waitlist counter** — Should the "1,200+ people already waiting" number be real (from a backend) or a static placeholder you can edit manually? The plan is a static editable constant for now.
+
+> [!NOTE]
+> **Bilingual toggle** — The prompt mentions an optional English/Nepali language toggle. Should I include this in v1? It would add ~60 lines of JS and a second copy set for each section.
+
+> [!NOTE]
+> **Domain / deployment** — Is this going to Vercel, Netlify, or GitHub Pages? No changes needed either way for a static site, just good to know for `canonical` meta tag.
+
+---
+
+## Verification Plan
+
+1. Run `npx serve .` in `Khozna.web/` and open in browser
+2. Test on mobile viewport (375px) — all sections stack correctly, tap targets ≥ 44px
+3. Check all three waitlist forms submit and show success state
+4. Confirm hero video plays on mobile (muted + playsinline)
+5. Verify `#00C853` green appears *only* on the KYC badge section
+6. Lighthouse performance score target: ≥ 85 on mobile

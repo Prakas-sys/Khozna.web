@@ -1,50 +1,375 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-
-  <!-- ✅ Favicon for all browsers and Google Search -->
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/original_logo.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/original_logo.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/original_logo.png" />
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#00A3E1" />
-
-  <!-- Google Fonts Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <title>Khozna - Nepal's First Video-First, Agent-Free Rental Platform</title>
-  <meta name="description"
-    content="The modern, video-first rental platform for Nepal. Discover verified flats, rooms, and apartments in Kathmandu, Lalitpur, & Pokhara with zero agent fee." />
-
-  <!-- ✅ Open Graph — controls logo shown in Google, Facebook, WhatsApp link previews -->
+  <title>Khozna — Find Your Next Home. No Middleman.</title>
+  <meta name="description" content="Khozna is Nepal's peer-to-peer rental marketplace. Browse verified rooms, apartments, and houses in Kathmandu. Talk directly to KYC-verified owners. No broker fee. Join the waitlist." />
+  <meta property="og:title" content="Khozna — Find Your Next Home. No Middleman." />
+  <meta property="og:description" content="Nepal's first direct rental marketplace. No dalal. No middleman. Every owner verified. Coming to Kathmandu." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://khozna.com/" />
-  <meta property="og:title" content="Khozna - Nepal's #1 Direct Rental Platform" />
-  <meta property="og:description"
-    content="Find your next home directly from verified owners in Nepal. No brokers, no middlemen. 100% Free." />
-  <meta property="og:image" content="https://khozna.com/original_logo.png" />
-  <meta property="og:image:width" content="512" />
-  <meta property="og:image:height" content="512" />
-  <meta property="og:site_name" content="Khozna" />
-
-  <!-- ✅ Twitter / X Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Khozna - Nepal's #1 Direct Rental Platform" />
-  <meta name="twitter:description"
-    content="Find your next home directly from verified owners in Nepal. No brokers, no middlemen. 100% Free." />
-  <meta name="twitter:image" content="https://khozna.com/original_logo.png" />
+  <link rel="icon" href="/public/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Inter:wght@400;500;600&family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
-</body>
 
+  <!-- ═══════════════════ NAVBAR ═══════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" id="nav-logo-link">
+        <img src="/public/original_logo.png" alt="Khozna logo" class="nav-logo-img" />
+        <span class="nav-brand">Khozna</span>
+      </a>
+      <button class="nav-cta" onclick="document.getElementById('hero-email').focus(); document.getElementById('hero-email').scrollIntoView({behavior:'smooth', block:'center'})">
+        Join the Waitlist
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-wrap">
+      <video class="hero-video" autoplay muted loop playsinline preload="none" poster="/public/ktm_hero_bg.jpg">
+        <source src="/public/view of ktm.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content container">
+      <div class="hero-text">
+        <div class="hero-badge">🇳🇵 Coming to Kathmandu</div>
+        <h1 class="hero-headline">Find Your Next Home.<br /><span class="hero-highlight">No Middleman.</span></h1>
+        <p class="hero-sub">Browse verified rooms, apartments, and houses. Talk directly to the owner. Request a visit. Move in — without paying a dalal a single rupee.</p>
+
+        <form class="waitlist-form" id="hero-form">
+          <div class="form-row">
+            <input
+              type="email"
+              id="hero-email"
+              class="form-input"
+              placeholder="Enter your email"
+              autocomplete="email"
+              required
+            />
+            <button type="submit" class="btn-primary" id="hero-btn">Join the Waitlist</button>
+          </div>
+          <p class="form-note">We'll email you the moment Khozna opens in Kathmandu.</p>
+        </form>
+      </div>
+
+      <div class="hero-mockup">
+        <div class="phone-frame">
+          <img src="/public/Home screen.jpeg" alt="Khozna app home feed showing rental listings in Kathmandu" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ PROBLEM ═══════════════════ -->
+  <section class="section section-grey" id="problem">
+    <div class="container">
+      <div class="section-label">The problem</div>
+      <h2 class="section-title">Kathmandu's rental hunt is broken.</h2>
+      <p class="section-sub">Anyone who's looked for a room here knows the drill.</p>
+
+      <div class="cards-3">
+        <div class="problem-card glass-card">
+          <div class="card-icon">📵</div>
+          <h3>No real photos</h3>
+          <p>You're making decisions based on a blurry picture and a neighbour's vague description. "Bright room, good location" — could be anything.</p>
+        </div>
+        <div class="problem-card glass-card">
+          <div class="card-icon">💸</div>
+          <h3>Dalal fee for what, exactly?</h3>
+          <p>The broker takes Rs 3,000–10,000+, shows you three places you already found online, and disappears. Zero paperwork. Zero accountability.</p>
+        </div>
+        <div class="problem-card glass-card">
+          <div class="card-icon">❓</div>
+          <h3>Who even is this owner?</h3>
+          <p>No ID check. No verification. You wire a deposit to a number from a Facebook post and hope for the best.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ HOW IT WORKS ═══════════════════ -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-label">How Khozna works</div>
+      <h2 class="section-title">Three steps. Zero broker.</h2>
+
+      <div class="steps-wrap">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon">🔍</div>
+          <h3>Browse verified listings</h3>
+          <p>Every property has real photos, video tours, NPR pricing, and a verified owner badge — no guessing.</p>
+          <div class="step-mockup">
+            <div class="phone-frame phone-sm">
+              <img src="/public/Home screen.jpeg" alt="Khozna home feed showing property listings" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <div class="step-connector" aria-hidden="true">→</div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon">💬</div>
+          <h3>Message the owner directly</h3>
+          <p>No middleman in the chat. Talk to the actual owner, ask real questions, and schedule a visit on your terms.</p>
+          <div class="step-mockup">
+            <div class="phone-frame phone-sm">
+              <img src="/public/message.jpeg" alt="Khozna messaging screen showing direct owner conversation" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <div class="step-connector" aria-hidden="true">→</div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon">🏠</div>
+          <h3>Move in. No broker fee.</h3>
+          <p>Agree on terms directly. Visit the property. Move in. The only person you pay is your landlord.</p>
+          <div class="step-mockup step-mockup-icon">
+            <div class="move-in-visual">
+              <span class="move-in-emoji">🎉</span>
+              <span class="move-in-text">₨0 broker fee</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ TOUR FEATURE ═══════════════════ -->
+  <section class="section section-grey" id="tour">
+    <div class="container">
+      <div class="split-layout split-reverse">
+        <div class="split-text">
+          <div class="section-label">Tour feature</div>
+          <h2 class="section-title">See it before you visit.</h2>
+          <p class="split-body">Real video walkthroughs posted by the owner. Scroll, watch, decide. Like Reels — but for your next home.</p>
+          <p class="split-body">No more showing up to a place that looks nothing like the photos. The Tour feed gives you a honest look at the space before you commit to a visit.</p>
+          <a href="#waitlist-banner" class="btn-primary btn-inline">Get Early Access</a>
+        </div>
+        <div class="split-visual">
+          <div class="phone-frame phone-lg">
+            <img src="/public/tour.jpeg" alt="Khozna Tour feed showing video walkthrough of a rental property" loading="lazy" />
+          </div>
+          <div class="feature-badge-float glass-card">
+            <span class="badge-icon">▶</span>
+            <div>
+              <strong>Video Tours</strong>
+              <span>by the actual owner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ VERIFIED OWNER ═══════════════════ -->
+  <section class="section" id="verified">
+    <div class="container">
+      <div class="split-layout">
+        <div class="split-visual">
+          <div class="phone-frame phone-lg">
+            <img src="/public/profile section.jpeg" alt="Khozna verified owner profile with KYC green badge" loading="lazy" />
+          </div>
+          <div class="feature-badge-float feature-badge-right glass-card">
+            <span class="kyc-badge">✓ Verified Owner</span>
+            <span class="kyc-sub">ID checked by Khozna</span>
+          </div>
+        </div>
+        <div class="split-text">
+          <div class="section-label">Verified, not just listed</div>
+          <h2 class="section-title">That green badge means something.</h2>
+          <p class="split-body">Every owner on Khozna goes through a KYC check. We verify their identity before their listing goes live.</p>
+          <p class="split-body">When you see the <span class="inline-kyc-badge">✓ Verified Owner</span> badge next to a name, you're talking to a real person who actually owns the place.</p>
+          <div class="trust-points">
+            <div class="trust-point">
+              <span class="trust-check">✓</span>
+              <span>Government ID verified</span>
+            </div>
+            <div class="trust-point">
+              <span class="trust-check">✓</span>
+              <span>Real name, real owner</span>
+            </div>
+            <div class="trust-point">
+              <span class="trust-check">✓</span>
+              <span>Reported listings reviewed within 24 hours</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ BUILT FOR KTM ═══════════════════ -->
+  <section class="section section-grey" id="local">
+    <div class="container text-center">
+      <div class="section-label">Built for Kathmandu</div>
+      <h2 class="section-title">Not a copy-paste startup.<br />Built here, for here.</h2>
+      <p class="section-sub">Khozna is made for how Kathmandu actually works — not adapted from some Silicon Valley template.</p>
+
+      <div class="local-chips">
+        <div class="local-chip">
+          <span class="chip-icon">रू</span>
+          <div>
+            <strong>NPR Pricing</strong>
+            <span>All prices in Nepali rupees</span>
+          </div>
+        </div>
+        <div class="local-chip">
+          <span class="chip-icon">🇳🇵</span>
+          <div>
+            <strong>Nepali + English</strong>
+            <span>Full bilingual support</span>
+          </div>
+        </div>
+        <div class="local-chip">
+          <span class="chip-icon">👤</span>
+          <div>
+            <strong>Real local owners</strong>
+            <span>Not a property management firm</span>
+          </div>
+        </div>
+        <div class="local-chip">
+          <span class="chip-icon">🚫</span>
+          <div>
+            <strong>No franchise</strong>
+            <span>Independent, Nepal-first</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ WAITLIST BANNER ═══════════════════ -->
+  <section class="section waitlist-banner" id="waitlist-banner">
+    <div class="container text-center">
+      <div class="wl-counter"><span class="counter-num" id="counter-display">1,200+</span> people already waiting</div>
+      <h2 class="wl-title">Be first in line when Khozna launches.</h2>
+      <p class="wl-sub">Drop your email. We'll send you early access, updates, and a heads-up when listings go live in your area.</p>
+
+      <form class="waitlist-form wl-form" id="banner-form">
+        <div class="form-row form-row-center">
+          <input
+            type="email"
+            id="banner-email"
+            class="form-input form-input-dark"
+            placeholder="Enter your email"
+            autocomplete="email"
+            required
+          />
+          <button type="submit" class="btn-white" id="banner-btn">Get Early Access</button>
+        </div>
+        <p class="form-note form-note-light">We'll email you the moment Khozna opens in Kathmandu.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FAQ ═══════════════════ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-label">Questions</div>
+      <h2 class="section-title">FAQ</h2>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-q">When does Khozna launch?<span class="faq-chevron">›</span></summary>
+          <div class="faq-a">
+            <p>We're in private testing right now. The public launch in Kathmandu is coming soon — everyone on the waitlist gets an email the day it opens. No exact date yet, but it's close.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Is it free to use?<span class="faq-chevron">›</span></summary>
+          <div class="faq-a">
+            <p>Free for renters, always. Browse listings, contact owners, schedule visits — no fees. We're still figuring out an optional listing plan for owners with lots of properties, but the core experience is free for everyone.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Which city first?<span class="faq-chevron">›</span></summary>
+          <div class="faq-a">
+            <p>Kathmandu valley first — Kathmandu, Lalitpur, and Bhaktapur. Once that's solid, we'll expand to Pokhara and other cities. Building it right in one place before spreading thin.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">I'm an owner — how do I list my property?<span class="faq-chevron">›</span></summary>
+          <div class="faq-a">
+            <p>Join the waitlist and mention you're a property owner — we'll flag your account for early owner onboarding. You'll go through a quick KYC check, then you can list your property with photos, a video tour, and NPR pricing. No broker cuts, ever.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo-wrap">
+            <img src="/public/original_logo.png" alt="Khozna" class="footer-logo-img" />
+            <span class="footer-brand-name">Khozna</span>
+          </div>
+          <p class="footer-tagline">Nepal's rental market, fixed.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Khozna on Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+            <a href="#" class="social-link" aria-label="Khozna on Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              Facebook
+            </a>
+            <a href="#" class="social-link" aria-label="Khozna on X (Twitter)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              Twitter / X
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-waitlist">
+          <p class="footer-wl-label">Still on the fence? Join anyway.</p>
+          <form class="waitlist-form" id="footer-form">
+            <div class="form-row form-row-col">
+              <input
+                type="email"
+                id="footer-email"
+                class="form-input"
+                placeholder="Enter your email"
+                autocomplete="email"
+                required
+              />
+              <button type="submit" class="btn-primary" id="footer-btn">Get Early Access</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Khozna. Made in Nepal 🇳🇵</p>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
 </html>
