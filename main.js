@@ -15,22 +15,25 @@ document.addEventListener('DOMContentLoaded', () => {
   copyHeroVideoFallback();
 });
 
-/* ══ 1. Navbar: transparent → solid on scroll ══ */
+/* ══ 1. Navbar: always white, active link highlight on scroll ══ */
 function initNavbar() {
-  const navbar = document.getElementById('navbar');
-  if (!navbar) return;
+  // Highlight active nav link based on scroll position
+  const sections = ['how-it-works', 'tour', 'verified', 'local', 'faq'];
+  const navLinks = document.querySelectorAll('.nav-link');
 
-  function update() {
-    if (window.scrollY > 60) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+  function updateActive() {
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 100) current = id;
+    });
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
   }
 
-  // Run immediately on load so initial state is correct
-  update();
-  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
 }
 
 /* ══ 2. Waitlist forms ══ */

@@ -96,14 +96,9 @@ p { line-height: 1.7; color: var(--text-muted); }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
-  background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, transparent 100%);
-}
-.navbar.scrolled {
-  background: rgba(255,255,255,0.95);
-  box-shadow: 0 1px 24px rgba(0,0,0,0.08);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: #ffffff;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08), 0 2px 16px rgba(0,0,0,0.06);
+  backdrop-filter: none;
 }
 .nav-inner {
   max-width: 1160px;
@@ -130,10 +125,8 @@ p { line-height: 1.7; color: var(--text-muted); }
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
   font-size: 1.25rem;
-  color: var(--white);
-  transition: color 0.3s;
+  color: var(--text-main);
 }
-.navbar.scrolled .nav-brand { color: var(--text-main); }
 
 /* -- Desktop Nav Links -- */
 .nav-links {
@@ -145,11 +138,10 @@ p { line-height: 1.7; color: var(--text-muted); }
   justify-content: center;
 }
 .nav-link {
-  display: block;
   padding: 8px 14px;
   font-size: 0.9rem;
   font-weight: 500;
-  color: rgba(255,255,255,0.85);
+  color: var(--text-muted);
   border-radius: var(--radius-pill);
   transition: color 0.2s, background 0.2s;
   white-space: nowrap;
@@ -158,13 +150,13 @@ p { line-height: 1.7; color: var(--text-muted); }
   align-items: center;
 }
 .nav-link:hover {
-  color: var(--white);
-  background: rgba(255,255,255,0.12);
+  color: var(--blue);
+  background: var(--blue-light);
 }
-.navbar.scrolled .nav-link { color: var(--text-muted); }
-.navbar.scrolled .nav-link:hover { color: var(--blue); background: var(--blue-light); }
-.nav-link.active { color: var(--blue); }
-.navbar.scrolled .nav-link.active { color: var(--blue); }
+.nav-link.active {
+  color: var(--blue);
+  font-weight: 600;
+}
 
 .nav-cta {
   font-family: 'Inter', sans-serif;
@@ -193,12 +185,11 @@ p { line-height: 1.7; color: var(--text-muted); }
 .hamburger span {
   display: block;
   width: 22px; height: 2px;
-  background: var(--white);
+  background: var(--text-main);
   border-radius: 2px;
   transition: background 0.3s, transform 0.3s, opacity 0.3s;
   transform-origin: center;
 }
-.navbar.scrolled .hamburger span { background: var(--text-main); }
 /* Hamburger open state — X animation */
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
@@ -211,14 +202,9 @@ p { line-height: 1.7; color: var(--text-muted); }
   max-height: 0;
   transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.25s ease;
   opacity: 0;
-  background: rgba(10,20,30,0.97);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-.navbar.scrolled .nav-drawer {
-  background: rgba(255,255,255,0.98);
+  background: #ffffff;
   border-top: 1px solid var(--grey-border);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 .nav-drawer.open {
   max-height: 400px;
@@ -232,23 +218,20 @@ p { line-height: 1.7; color: var(--text-muted); }
   gap: 4px;
 }
 .drawer-link {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 12px 16px;
   font-size: 1rem;
   font-weight: 500;
-  color: rgba(255,255,255,0.85);
+  color: var(--text-main);
   border-radius: var(--radius-md);
   transition: background 0.2s, color 0.2s;
   min-height: 48px;
-  display: flex;
-  align-items: center;
 }
 .drawer-link:hover, .drawer-link:active {
-  background: rgba(255,255,255,0.1);
-  color: var(--white);
+  background: var(--blue-light);
+  color: var(--blue);
 }
-.navbar.scrolled .drawer-link { color: var(--text-main); }
-.navbar.scrolled .drawer-link:hover { background: var(--blue-light); color: var(--blue); }
 .drawer-cta {
   display: block;
   width: calc(100% - 48px);
@@ -273,6 +256,7 @@ p { line-height: 1.7; color: var(--text-muted); }
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding-top: 64px;
 }
 .hero-bg-wrap {
   position: absolute;
