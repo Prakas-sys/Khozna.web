@@ -6,6 +6,9 @@
 /* ── Config ── */
 const WAITLIST_COUNT = 1200;
 
+// ⭐ Paste your Google Apps Script Web App URL here after deploying sheets-collector.gs
+const SHEETS_WEBHOOK_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+
 /* ── DOM ready ── */
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
@@ -57,6 +60,11 @@ function initWaitlistForms() {
         shakeInput(input);
         return;
       }
+
+      // Send to Google Sheets (fire and forget)
+      const source = formId === 'hero-form' ? 'hero' : formId === 'banner-form' ? 'banner' : 'footer';
+      sendToSheets(email, source);
+
       // Success state
       btn.textContent = '✓ You\'re on the list!';
       btn.classList.add('success');
@@ -74,6 +82,26 @@ function initWaitlistForms() {
       }
     });
   });
+}
+
+/* ══ Google Sheets webhook ══ */
+async function sendToSheets(email, source) {
+  if (!SHEETS_WEBHOOK_URL || SHEETS_WEBHOOK_URL.includes('YOUR_')) return;
+  try {
+    await fetch(SHEETS_WEBHOOK_URL, {
+      method: 'POST',
+      mode: 'no-cors', // Apps Script handles CORS
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email,
+        source,
+        userAgent: navigator.userAgent,
+        timestamp: new Date().toISOString(),
+      }),
+    });
+  } catch (_) {
+    // Silent fail — never block the user experience
+  }
 }
 
 function isValidEmail(email) {
