@@ -27,17 +27,24 @@
 
       <!-- Desktop nav links -->
       <ul class="nav-links" id="nav-links">
-        <li><a href="#how-it-works" class="nav-link">How it Works</a></li>
-        <li><a href="#tour" class="nav-link">Tour</a></li>
-        <li><a href="#verified" class="nav-link">Verified</a></li>
-        <li><a href="#local" class="nav-link">Why Nepal</a></li>
-        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#how-it-works" class="nav-link" data-translate="nav-how">How it Works</a></li>
+        <li><a href="#tour" class="nav-link" data-translate="nav-tour">Tour</a></li>
+        <li><a href="#verified" class="nav-link" data-translate="nav-verified">Verified</a></li>
+        <li><a href="#local" class="nav-link" data-translate="nav-local">Why Nepal</a></li>
+        <li><a href="#faq" class="nav-link" data-translate="nav-faq">FAQ</a></li>
       </ul>
 
-      <!-- CTA -->
-      <button class="nav-cta" id="nav-cta-btn">
-        Join the Waitlist
-      </button>
+      <!-- Desktop CTA & Lang -->
+      <div class="nav-actions">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <span class="lang-divider">|</span>
+          <button class="lang-btn" data-lang="np">नेपाली</button>
+        </div>
+        <button class="nav-cta" id="nav-cta-btn" data-translate="btn-waitlist">
+          Join the Waitlist
+        </button>
+      </div>
 
       <!-- Hamburger (mobile) -->
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -48,13 +55,18 @@
     <!-- Mobile drawer -->
     <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
       <ul class="drawer-links">
-        <li><a href="#how-it-works" class="drawer-link">How it Works</a></li>
-        <li><a href="#tour" class="drawer-link">Tour</a></li>
-        <li><a href="#verified" class="drawer-link">Verified</a></li>
-        <li><a href="#local" class="drawer-link">Why Nepal</a></li>
-        <li><a href="#faq" class="drawer-link">FAQ</a></li>
+        <li><a href="#how-it-works" class="drawer-link" data-translate="nav-how">How it Works</a></li>
+        <li><a href="#tour" class="drawer-link" data-translate="nav-tour">Tour</a></li>
+        <li><a href="#verified" class="drawer-link" data-translate="nav-verified">Verified</a></li>
+        <li><a href="#local" class="drawer-link" data-translate="nav-local">Why Nepal</a></li>
+        <li><a href="#faq" class="drawer-link" data-translate="nav-faq">FAQ</a></li>
       </ul>
-      <button class="drawer-cta" id="drawer-cta-btn">Join the Waitlist</button>
+      <div class="drawer-lang-switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <span class="lang-divider">|</span>
+        <button class="lang-btn" data-lang="np">नेपाली</button>
+      </div>
+      <button class="drawer-cta" id="drawer-cta-btn" data-translate="btn-waitlist">Join the Waitlist</button>
     </div>
   </nav>
 
@@ -69,9 +81,9 @@
 
     <div class="hero-content container">
       <div class="hero-text">
-        <div class="hero-badge">🇳🇵 Coming to Kathmandu</div>
-        <h1 class="hero-headline">Find Your Next Home.<br /><span class="hero-highlight">No Middleman.</span></h1>
-        <p class="hero-sub">Browse verified rooms, apartments, and houses. Talk directly to the owner. Request a visit. Move in — without paying a dalal a single rupee.</p>
+        <div class="hero-badge" data-translate="hero-badge">🇳🇵 Coming to Kathmandu</div>
+        <h1 class="hero-headline" data-translate="hero-title">Find Your Next Home.<br /><span class="hero-highlight">No Middleman.</span></h1>
+        <p class="hero-sub" data-translate="hero-sub">Browse verified rooms, apartments, and houses. Talk directly to the owner. Request a visit. Move in — without paying a dalal a single rupee.</p>
 
         <form class="waitlist-form" id="hero-form">
           <div class="form-row">
@@ -79,6 +91,7 @@
               type="text"
               id="hero-name"
               class="form-input"
+              data-translate-placeholder="placeholder-name"
               placeholder="Your name"
               autocomplete="name"
               required
@@ -87,6 +100,7 @@
               type="tel"
               id="hero-phone"
               class="form-input"
+              data-translate-placeholder="placeholder-phone"
               placeholder="Phone number"
               autocomplete="tel"
               required
@@ -97,13 +111,14 @@
               type="email"
               id="hero-email"
               class="form-input"
+              data-translate-placeholder="placeholder-email"
               placeholder="Email address"
               autocomplete="email"
               required
             />
-            <button type="submit" class="btn-primary" id="hero-btn">Join the Waitlist</button>
+            <button type="submit" class="btn-primary" id="hero-btn" data-translate="btn-waitlist">Join the Waitlist</button>
           </div>
-          <p class="form-note">We'll email you the moment Khozna opens in Kathmandu.</p>
+          <p class="form-note" data-translate="hero-note">We'll email you the moment Khozna opens in Kathmandu.</p>
         </form>
       </div>
 
@@ -118,25 +133,25 @@
   <!-- ═══════════════════ PROBLEM ═══════════════════ -->
   <section class="section section-grey" id="problem">
     <div class="container">
-      <div class="section-label">The problem</div>
-      <h2 class="section-title">Kathmandu's rental hunt is broken.</h2>
-      <p class="section-sub">Anyone who's looked for a room here knows the drill.</p>
+      <div class="section-label" data-translate="prob-label">The problem</div>
+      <h2 class="section-title" data-translate="prob-title">Kathmandu's rental hunt is broken.</h2>
+      <p class="section-sub" data-translate="prob-sub">Anyone who's looked for a room here knows the drill.</p>
 
       <div class="cards-3">
         <div class="problem-card glass-card">
           <div class="card-icon">📵</div>
-          <h3>No real photos</h3>
-          <p>You're making decisions based on a blurry picture and a neighbour's vague description. "Bright room, good location" — could be anything.</p>
+          <h3 data-translate="prob-c1-t">No real photos</h3>
+          <p data-translate="prob-c1-d">You're making decisions based on a blurry picture and a neighbour's vague description. "Bright room, good location" — could be anything.</p>
         </div>
         <div class="problem-card glass-card">
           <div class="card-icon">💸</div>
-          <h3>Dalal fee for what, exactly?</h3>
-          <p>The broker takes Rs 3,000–10,000+, shows you three places you already found online, and disappears. Zero paperwork. Zero accountability.</p>
+          <h3 data-translate="prob-c2-t">Dalal fee for what, exactly?</h3>
+          <p data-translate="prob-c2-d">The broker takes Rs 3,000–10,000+, shows you three places you already found online, and disappears. Zero paperwork. Zero accountability.</p>
         </div>
         <div class="problem-card glass-card">
           <div class="card-icon">❓</div>
-          <h3>Who even is this owner?</h3>
-          <p>No ID check. No verification. You wire a deposit to a number from a Facebook post and hope for the best.</p>
+          <h3 data-translate="prob-c3-t">Who even is this owner?</h3>
+          <p data-translate="prob-c3-d">No ID check. No verification. You wire a deposit to a number from a Facebook post and hope for the best.</p>
         </div>
       </div>
     </div>
@@ -145,15 +160,15 @@
   <!-- ═══════════════════ HOW IT WORKS ═══════════════════ -->
   <section class="section" id="how-it-works">
     <div class="container">
-      <div class="section-label">How Khozna works</div>
-      <h2 class="section-title">Three steps. Zero broker.</h2>
+      <div class="section-label" data-translate="how-label">How Khozna works</div>
+      <h2 class="section-title" data-translate="how-title">Three steps. Zero broker.</h2>
 
       <div class="steps-wrap">
         <div class="step-card">
           <div class="step-number">01</div>
           <div class="step-icon">🔍</div>
-          <h3>Browse verified listings</h3>
-          <p>Every property has real photos, video tours, NPR pricing, and a verified owner badge — no guessing.</p>
+          <h3 data-translate="step1-t">Browse verified listings</h3>
+          <p data-translate="step1-d">Every property has real photos, video tours, NPR pricing, and a verified owner badge — no guessing.</p>
           <div class="step-mockup">
             <div class="phone-frame phone-sm">
               <img src="/public/Home screen.jpeg" alt="Khozna home feed showing property listings" loading="lazy" />
@@ -166,8 +181,8 @@
         <div class="step-card">
           <div class="step-number">02</div>
           <div class="step-icon">💬</div>
-          <h3>Message the owner directly</h3>
-          <p>No middleman in the chat. Talk to the actual owner, ask real questions, and schedule a visit on your terms.</p>
+          <h3 data-translate="step2-t">Message the owner directly</h3>
+          <p data-translate="step2-d">No middleman in the chat. Talk to the actual owner, ask real questions, and schedule a visit on your terms.</p>
           <div class="step-mockup">
             <div class="phone-frame phone-sm">
               <img src="/public/message.jpeg" alt="Khozna messaging screen showing direct owner conversation" loading="lazy" />
@@ -180,12 +195,12 @@
         <div class="step-card">
           <div class="step-number">03</div>
           <div class="step-icon">🏠</div>
-          <h3>Move in. No broker fee.</h3>
-          <p>Agree on terms directly. Visit the property. Move in. The only person you pay is your landlord.</p>
+          <h3 data-translate="step3-t">Move in. No broker fee.</h3>
+          <p data-translate="step3-d">Agree on terms directly. Visit the property. Move in. The only person you pay is your landlord.</p>
           <div class="step-mockup step-mockup-icon">
             <div class="move-in-visual">
               <span class="move-in-emoji">🎉</span>
-              <span class="move-in-text">₨0 broker fee</span>
+              <span class="move-in-text" data-translate="how-movein">₨0 broker fee</span>
             </div>
           </div>
         </div>
@@ -198,11 +213,11 @@
     <div class="container">
       <div class="split-layout split-reverse">
         <div class="split-text">
-          <div class="section-label">Tour feature</div>
-          <h2 class="section-title">See it before you visit.</h2>
-          <p class="split-body">Real video walkthroughs posted by the owner. Scroll, watch, decide. Like Reels — but for your next home.</p>
-          <p class="split-body">No more showing up to a place that looks nothing like the photos. The Tour feed gives you a honest look at the space before you commit to a visit.</p>
-          <a href="#waitlist-banner" class="btn-primary btn-inline">Get Early Access</a>
+          <div class="section-label" data-translate="tour-label">Tour feature</div>
+          <h2 class="section-title" data-translate="tour-title">See it before you visit.</h2>
+          <p class="split-body" data-translate="tour-d1">Real video walkthroughs posted by the owner. Scroll, watch, decide. Like Reels — but for your next home.</p>
+          <p class="split-body" data-translate="tour-d2">No more showing up to a place that looks nothing like the photos. The Tour feed gives you a honest look at the space before you commit to a visit.</p>
+          <a href="#waitlist-banner" class="btn-primary btn-inline" data-translate="btn-early">Get Early Access</a>
         </div>
         <div class="split-visual">
           <div class="phone-frame phone-lg">
@@ -211,8 +226,8 @@
           <div class="feature-badge-float glass-card">
             <span class="badge-icon">▶</span>
             <div>
-              <strong>Video Tours</strong>
-              <span>by the actual owner</span>
+              <strong data-translate="tour-badge-t">Video Tours</strong>
+              <span data-translate="tour-badge-s">by the actual owner</span>
             </div>
           </div>
         </div>
@@ -229,27 +244,27 @@
             <img src="/public/profile section.jpeg" alt="Khozna verified owner profile with KYC green badge" loading="lazy" />
           </div>
           <div class="feature-badge-float feature-badge-right glass-card">
-            <span class="kyc-badge">✓ Verified Owner</span>
-            <span class="kyc-sub">ID checked by Khozna</span>
+            <span class="kyc-badge" data-translate="ver-badge-t">✓ Verified Owner</span>
+            <span class="kyc-sub" data-translate="ver-badge-s">ID checked by Khozna</span>
           </div>
         </div>
         <div class="split-text">
-          <div class="section-label">Verified, not just listed</div>
-          <h2 class="section-title">That green badge means something.</h2>
-          <p class="split-body">Every owner on Khozna goes through a KYC check. We verify their identity before their listing goes live.</p>
-          <p class="split-body">When you see the <span class="inline-kyc-badge">✓ Verified Owner</span> badge next to a name, you're talking to a real person who actually owns the place.</p>
+          <div class="section-label" data-translate="ver-label">Verified, not just listed</div>
+          <h2 class="section-title" data-translate="ver-title">That green badge means something.</h2>
+          <p class="split-body" data-translate="ver-d1">Every owner on Khozna goes through a KYC check. We verify their identity before their listing goes live.</p>
+          <p class="split-body" data-translate="ver-d2">When you see the <span class="inline-kyc-badge" data-translate="ver-badge-t">✓ Verified Owner</span> badge next to a name, you're talking to a real person who actually owns the place.</p>
           <div class="trust-points">
             <div class="trust-point">
               <span class="trust-check">✓</span>
-              <span>Government ID verified</span>
+              <span data-translate="ver-p1">Government ID verified</span>
             </div>
             <div class="trust-point">
               <span class="trust-check">✓</span>
-              <span>Real name, real owner</span>
+              <span data-translate="ver-p2">Real name, real owner</span>
             </div>
             <div class="trust-point">
               <span class="trust-check">✓</span>
-              <span>Reported listings reviewed within 24 hours</span>
+              <span data-translate="ver-p3">Reported listings reviewed within 24 hours</span>
             </div>
           </div>
         </div>
@@ -260,37 +275,37 @@
   <!-- ═══════════════════ BUILT FOR KTM ═══════════════════ -->
   <section class="section section-grey" id="local">
     <div class="container text-center">
-      <div class="section-label">Built for Nepal</div>
-      <h2 class="section-title">Made in Nepal.<br />Built for Nepal.</h2>
-      <p class="section-sub">Khozna is built for how Nepal actually rents — not a foreign app with a Nepali flag slapped on it.</p>
+      <div class="section-label" data-translate="local-label">Built for Nepal</div>
+      <h2 class="section-title" data-translate="local-title">Made in Nepal.<br />Built for Nepal.</h2>
+      <p class="section-sub" data-translate="local-sub">Khozna is built for how Nepal actually rents — not a foreign app with a Nepali flag slapped on it.</p>
 
       <div class="local-chips">
         <div class="local-chip">
           <span class="chip-icon">रू</span>
           <div>
-            <strong>NPR Pricing</strong>
-            <span>All prices in Nepali rupees</span>
+            <strong data-translate="local-c1-t">NPR Pricing</strong>
+            <span data-translate="local-c1-d">All prices in Nepali rupees</span>
           </div>
         </div>
         <div class="local-chip">
           <span class="chip-icon">🇳🇵</span>
           <div>
-            <strong>Nepali + English</strong>
-            <span>Full bilingual support</span>
+            <strong data-translate="local-c2-t">Nepali + English</strong>
+            <span data-translate="local-c2-d">Full bilingual support</span>
           </div>
         </div>
         <div class="local-chip">
           <span class="chip-icon">👤</span>
           <div>
-            <strong>Real local owners</strong>
-            <span>Not a property management firm</span>
+            <strong data-translate="local-c3-t">Real local owners</strong>
+            <span data-translate="local-c3-d">Not a property management firm</span>
           </div>
         </div>
         <div class="local-chip">
           <span class="chip-icon">🚫</span>
           <div>
-            <strong>No franchise</strong>
-            <span>Independent, Nepal-first</span>
+            <strong data-translate="local-c4-t">No franchise</strong>
+            <span data-translate="local-c4-d">Independent, Nepal-first</span>
           </div>
         </div>
       </div>
@@ -300,9 +315,9 @@
   <!-- ═══════════════════ WAITLIST BANNER ═══════════════════ -->
   <section class="section waitlist-banner" id="waitlist-banner">
     <div class="container text-center">
-      <div class="wl-counter"><span class="counter-num" id="counter-display">1,200+</span> people already waiting</div>
-      <h2 class="wl-title">Be first in line when Khozna launches.</h2>
-      <p class="wl-sub">Drop your email. We'll send you early access, updates, and a heads-up when listings go live in your area.</p>
+      <div class="wl-counter"><span class="counter-num" id="counter-display">1,200+</span> <span data-translate="banner-counter">people already waiting</span></div>
+      <h2 class="wl-title" data-translate="banner-title">Be first in line when Khozna launches.</h2>
+      <p class="wl-sub" data-translate="banner-sub">Drop your email. We'll send you early access, updates, and a heads-up when listings go live in your area.</p>
 
       <form class="waitlist-form wl-form" id="banner-form">
         <div class="form-row form-row-center">
@@ -310,6 +325,7 @@
             type="text"
             id="banner-name"
             class="form-input form-input-dark"
+            data-translate-placeholder="placeholder-name"
             placeholder="Your name"
             autocomplete="name"
             required
@@ -318,6 +334,7 @@
             type="tel"
             id="banner-phone"
             class="form-input form-input-dark"
+            data-translate-placeholder="placeholder-phone"
             placeholder="Phone number"
             autocomplete="tel"
             required
@@ -328,13 +345,14 @@
             type="email"
             id="banner-email"
             class="form-input form-input-dark"
+            data-translate-placeholder="placeholder-email"
             placeholder="Email address"
             autocomplete="email"
             required
           />
-          <button type="submit" class="btn-white" id="banner-btn">Get Early Access</button>
+          <button type="submit" class="btn-white" id="banner-btn" data-translate="btn-early">Get Early Access</button>
         </div>
-        <p class="form-note form-note-light">We'll email you the moment Khozna opens in Kathmandu.</p>
+        <p class="form-note form-note-light" data-translate="hero-note">We'll email you the moment Khozna opens in Kathmandu.</p>
       </form>
     </div>
   </section>
@@ -342,35 +360,35 @@
   <!-- ═══════════════════ FAQ ═══════════════════ -->
   <section class="section" id="faq">
     <div class="container">
-      <div class="section-label">Questions</div>
-      <h2 class="section-title">FAQ</h2>
+      <div class="section-label" data-translate="faq-label">Questions</div>
+      <h2 class="section-title" data-translate="faq-title">FAQ</h2>
 
       <div class="faq-list">
         <details class="faq-item">
-          <summary class="faq-q">When does Khozna launch?<span class="faq-chevron">›</span></summary>
+          <summary class="faq-q"><span data-translate="faq-q1">When does Khozna launch?</span><span class="faq-chevron">›</span></summary>
           <div class="faq-a">
-            <p>We're in private testing right now. The public launch in Kathmandu is coming soon — everyone on the waitlist gets an email the day it opens. No exact date yet, but it's close.</p>
+            <p data-translate="faq-a1">We're in private testing right now. The public launch in Kathmandu is coming soon — everyone on the waitlist gets an email the day it opens. No exact date yet, but it's close.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary class="faq-q">Is it free to use?<span class="faq-chevron">›</span></summary>
+          <summary class="faq-q"><span data-translate="faq-q2">Is it free to use?</span><span class="faq-chevron">›</span></summary>
           <div class="faq-a">
-            <p>Free for renters, always. Browse listings, contact owners, schedule visits — no fees. We're still figuring out an optional listing plan for owners with lots of properties, but the core experience is free for everyone.</p>
+            <p data-translate="faq-a2">Free for renters, always. Browse listings, contact owners, schedule visits — no fees. We're still figuring out an optional listing plan for owners with lots of properties, but the core experience is free for everyone.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary class="faq-q">Which city first?<span class="faq-chevron">›</span></summary>
+          <summary class="faq-q"><span data-translate="faq-q3">Which city first?</span><span class="faq-chevron">›</span></summary>
           <div class="faq-a">
-            <p>Kathmandu valley first — Kathmandu, Lalitpur, and Bhaktapur. Once that's solid, we'll expand to Pokhara and other cities. Building it right in one place before spreading thin.</p>
+            <p data-translate="faq-a3">Kathmandu valley first — Kathmandu, Lalitpur, and Bhaktapur. Once that's solid, we'll expand to Pokhara and other cities. Building it right in one place before spreading thin.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary class="faq-q">I'm an owner — how do I list my property?<span class="faq-chevron">›</span></summary>
+          <summary class="faq-q"><span data-translate="faq-q4">I'm an owner — how do I list my property?</span><span class="faq-chevron">›</span></summary>
           <div class="faq-a">
-            <p>Join the waitlist and mention you're a property owner — we'll flag your account for early owner onboarding. You'll go through a quick KYC check, then you can list your property with photos, a video tour, and NPR pricing. No broker cuts, ever.</p>
+            <p data-translate="faq-a4">Join the waitlist and mention you're a property owner — we'll flag your account for early owner onboarding. You'll go through a quick KYC check, then you can list your property with photos, a video tour, and NPR pricing. No broker cuts, ever.</p>
           </div>
         </details>
       </div>
@@ -386,7 +404,7 @@
             <img src="/public/original_logo.png" alt="Khozna" class="footer-logo-img" />
             <span class="footer-brand-name">KHOZNA</span>
           </div>
-          <p class="footer-tagline">Nepal's rental market, fixed.</p>
+          <p class="footer-tagline" data-translate="foot-tagline">Nepal's rental market, fixed.</p>
           <div class="footer-socials">
             <a href="#" class="social-link" aria-label="Khozna on Instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
@@ -404,13 +422,14 @@
         </div>
 
         <div class="footer-waitlist">
-          <p class="footer-wl-label">Ready to ditch the dalal? Join the list.</p>
+          <p class="footer-wl-label" data-translate="foot-wl-label">Ready to ditch the dalal? Join the list.</p>
           <form class="waitlist-form" id="footer-form">
             <div class="form-row form-row-col">
               <input
                 type="text"
                 id="footer-name"
                 class="form-input"
+                data-translate-placeholder="placeholder-name"
                 placeholder="Your name"
                 autocomplete="name"
                 required
@@ -419,6 +438,7 @@
                 type="tel"
                 id="footer-phone"
                 class="form-input"
+                data-translate-placeholder="placeholder-phone"
                 placeholder="Phone number"
                 autocomplete="tel"
                 required
@@ -427,22 +447,23 @@
                 type="email"
                 id="footer-email"
                 class="form-input"
+                data-translate-placeholder="placeholder-email"
                 placeholder="Email address"
                 autocomplete="email"
                 required
               />
-              <button type="submit" class="btn-primary" id="footer-btn">Get Early Access</button>
+              <button type="submit" class="btn-primary" id="footer-btn" data-translate="btn-early">Get Early Access</button>
             </div>
           </form>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 Khozna. Made in Nepal 🇳🇵</p>
+        <p data-translate="foot-copyright">© 2026 Khozna. Made in Nepal 🇳🇵</p>
         <div class="footer-links">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Contact</a>
+          <a href="#" data-translate="foot-privacy">Privacy</a>
+          <a href="#" data-translate="foot-terms">Terms</a>
+          <a href="#" data-translate="foot-contact">Contact</a>
         </div>
       </div>
     </div>
