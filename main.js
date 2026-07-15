@@ -7,7 +7,7 @@
 const WAITLIST_COUNT = 1200;
 
 // ⭐ Paste your Google Apps Script Web App URL here after deploying sheets-collector.gs
-const SHEETS_WEBHOOK_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+const SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyhAKH-8IQxdzTegL5_c8kNtG5cTdl5uffnQN1R8AdWp89A12NH0b0OBA9O15NGIcuC/exec';
 
 /* ── DOM ready ── */
 document.addEventListener('DOMContentLoaded', () => {
