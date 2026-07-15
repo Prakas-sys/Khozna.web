@@ -95,15 +95,55 @@ function initCounter() {
   counter.textContent = formatCount(WAITLIST_COUNT) + '+';
 }
 
-/* ══ 4. Mobile hamburger (basic toggle) ══ */
+/* ══ 4. Mobile hamburger + drawer ══ */
 function initHamburger() {
-  const btn = document.getElementById('hamburger');
-  if (!btn) return;
-  // For now: scroll to waitlist on mobile tap (no full mobile menu needed — single page)
+  const btn    = document.getElementById('hamburger');
+  const drawer = document.getElementById('nav-drawer');
+  const drawerCta = document.getElementById('drawer-cta-btn');
+  const navCtaBtn = document.getElementById('nav-cta-btn');
+  if (!btn || !drawer) return;
+
+  function openDrawer() {
+    btn.classList.add('open');
+    drawer.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeDrawer() {
+    btn.classList.remove('open');
+    drawer.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+  }
+
   btn.addEventListener('click', () => {
-    const banner = document.getElementById('waitlist-banner');
-    if (banner) banner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    drawer.classList.contains('open') ? closeDrawer() : openDrawer();
   });
+
+  // Close drawer when any drawer link is clicked
+  drawer.querySelectorAll('.drawer-link').forEach(link => {
+    link.addEventListener('click', closeDrawer);
+  });
+
+  // Drawer CTA scrolls to hero form
+  if (drawerCta) {
+    drawerCta.addEventListener('click', () => {
+      closeDrawer();
+      setTimeout(() => {
+        const el = document.getElementById('hero-email');
+        if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.focus(); }
+      }, 200);
+    });
+  }
+
+  // Desktop nav CTA also scrolls to hero form
+  if (navCtaBtn) {
+    navCtaBtn.addEventListener('click', () => {
+      const el = document.getElementById('hero-email');
+      if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.focus(); }
+    });
+  }
 }
 
 /* ══ 5. Hero video fallback poster ══ */

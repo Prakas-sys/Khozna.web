@@ -19,16 +19,42 @@
   <!-- ═══════════════════ NAVBAR ═══════════════════ -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
+      <!-- Logo -->
       <a href="#" class="nav-logo" id="nav-logo-link">
         <img src="/public/original_logo.png" alt="Khozna logo" class="nav-logo-img" />
         <span class="nav-brand">Khozna</span>
       </a>
-      <button class="nav-cta" onclick="document.getElementById('hero-email').focus(); document.getElementById('hero-email').scrollIntoView({behavior:'smooth', block:'center'})">
+
+      <!-- Desktop nav links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#how-it-works" class="nav-link">How it Works</a></li>
+        <li><a href="#tour" class="nav-link">Tour</a></li>
+        <li><a href="#verified" class="nav-link">Verified</a></li>
+        <li><a href="#local" class="nav-link">Why Nepal</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <!-- CTA -->
+      <button class="nav-cta" id="nav-cta-btn">
         Join the Waitlist
       </button>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
+
+      <!-- Hamburger (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+      <ul class="drawer-links">
+        <li><a href="#how-it-works" class="drawer-link">How it Works</a></li>
+        <li><a href="#tour" class="drawer-link">Tour</a></li>
+        <li><a href="#verified" class="drawer-link">Verified</a></li>
+        <li><a href="#local" class="drawer-link">Why Nepal</a></li>
+        <li><a href="#faq" class="drawer-link">FAQ</a></li>
+      </ul>
+      <button class="drawer-cta" id="drawer-cta-btn">Join the Waitlist</button>
     </div>
   </nav>
 
