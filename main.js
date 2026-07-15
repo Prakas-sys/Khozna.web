@@ -42,20 +42,25 @@ function initNavbar() {
 /* ══ 2. Waitlist forms ══ */
 function initWaitlistForms() {
   const forms = [
-    { formId: 'hero-form',   btnId: 'hero-btn',   emailId: 'hero-email' },
-    { formId: 'banner-form', btnId: 'banner-btn',  emailId: 'banner-email', dark: true },
-    { formId: 'footer-form', btnId: 'footer-btn',  emailId: 'footer-email', footer: true },
+    { formId: 'hero-form',   btnId: 'hero-btn',   emailId: 'hero-email',   nameId: 'hero-name',   phoneId: 'hero-phone'   },
+    { formId: 'banner-form', btnId: 'banner-btn',  emailId: 'banner-email', nameId: 'banner-name', phoneId: 'banner-phone' },
+    { formId: 'footer-form', btnId: 'footer-btn',  emailId: 'footer-email', nameId: 'footer-name', phoneId: 'footer-phone' },
   ];
 
-  forms.forEach(({ formId, btnId, emailId, dark, footer }) => {
+  forms.forEach(({ formId, btnId, emailId, nameId, phoneId }) => {
     const form  = document.getElementById(formId);
     const btn   = document.getElementById(btnId);
     const input = document.getElementById(emailId);
+    const nameInput  = document.getElementById(nameId);
+    const phoneInput = document.getElementById(phoneId);
     if (!form || !btn || !input) return;
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const email = input.value.trim();
+      const name  = nameInput  ? nameInput.value.trim()  : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+
       if (!isValidEmail(email)) {
         shakeInput(input);
         return;
@@ -63,13 +68,16 @@ function initWaitlistForms() {
 
       // Send to Google Sheets (fire and forget)
       const source = formId === 'hero-form' ? 'hero' : formId === 'banner-form' ? 'banner' : 'footer';
-      sendToSheets(email, source);
+      sendToSheets(email, name, phone, source);
 
       // Success state
       btn.textContent = '✓ You\'re on the list!';
       btn.classList.add('success');
-      input.value = '';
-      input.disabled = true;
+      [input, nameInput, phoneInput].forEach(el => {
+        if (!el) return;
+        el.value = '';
+        el.disabled = true;
+      });
       input.placeholder = 'See you when we launch 🎉';
 
       // Increment counter display
@@ -84,16 +92,20 @@ function initWaitlistForms() {
   });
 }
 
+
+
 /* ══ Google Sheets webhook ══ */
-async function sendToSheets(email, source) {
+async function sendToSheets(email, name, phone, source) {
   if (!SHEETS_WEBHOOK_URL || SHEETS_WEBHOOK_URL.includes('YOUR_')) return;
   try {
     await fetch(SHEETS_WEBHOOK_URL, {
       method: 'POST',
-      mode: 'no-cors', // Apps Script handles CORS
+      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email,
+        name,
+        phone,
         source,
         userAgent: navigator.userAgent,
         timestamp: new Date().toISOString(),
