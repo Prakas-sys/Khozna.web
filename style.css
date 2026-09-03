@@ -193,10 +193,25 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .nav-drawer { display: none; }
 
+/* ═══════════════════ SCROLL REVEAL ANIMATIONS ═══════════════════ */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(32px) scale(0.96);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.reveal-delay-1 { transition-delay: 0.12s; }
+.reveal-delay-2 { transition-delay: 0.24s; }
+.reveal-delay-3 { transition-delay: 0.36s; }
+
 /* ═══════════════════ HERO SECTION ═══════════════════ */
 .hero-section {
-  padding-top: 110px;
-  padding-bottom: 70px;
+  padding-top: 144px;
+  padding-bottom: 90px;
   background: linear-gradient(180deg, #F0F9FF 0%, #FFFFFF 100%);
   text-align: center;
   overflow: hidden;

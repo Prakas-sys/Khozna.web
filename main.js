@@ -17,7 +17,31 @@ document.addEventListener('DOMContentLoaded', () => {
   initHamburger();
   copyHeroVideoFallback();
   initLanguage();
+  initScrollReveal();
 });
+
+/* ══ Scroll Reveal IntersectionObserver ══ */
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+  if (!revealElements.length) return;
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -50px 0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  revealElements.forEach(el => observer.observe(el));
+}
 
 /* ══ 1. Navbar: always white, active link highlight on scroll ══ */
 function initNavbar() {
