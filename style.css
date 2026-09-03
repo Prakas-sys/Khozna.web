@@ -547,43 +547,20 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .footer-brand-name { font-family: var(--font-heading); font-weight: 800; font-size: 1.3rem; }
 .footer-tagline { color: #64748B; font-size: 0.88rem; max-width: 280px; line-height: 1.6; }
 
-/* Official Standard Google Play Badge */
-.google-play-badge-official {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 22px;
-  background: #0A0F1D;
-  color: #FFFFFF;
-  border-radius: 12px;
-  border: 1.5px solid rgba(255,255,255,0.22);
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+/* Official Google Play Badge Image Asset */
+.playstore-badge-link {
+  display: inline-block;
+  transition: transform 0.2s ease, filter 0.2s ease;
   text-decoration: none;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
 }
-.google-play-badge-official:hover {
-  border-color: var(--blue-primary);
+.playstore-badge-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0,163,225,0.25);
+  filter: drop-shadow(0 8px 16px rgba(0, 163, 225, 0.35));
 }
-.gp-badge-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  line-height: 1.15;
-}
-.gp-sub {
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: rgba(255,255,255,0.8);
-}
-.gp-main {
-  font-size: 1.05rem;
-  font-weight: 700;
-  font-family: var(--font-heading);
-  color: #FFFFFF;
+.google-play-badge-img {
+  height: 52px;
+  width: auto;
+  display: block;
 }
 
 /* Footer Contact & Social Icons */
