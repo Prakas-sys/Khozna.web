@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ══ 1. Navbar: always white, active link highlight on scroll ══ */
 function initNavbar() {
   // Highlight active nav link based on scroll position
-  const sections = ['how-it-works', 'tour', 'verified', 'local', 'faq'];
+  const sections = ['how-it-works', 'app-preview', 'property-detail', 'verified', 'local', 'faq'];
   const navLinks = document.querySelectorAll('.nav-link');
 
   function updateActive() {
@@ -81,14 +81,16 @@ function initWaitlistForms() {
       });
       input.placeholder = 'See you when we launch 🎉';
 
-      // Increment counter display
-      const counter = document.getElementById('counter-display');
-      if (counter) {
-        const current = parseInt(counter.dataset.count || WAITLIST_COUNT, 10);
-        const next = current + 1;
-        counter.dataset.count = next;
-        counter.textContent = formatCount(next) + '+';
-      }
+      // Increment both counter displays
+      ['counter-display', 'wl-counter-num'].forEach(id => {
+        const counter = document.getElementById(id);
+        if (counter) {
+          const current = parseInt(counter.dataset.count || WAITLIST_COUNT, 10);
+          const next = current + 1;
+          counter.dataset.count = next;
+          counter.textContent = formatCount(next) + '+';
+        }
+      });
     });
   });
 }
@@ -135,10 +137,12 @@ function formatCount(n) {
 
 /* ══ 3. Counter init ══ */
 function initCounter() {
-  const counter = document.getElementById('counter-display');
-  if (!counter) return;
-  counter.dataset.count = WAITLIST_COUNT;
-  counter.textContent = formatCount(WAITLIST_COUNT) + '+';
+  ['counter-display', 'wl-counter-num'].forEach(id => {
+    const counter = document.getElementById(id);
+    if (!counter) return;
+    counter.dataset.count = WAITLIST_COUNT;
+    counter.textContent = formatCount(WAITLIST_COUNT) + '+';
+  });
 }
 
 /* ══ 4. Mobile hamburger + drawer ══ */
@@ -361,9 +365,9 @@ const TRANSLATIONS = {
 
     // Verified Owner Section
     'ver-label': 'Verified, not just listed',
-    'ver-title': 'That green badge means something.',
+    'ver-title': 'That blue badge means something.',
     'ver-d1': 'Every owner on Khozna goes through a KYC check. We verify their identity before their listing goes live.',
-    'ver-d2': 'When you see the Verified Owner badge next to a name, you\'re talking to a real person who actually owns the place.',
+    'ver-d2': 'When you see the ✓ Verified Owner badge next to a name, you\'re talking to a real person who actually owns the place.',
     'ver-p1': 'Government ID verified',
     'ver-p2': 'Real name, real owner',
     'ver-p3': 'Reported listings reviewed within 24 hours',
