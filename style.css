@@ -9,8 +9,8 @@
   --blue-light-bg:  #F0F9FF;
   --blue-banner:    #00A3E1;
   
-  --dark-slate:     #2D3736; /* Dark background section from reference mockup */
-  --footer-dark:    #0D131A;
+  --dark-slate:     #0B132B; /* Rich Deep Navy Slate for maximum color harmony with #00A3E1 */
+  --footer-dark:    #070C18; /* Ultra-Deep Midnight Blue */
   
   --white:          #FFFFFF;
   --off-white:      #F8FAFC;
@@ -49,7 +49,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .section-white { background: var(--white); }
 .section-light-grey { background: var(--off-white); }
 .section-dark-slate { background: var(--dark-slate); color: var(--white); }
-.section-blue-banner { background: var(--blue-banner); color: var(--white); }
+.section-blue-banner { background: linear-gradient(135deg, #00A3E1 0%, #0077A3 100%); color: var(--white); }
 .text-center { text-align: center; }
 .text-blue { color: var(--blue-primary); }
 
@@ -350,9 +350,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 0.75rem; font-weight: 700; color: white;
   flex-shrink: 0;
 }
-.blue-bg { background: var(--blue-primary); }
-.green-bg { background: #10B981; }
-.red-bg { background: #EF4444; }
+.blue-bg { background: var(--blue-primary); box-shadow: 0 4px 12px rgba(0,163,225,0.3); }
+.green-bg { background: #10B981; box-shadow: 0 4px 12px rgba(16,185,129,0.3); }
+.red-bg { background: #F43F5E; box-shadow: 0 4px 12px rgba(244,63,94,0.3); }
 
 .tag-text strong { display: block; font-size: 0.78rem; color: var(--text-primary); }
 .tag-text span { font-size: 0.7rem; color: var(--text-muted); }
