@@ -558,7 +558,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   filter: drop-shadow(0 8px 16px rgba(0, 163, 225, 0.35));
 }
 .google-play-badge-img {
-  height: 52px;
+  height: 60px;
   width: auto;
   display: block;
 }
