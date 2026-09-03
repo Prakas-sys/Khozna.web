@@ -545,6 +545,81 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .footer-brand-name { font-family: var(--font-heading); font-weight: 800; font-size: 1.3rem; }
 .footer-tagline { color: #64748B; font-size: 0.88rem; max-width: 280px; line-height: 1.6; }
 
+/* Official Standard Google Play Badge */
+.google-play-badge-official {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 22px;
+  background: #0A0F1D;
+  color: #FFFFFF;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255,255,255,0.22);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+.google-play-badge-official:hover {
+  border-color: var(--blue-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,163,225,0.25);
+}
+.gp-badge-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  line-height: 1.15;
+}
+.gp-sub {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.8);
+}
+.gp-main {
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: #FFFFFF;
+}
+
+/* Footer Contact & Social Icons */
+.footer-social-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+.social-icon-btn {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #94A3B8;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.social-icon-btn:hover {
+  color: var(--blue-primary);
+  border-color: var(--blue-primary);
+  background: rgba(0,163,225,0.1);
+}
+
+.footer-contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #94A3B8;
+}
+.contact-item svg { flex-shrink: 0; }
+
 .footer-heading { font-family: var(--font-heading); font-size: 0.92rem; font-weight: 700; margin-bottom: 16px; color: var(--white); }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .footer-links a { color: #94A3B8; font-size: 0.88rem; transition: color 0.2s; }
