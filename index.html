@@ -88,6 +88,10 @@
   }
   </script>
 
+  <!-- Preload critical above-fold assets -->
+  <link rel="preload" href="/public/discover mockup.png" as="image" />
+  <link rel="preload" href="style.css" as="style" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -212,7 +216,7 @@
         </div>
 
         <div class="hero-phone-frame">
-          <img src="/public/discover mockup.png" alt="Khozna App Screen" class="hero-mockup-img" />
+          <img src="/public/discover mockup.png" alt="Khozna App Screen" class="hero-mockup-img" loading="eager" fetchpriority="high" decoding="async" width="320" height="640" />
         </div>
       </div>
 
@@ -229,7 +233,7 @@
         <a href="#waitlist" class="btn-pill-primary btn-lg">Explore Listings →</a>
       </div>
       <div class="split-visual reveal-on-scroll reveal-delay-1">
-        <img src="/public/discover mockup.png" alt="Discover Mobile Preview" class="split-mockup-img" />
+        <img src="/public/discover mockup.png" alt="Discover Mobile Preview" class="split-mockup-img" loading="lazy" decoding="async" width="320" height="640" />
       </div>
     </div>
   </section>
@@ -280,7 +284,7 @@
   <section class="section section-light-grey" id="property-detail">
     <div class="container split-grid">
       <div class="split-visual reveal-on-scroll">
-        <img src="/public/property detail mockup.png" alt="Property Detail Mockup" class="split-mockup-img mockup-detail" />
+        <img src="/public/property detail mockup.png" alt="Property Detail Mockup" class="split-mockup-img mockup-detail" loading="lazy" decoding="async" width="320" height="640" />
       </div>
       <div class="split-content reveal-on-scroll reveal-delay-1">
         <span class="pill-badge">APP FEATURE</span>
@@ -314,7 +318,7 @@
       </div>
 
       <div class="banner-phone-preview reveal-on-scroll reveal-delay-1">
-        <img src="/public/discover mockup.png" alt="Khozna App Close-up" class="banner-mockup-img" />
+        <img src="/public/discover mockup.png" alt="Khozna App Close-up" class="banner-mockup-img" loading="lazy" decoding="async" width="280" height="560" />
       </div>
     </div>
   </section>
