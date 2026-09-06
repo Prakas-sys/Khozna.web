@@ -503,7 +503,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: 20px;
 }
 .dark-title {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 800;
   color: var(--white);
@@ -537,7 +537,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-bottom: 20px;
 }
 .card-item-title {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 10px;
