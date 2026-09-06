@@ -553,11 +553,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   filter: drop-shadow(0 22px 45px rgba(0,0,0,0.15));
 }
 .split-mockup-img.mockup-detail {
-  width: 720px;
-  max-width: 140%;
-  transform: scale(1.2);
-  transform-origin: center center;
-  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.28));
+  width: 480px;
+  max-width: 100%;
+  filter: drop-shadow(0 25px 50px rgba(0,0,0,0.18));
 }
 .split-screen-frame {
   width: 250px;
@@ -897,9 +895,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     width: 310px;
   }
   .split-mockup-img.mockup-detail {
-    width: 500px;
-    max-width: 115%;
-    transform: scale(1.1);
+    width: 360px;
+    max-width: 100%;
   }
   .split-screen-frame {
     width: 230px;
