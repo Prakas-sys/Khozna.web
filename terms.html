@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self'; connect-src 'self' https://script.google.com https://docs.google.com; frame-ancestors 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  
+  <title>Legal & Policy Hub — KHOZNA | Terms, Privacy, Refunds & Agreements</title>
+  <meta name="title" content="Legal & Policy Hub — KHOZNA | Terms, Privacy, Refunds & Agreements" />
+  <meta name="description" content="Official legal policies, Terms of Service, Privacy Policy, Escrow Refund rules, Host Agreement, and Data Deletion Portal for Khozna Private Limited." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://khozna.com/terms.html" />
+  
+  <link rel="shortcut icon" href="/public/logo%202.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/logo%202.png" />
+  <meta name="theme-color" content="#00A3E1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    :root {
+      --legal-bg: #F8FAFC;
+      --legal-sidebar-width: 310px;
+      --primary: #00A3E1;
+      --primary-dark: #0082B5;
+      --text-dark: #0F172A;
+      --text-muted: #64748B;
+      --border-color: #E2E8F0;
+      --card-bg: #FFFFFF;
+    }
+
+    body {
+      background-color: var(--legal-bg);
+      color: var(--text-dark);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+
+    .legal-nav-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 24px;
+    }
+
+    .legal-nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .legal-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .legal-brand img {
+      height: 36px;
+      width: auto;
+    }
+
+    .legal-brand span {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--text-dark);
+      letter-spacing: 0.5px;
+    }
+
+    .back-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 99px;
+      background-color: #F1F5F9;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .back-home-btn:hover {
+      background-color: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .legal-layout {
+      max-width: 1280px;
+      margin: 40px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: var(--legal-sidebar-width) 1fr;
+      gap: 36px;
+    }
+
+    /* Sidebar Sticky Navigation */
+    .legal-sidebar {
+      position: sticky;
+      top: 100px;
+      height: calc(100vh - 120px);
+      overflow-y: auto;
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .sidebar-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .legal-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .legal-menu-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-radius: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: all 0.2s ease;
+    }
+
+    .legal-menu-link:hover,
+    .legal-menu-link.active {
+      background-color: rgba(0, 163, 225, 0.08);
+      color: var(--primary);
+    }
+
+    .legal-menu-link.active {
+      font-weight: 700;
+      border-left: 4px solid var(--primary);
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    .badge-num {
+      background: #E2E8F0;
+      color: var(--text-dark);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+    }
+
+    .legal-menu-link.active .badge-num {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .action-box {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      background: #FFFFFF;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 100%;
+      text-decoration: none;
+    }
+
+    .btn-action:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Content Area */
+    .legal-content {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 40px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .policy-section {
+      display: none;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .policy-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .policy-header {
+      border-bottom: 2px solid #F1F5F9;
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+
+    .policy-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+
+    .policy-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .policy-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #F8FAFC;
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid #E2E8F0;
+    }
+
+    /* Policy Markdown Formatting */
+    .policy-body h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-top: 32px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .policy-body p {
+      margin-bottom: 16px;
+      color: #334155;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .policy-body ul, .policy-body ol {
+      margin-bottom: 20px;
+      padding-left: 24px;
+      color: #334155;
+    }
+
+    .policy-body li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .alert-callout {
+      padding: 20px;
+      border-radius: 16px;
+      margin: 24px 0;
+      border-left: 5px solid var(--primary);
+      background: #F0F9FF;
+    }
+
+    .alert-callout.warning {
+      border-left-color: #EF4444;
+      background: #FEF2F2;
+    }
+
+    .alert-callout.success {
+      border-left-color: #10B981;
+      background: #ECFDF5;
+    }
+
+    .alert-callout-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-dark);
+      font-size: 1rem;
+    }
+
+    /* Web Form for Data Deletion */
+    .deletion-form-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 28px;
+      margin-top: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      color: var(--text-dark);
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid #CBD5E1;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      background: #FFFFFF;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 163, 225, 0.15);
+    }
+
+    .submit-btn {
+      background: var(--primary);
+      color: #FFFFFF;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    /* FAQ accordion styling in policy page */
+    .policy-faq-box {
+      border: 1px solid #E2E8F0;
+      border-radius: 14px;
+      margin-bottom: 14px;
+      overflow: hidden;
+      background: #FFFFFF;
+    }
+
+    .policy-faq-box summary {
+      padding: 18px 24px;
+      font-weight: 700;
+      cursor: pointer;
+      user-select: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.05rem;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .policy-faq-box summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .policy-faq-box[open] summary {
+      border-bottom: 1px solid #F1F5F9;
+      background: #F8FAFC;
+      color: var(--primary);
+    }
+
+    .policy-faq-answer {
+      padding: 20px 24px;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 992px) {
+      .legal-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .legal-sidebar {
+        position: static;
+        height: auto;
+      }
+
+      .legal-content {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="legal-nav-header">
+    <div class="legal-nav-container">
+      <a href="/" class="legal-brand">
+        <img src="/public/logo 2.png" alt="Khozna Logo" />
+        <span>KHOZNA</span>
+      </a>
+      <a href="/" class="back-home-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Website
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Legal Hub Layout -->
+  <main class="legal-layout">
+    
+    <!-- Sidebar Sticky Navigation -->
+    <aside class="legal-sidebar">
+      <div class="sidebar-title">Legal Documents</div>
+      <ul class="legal-menu" id="legal-menu">
+        <li>
+          <a href="#terms" class="legal-menu-link active" data-tab="terms">
+            <span>1. Terms & Conditions</span>
+            <span class="badge-num">v1.0</span>
+          </a>
+        </li>
+        <li>
+          <a href="#privacy" class="legal-menu-link" data-tab="privacy">
+            <span>2. Privacy Policy</span>
+            <span class="badge-num">v1.0</span>
+          </a>
+        </li>
+        <li>
+          <a href="#refund" class="legal-menu-link" data-tab="refund">
+            <span>3. Refund & Cancellation</span>
+            <span class="badge-num">v1.0</span>
+          </a>
+        </li>
+        <li>
+          <a href="#data-deletion" class="legal-menu-link" data-tab="data-deletion">
+            <span>4. Data Deletion Portal</span>
+            <span class="badge-num">Web</span>
+          </a>
+        </li>
+        <li>
+          <a href="#host-agreement" class="legal-menu-link" data-tab="host-agreement">
+            <span>5. Host Agreement</span>
+            <span class="badge-num">v1.0</span>
+          </a>
+        </li>
+        <li>
+          <a href="#faq" class="legal-menu-link" data-tab="faq">
+            <span>6. Legal FAQs</span>
+            <span class="badge-num">Help</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="action-box">
+        <button class="btn-action" onclick="window.print()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Print Document
+        </button>
+        <button class="btn-action" onclick="copyPolicyLink()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span id="copy-text">Share Direct Link</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Policy Content Area -->
+    <article class="legal-content">
+
+      <!-- ════════════ 1. TERMS & CONDITIONS ════════════ -->
+      <section class="policy-section active" id="sec-terms">
+        <div class="policy-header">
+          <h1 class="policy-title">Terms & Conditions of Service</h1>
+          <div class="policy-meta">
+            <span><strong>Entity:</strong> Khozna Private Limited</span>
+            <span><strong>Jurisdiction:</strong> Nepal (Kathmandu)</span>
+            <span><strong>Effective Date:</strong> September 6, 2026</span>
+          </div>
+        </div>
+
+        <div class="policy-body">
+          <h3>1. Acceptance of Terms</h3>
+          <p>By downloading, accessing, or using the Khozna mobile application or website (khozna.com), operated by Khozna Private Limited ("Platform", "we", "us", or "our"), you ("User", "Seeker", or "Host") agree to be legally bound by these Terms of Service. If you do not agree to all terms, do not use the Platform.</p>
+
+          <h3>2. Platform Scope & Role</h3>
+          <p>Khozna strictly operates as a digital marketplace and technology facilitator connecting house owners/landlords ("Hosts") with individuals seeking room or apartment rentals ("Seekers") in Nepal.</p>
+          <ul>
+            <li>Khozna is <strong>not</strong> a real estate brokerage or property management company.</li>
+            <li>We do not own, inspect, or manage listed physical properties unless certified under an official Khozna badge.</li>
+            <li>Rental agreements, lease terms, and physical move-in conditions are strictly negotiated between the Host and Seeker.</li>
+          </ul>
+
+          <h3>3. User Accounts & KYC Verification</h3>
+          <p>To prevent fraudulent activity and protect safety across Nepal, users must complete Know-Your-Customer (KYC) verification by providing valid government identity documents (Citizenship Certificate, Passport, or Driving License).</p>
+          <div class="alert-callout warning">
+            <div class="alert-callout-title">⚠️ Strictly Enforced KYC Policy</div>
+            <p>Providing forged or misleading identity documents will result in an immediate permanent ban and reporting to the Cyber Bureau of Nepal Police.</p>
+          </div>
+
+          <h3>4. Mandatory Property Inspection & Safety</h3>
+          <ul>
+            <li><strong>Inspect Before Paying:</strong> Seekers must physically visit and inspect the room and verify the landlord's genuine ownership status prior to executing a lease or transferring full advance rent.</li>
+            <li><strong>Off-Platform Warning:</strong> NEVER transfer advance cash or direct off-platform payments to individuals claiming to be hosts before inspecting the property in person. Payments made via the official Khozna Escrow system are protected under our Escrow Policy.</li>
+          </ul>
+
+          <h3>5. Khozna Escrow Protection</h3>
+          <p>When a booking deposit or fee is paid via the Khozna App using eSewa, Khalti, or Bank transfer, funds are securely held in the <strong>Khozna Escrow Account</strong>. Funds are released to the Host only upon Seeker inspection confirmation or move-in verification.</p>
+
+          <h3>6. Limitation of Liability</h3>
+          <ul>
+            <li>Khozna provides the platform "AS-IS" without warranties of any kind.</li>
+            <li>Khozna is NOT liable for financial losses, fraud, or property disputes occurring from off-platform dealings.</li>
+            <li>Khozna does NOT initiate police reports on behalf of individual users. Users involved in disputes must contact Nepal Police independently.</li>
+            <li>Khozna’s cumulative liability for any claim shall not exceed the platform service fee collected for the relevant transaction.</li>
+          </ul>
+
+          <h3>7. Prohibited Conduct</h3>
+          <p>Users are prohibited from:</p>
+          <ol>
+            <li>Posting false, deceptive, or stolen room videos and photos.</li>
+            <li>Demanding hidden fees or soliciting off-platform cash advances.</li>
+            <li>Harassing, discriminating against, or abusing other platform users.</li>
+            <li>Using automated scripts, bots, or scrapers against Khozna systems.</li>
+          </ol>
+
+          <h3>8. Governing Law & Dispute Resolution</h3>
+          <p>These terms are governed by the laws of Nepal. Any legal action or dispute shall be subject to the exclusive jurisdiction of the competent courts in Kathmandu, Nepal.</p>
+        </div>
+      </section>
+
+      <!-- ════════════ 2. PRIVACY POLICY ════════════ -->
+      <section class="policy-section" id="sec-privacy">
+        <div class="policy-header">
+          <h1 class="policy-title">Privacy Policy</h1>
+          <div class="policy-meta">
+            <span><strong>Effective Date:</strong> September 6, 2026</span>
+            <span><strong>Compliance:</strong> Google Play Store & Apple App Store Guidelines</span>
+          </div>
+        </div>
+
+        <div class="policy-body">
+          <h3>1. Overview</h3>
+          <p>Khozna Private Limited ("Khozna", "we", "us") respects your personal privacy. This Privacy Policy details how we collect, process, store, and safeguard your data when using the Khozna app and website in Nepal.</p>
+
+          <h3>2. Information We Collect</h3>
+          <ol>
+            <li><strong>Personal Identification:</strong> Name, Email Address, Registered Phone Number, Profile Avatar.</li>
+            <li><strong>KYC Verification Data:</strong> Images of government-issued IDs (Citizenship, Passport, Driving License, Student ID).</li>
+            <li><strong>Location Data (GPS):</strong> Precise geographic location collected with user permission to map nearby rooms, verify host property addresses, and enable distance-based searches.</li>
+            <li><strong>Media Uploads:</strong> Room walkthrough videos, photos, and listing media uploaded by hosts and users.</li>
+            <li><strong>Transaction Data:</strong> Payment logs via eSewa, Khalti, or Bank transfers (Note: Khozna does NOT store raw wallet passwords or PINs).</li>
+          </ol>
+
+          <h3>3. How We Use Information</h3>
+          <ul>
+            <li>Verifying host identities and authenticating room ownership to eliminate rental scams.</li>
+            <li>Enabling scheduled room visits and tenant-landlord communication.</li>
+            <li>Processing secure escrow holding deposits and host payouts via eSewa/Khalti.</li>
+            <li>Improving location-based room recommendations and AI search queries.</li>
+          </ul>
+
+          <h3>4. Data Sharing & Disclosure Rules</h3>
+          <ul>
+            <li><strong>Strict Anti-Ad Sharing:</strong> We NEVER sell your personal data to third-party ad networks.</li>
+            <li><strong>Mutual Visit Sharing:</strong> Your phone number is disclosed to the Host or Seeker ONLY after a visit request is accepted or a booking deposit is paid.</li>
+            <li><strong>KYC Confidentiality:</strong> Submitted identity documents are strictly private for internal compliance and are NEVER visible to other platform users.</li>
+            <li><strong>Legal Compliance:</strong> Data may be disclosed to Nepal Police or judicial authorities upon receiving an official court warrant.</li>
+          </ul>
+
+          <h3>5. Data Security</h3>
+          <p>We employ bank-grade SSL/TLS encryption in transit and AES-256 encryption at rest. Sensitive screens within the Khozna mobile application enforce screenshot-blocking technology to prevent identity theft.</p>
+
+          <h3>6. User Rights & Data Deletion</h3>
+          <p>You retain the right to view, update, export, or permanently delete your account and personal data. To submit a deletion request, visit our <strong>Data Deletion Portal</strong> at <a href="#data-deletion" onclick="switchTab('data-deletion')" style="color:var(--primary); font-weight:700;">khozna.com/legal/data-deletion.html</a>.</p>
+        </div>
+      </section>
+
+      <!-- ════════════ 3. REFUND & CANCELLATION ════════════ -->
+      <section class="policy-section" id="sec-refund">
+        <div class="policy-header">
+          <h1 class="policy-title">Refund & Cancellation Policy</h1>
+          <div class="policy-meta">
+            <span><strong>Effective Date:</strong> September 6, 2026</span>
+            <span><strong>Coverage:</strong> eSewa, Khalti, ConnectIPS & Bank Transfers</span>
+          </div>
+        </div>
+
+        <div class="policy-body">
+          <h3>1. Khozna Escrow Protection</h3>
+          <p>All booking fees and room deposits paid through the Khozna App are automatically held in <strong>Khozna Escrow</strong>. Deposit funds remain locked in escrow until the Seeker inspects the property or approves move-in.</p>
+
+          <h3>2. Seeker Cancellation Terms</h3>
+          <ul>
+            <li><strong>Free Cancellation (100% Refund):</strong> Cancellations made at least 24 hours prior to the scheduled property visit qualify for a 100% full refund to the original payment source.</li>
+            <li><strong>Late Cancellation (within 24 hours):</strong> Cancellations submitted within 24 hours of the scheduled visit incur a nominal processing fee (NPR 100 or 5%), with the remaining balance refunded immediately.</li>
+          </ul>
+
+          <h3>3. Host Default & Non-Availability</h3>
+          <p>If a Host cancels a scheduled visit, fails to show up, or informs the Seeker that the room is no longer available:</p>
+          <div class="alert-callout success">
+            <div class="alert-callout-title">🛡️ 100% Instant Refund Guarantee</div>
+            <p>The Seeker receives a 100% full refund of all fees, and penalty points are assigned against the Host's account.</p>
+          </div>
+
+          <h3>4. Video & Photo Misrepresentation Guarantee</h3>
+          <p>If the physical room during inspection differs drastically from the video walkthrough or photos on Khozna (e.g. broken structure, missing promised amenities, wrong floor):</p>
+          <ol>
+            <li>Select <strong>"Report Misrepresentation"</strong> in the Khozna App within 2 hours of the visit.</li>
+            <li>Upon support team verification, a 100% full refund is issued immediately.</li>
+          </ol>
+
+          <h3>5. Refund Processing Timelines (SLA)</h3>
+          <ul>
+            <li><strong>Digital Wallets (eSewa / Khalti):</strong> Credited within 24 to 48 hours.</li>
+            <li><strong>Bank Account Transfers:</strong> Credited within 3 to 5 business days per Nepal interbank settlement rules.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ════════════ 4. DATA DELETION PORTAL ════════════ -->
+      <section class="policy-section" id="sec-data-deletion">
+        <div class="policy-header">
+          <h1 class="policy-title">Account & Data Deletion Policy</h1>
+          <div class="policy-meta">
+            <span><strong>Compliance:</strong> Google Play & Apple App Store Requirements</span>
+            <span><strong>URL:</strong> khozna.com/legal/data-deletion.html</span>
+          </div>
+        </div>
+
+        <div class="policy-body">
+          <h3>1. Data Deletion Overview</h3>
+          <p>In accordance with user privacy rights, any Khozna user can permanently request the deletion of their account and associated personal data.</p>
+
+          <h3>2. Option A: In-App Self-Service Deletion</h3>
+          <p>You can instantly purge your account within the Khozna Mobile App:</p>
+          <ol>
+            <li>Open the <strong>Khozna App</strong> and go to <strong>Profile</strong>.</li>
+            <li>Tap <strong>Edit Profile</strong>.</li>
+            <li>Scroll down and select <strong>Delete Account & Purge Data</strong>.</li>
+            <li>Confirm deletion. Your profile, media, and session will be permanently wiped.</li>
+          </ol>
+
+          <h3>3. Option B: Web Request Portal</h3>
+          <p>If you cannot access the mobile application, submit an online deletion request below or email <code>support@khozna.com</code>:</p>
+
+          <!-- Interactive Request Form -->
+          <div class="deletion-form-card">
+            <h4 style="font-family:'Plus Jakarta Sans',sans-serif; font-size:1.15rem; font-weight:800; margin-bottom:16px;">Submit Account Deletion Request</h4>
+            <form id="web-deletion-form" onsubmit="handleDeletionSubmit(event)">
+              <div class="form-group">
+                <label class="form-label" for="del-name">Full Registered Name *</label>
+                <input type="text" id="del-name" class="form-input" placeholder="e.g. Aarav Sharma" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="del-phone">Registered Phone Number (Nepal +977) *</label>
+                <input type="tel" id="del-phone" class="form-input" placeholder="e.g. +977 9801234567" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="del-email">Registered Email Address *</label>
+                <input type="email" id="del-email" class="form-input" placeholder="e.g. aarav@example.com" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="del-scope">Scope of Deletion *</label>
+                <select id="del-scope" class="form-select" required>
+                  <option value="full">Full Profile Wipe (All Personal & Listing Data)</option>
+                  <option value="kyc">KYC Purge (Identity Documents Only)</option>
+                  <option value="listings">Listing Media & Video Walkthrough Removal</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="del-reason">Reason for Deletion (Optional)</label>
+                <textarea id="del-reason" class="form-textarea" rows="3" placeholder="Let us know why you wish to delete your account..."></textarea>
+              </div>
+              <button type="submit" class="submit-btn" id="del-submit-btn">Submit Deletion Request →</button>
+            </form>
+            <div id="del-success-msg" style="display:none; margin-top:16px; padding:14px; background:#ECFDF5; border:1px solid #10B981; color:#065F46; border-radius:10px; font-weight:600;">
+              ✓ Your deletion request has been submitted to support@khozna.com. Our compliance team will process and purge your data within 48 hours.
+            </div>
+          </div>
+
+          <h3>4. Data Types Permanently Erased</h3>
+          <ul>
+            <li>User profile info (Name, Avatar, Contact Details, Saved Locations).</li>
+            <li>Submitted KYC identity photos (Citizenship, Passport, Student IDs).</li>
+            <li>Room listing videos, walkthrough clips, and photos.</li>
+            <li>Chat logs and AI search history.</li>
+          </ul>
+
+          <h3>5. Statutory Retention Exceptions</h3>
+          <p>Under Nepal Tax Laws and Financial Regulations, transaction logs and escrow invoices must be archived for up to 3 years. This data is isolated from active systems and used solely for statutory audits.</p>
+        </div>
+      </section>
+
+      <!-- ════════════ 5. HOST AGREEMENT ════════════ -->
+      <section class="policy-section" id="sec-host-agreement">
+        <div class="policy-header">
+          <h1 class="policy-title">Host & Property Owner Agreement</h1>
+          <div class="policy-meta">
+            <span><strong>Effective Date:</strong> September 6, 2026</span>
+            <span><strong>Target:</strong> Property Owners, Landlords & Authorized Agents in Nepal</span>
+          </div>
+        </div>
+
+        <div class="policy-body">
+          <h3>1. Host Eligibility & Authorization</h3>
+          <p>To list a room or property on Khozna, you warrant that you are the legal property owner or hold valid written authorization (subletting permissions) from the owner.</p>
+
+          <h3>2. Listing Quality & Video Standards</h3>
+          <ul>
+            <li><strong>Real Video Walkthroughs:</strong> Videos and photos must accurately portray the room's current state. Stock photos or deceptive media are strictly prohibited.</li>
+            <li><strong>Geographic Precision:</strong> The property location pinned on Khozna must match the exact building location.</li>
+            <li><strong>Functional Amenities:</strong> Amenities listed (Water, WiFi, Parking, Balcony) must be fully available to tenants as advertised.</li>
+          </ul>
+
+          <h3>3. Transparent Rent & No Hidden Surcharges</h3>
+          <p>The monthly rent displayed on Khozna must be the complete rental cost. Hosts may NOT demand unannounced extra fees or broker commissions upon tenant arrival.</p>
+
+          <h3>4. Escrow Payouts & Commission</h3>
+          <p>Booking deposits are secured in Khozna Escrow. Upon tenant visit completion or move-in approval, funds are transferred directly to your eSewa, Khalti, or Bank account minus Khozna’s nominal platform service fee.</p>
+
+          <h3>5. Host Cancellation Penalties</h3>
+          <p>Canceling accepted visit requests without a verified emergency degrades user experience. Defaulting hosts will suffer search ranking penalties and risk permanent account suspension.</p>
+        </div>
+      </section>
+
+      <!-- ════════════ 6. FAQS ════════════ -->
+      <section class="policy-section" id="sec-faq">
+        <div class="policy-header">
+          <h1 class="policy-title">Frequently Asked Questions (FAQs)</h1>
+          <div class="policy-meta">
+            <span><strong>Updated:</strong> September 2026</span>
+            <span><strong>Topic:</strong> General, Seekers, Hosts, Escrow & Safety</span>
+          </div>
+        </div>
+
+        <div class="policy-body">
+          <h3 style="color:var(--primary); margin-top:16px;">General Questions</h3>
+          
+          <details class="policy-faq-box" open>
+            <summary>What is Khozna? <span>›</span></summary>
+            <div class="policy-faq-answer">
+              <p>Khozna is Nepal's premier digital room renting platform connecting tenants with verified hosts using video walkthroughs, map locations, KYC safety, and Escrow payments.</p>
+            </div>
+          </details>
+
+          <details class="policy-faq-box">
+            <summary>Which cities does Khozna cover? <span>›</span></summary>
+            <div class="policy-faq-answer">
+              <p>Khozna operates nationwide across Nepal, including Kathmandu Valley (Kathmandu, Lalitpur, Bhaktapur), Pokhara, Chitwan, and Butwal.</p>
+            </div>
+          </details>
+
+          <h3 style="color:var(--primary); margin-top:28px;">Room Seekers</h3>
+
+          <details class="policy-faq-box">
+            <summary>How do I book a room visit? <span>›</span></summary>
+            <div class="policy-faq-answer">
+              <p>Browse listings, watch the video walkthrough, and tap "Book Visit". Once the host confirms, you will receive full location pin and contact details.</p>
+            </div>
+          </details>
+
+          <details class="policy-faq-box">
+            <summary>What if the room is different from the video? <span>›</span></summary>
+            <div class="policy-faq-answer">
+              <p>Tap "Report Misrepresentation" in the app within 2 hours of your visit to receive a 100% full escrow refund.</p>
+            </div>
+          </details>
+
+          <h3 style="color:var(--primary); margin-top:28px;">Hosts & Property Owners</h3>
+
+          <details class="policy-faq-box">
+            <summary>How do I list a room? <span>›</span></summary>
+            <div class="policy-faq-answer">
+              <p>Tap the "+" icon in the Khozna App, record a quick video walkthrough, enter rent details, set location, and submit your KYC.</p>
+            </div>
+          </details>
+
+          <details class="policy-faq-box">
+            <summary>When do I receive my rent payment? <span>›</span></summary>
+            <div class="policy-faq-answer">
+              <p>Escrow funds are disbursed to your registered Khalti/eSewa/Bank account immediately after the tenant inspects or confirms move-in.</p>
+            </div>
+          </details>
+
+          <h3 style="color:var(--primary); margin-top:28px;">Safety & Escrow</h3>
+
+          <details class="policy-faq-box">
+            <summary>How does Escrow protect me? <span>›</span></summary>
+            <div class="policy-faq-answer">
+              <p>Escrow holds booking payments safely until you physically inspect the room. Funds are never released to the host without your confirmation.</p>
+            </div>
+          </details>
+
+          <details class="policy-faq-box">
+            <summary>How do I delete my account? <span>›</span></summary>
+            <div class="policy-faq-answer">
+              <p>Go to Profile -> Edit Profile -> Delete Account inside the app, or use our <a href="#data-deletion" onclick="switchTab('data-deletion')" style="color:var(--primary); font-weight:700;">Data Deletion Web Portal</a>.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <script>
+    // Tab switching logic
+    function switchTab(tabId) {
+      // Remove active from all links and sections
+      document.querySelectorAll('.legal-menu-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-tab') === tabId) {
+          link.classList.add('active');
+        }
+      });
+
+      document.querySelectorAll('.policy-section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+
+      const activeSec = document.getElementById('sec-' + tabId);
+      if (activeSec) {
+        activeSec.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    // Hash based routing on load and hash change
+    function handleHash() {
+      const hash = window.location.hash.replace('#', '');
+      const validTabs = ['terms', 'privacy', 'refund', 'data-deletion', 'host-agreement', 'faq'];
+      if (hash && validTabs.includes(hash)) {
+        switchTab(hash);
+      } else {
+        switchTab('terms');
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      handleHash();
+
+      document.querySelectorAll('.legal-menu-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetTab = link.getAttribute('data-tab');
+          window.location.hash = targetTab;
+          switchTab(targetTab);
+        });
+      });
+    });
+
+    window.addEventListener('hashchange', handleHash);
+
+    function copyPolicyLink() {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        const copyText = document.getElementById('copy-text');
+        copyText.textContent = '✓ Link Copied!';
+        setTimeout(() => { copyText.textContent = 'Share Direct Link'; }, 2000);
+      });
+    }
+
+    function handleDeletionSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('del-name').value;
+      const phone = document.getElementById('del-phone').value;
+      const email = document.getElementById('del-email').value;
+      const scope = document.getElementById('del-scope').value;
+      const reason = document.getElementById('del-reason').value;
+
+      document.getElementById('del-submit-btn').textContent = 'Submitting Request...';
+      document.getElementById('del-submit-btn').disabled = true;
+
+      // Construct mailto as fallback / direct alert
+      const subject = encodeURIComponent('DATA DELETION REQUEST - ' + name);
+      const body = encodeURIComponent(`Full Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nScope: ${scope}\nReason: ${reason}\nTimestamp: ${new Date().toISOString()}`);
+
+      setTimeout(() => {
+        document.getElementById('del-submit-btn').style.display = 'none';
+        document.getElementById('del-success-msg').style.display = 'block';
+        window.location.href = `mailto:support@khozna.com?subject=${subject}&body=${body}`;
+      }, 800);
+    }
+  </script>
+</body>
+</html>

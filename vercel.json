@@ -17,6 +17,26 @@
     {
       "source": "/favicon.ico",
       "destination": "/public/logo%202.png"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/refund",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/host-agreement",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/legal/data-deletion",
+      "destination": "/legal/data-deletion.html"
     }
   ],
   "headers": [
