@@ -392,13 +392,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .hero-phone-container {
   position: relative;
   width: 100%;
-  max-width: 520px;
+  max-width: 620px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
 }
 .hero-phone-frame {
-  width: 270px;
+  width: 340px;
   position: relative;
   z-index: 2;
   filter: drop-shadow(0 25px 50px rgba(0,0,0,0.15));
@@ -547,7 +547,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .split-visual { display: flex; justify-content: center; }
 .split-mockup-img {
-  width: 320px;
+  width: 380px;
+  max-width: 100%;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.12));
 }
 
@@ -652,7 +653,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   justify-content: center;
 }
 .banner-mockup-img {
-  width: 280px;
+  width: 350px;
+  max-width: 100%;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
 }
 
@@ -851,7 +853,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     position: static;
   }
   .hero-phone-frame {
-    width: 230px;
+    width: 290px;
     margin-bottom: 12px;
   }
   
@@ -866,10 +868,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .floating-tag:hover { transform: none; }
   
   .split-mockup-img {
-    width: 260px;
+    width: 310px;
   }
   .banner-mockup-img {
-    width: 240px;
+    width: 290px;
   }
   .banner-content {
     text-align: center;
@@ -882,7 +884,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     font-size: 1.8rem;
   }
   .hero-phone-frame {
-    width: 200px;
+    width: 260px;
   }
   .banner-form-pill {
     flex-direction: column;
