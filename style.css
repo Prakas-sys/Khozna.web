@@ -553,9 +553,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   filter: drop-shadow(0 22px 45px rgba(0,0,0,0.15));
 }
 .split-mockup-img.mockup-detail {
-  width: 400px;
+  width: 580px;
   max-width: 100%;
-  filter: drop-shadow(0 25px 50px rgba(0,0,0,0.18));
+  filter: drop-shadow(0 35px 70px rgba(0,0,0,0.22));
 }
 .split-screen-frame {
   width: 250px;
@@ -895,7 +895,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     width: 310px;
   }
   .split-mockup-img.mockup-detail {
-    width: 310px;
+    width: 420px;
   }
   .split-screen-frame {
     width: 230px;
