@@ -50,10 +50,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .section-white { background: var(--white); }
 .section-light-grey { background: var(--off-white); }
 .section-dark-slate {
-  background: linear-gradient(135deg, #0E232B 0%, #1A3944 100%);
+  background: linear-gradient(135deg, #487181 0%, #365764 100%);
   color: var(--white);
-  border-top: 1px solid rgba(72, 113, 129, 0.25);
-  border-bottom: 1px solid rgba(72, 113, 129, 0.25);
 }
 .section-blue-banner { background: linear-gradient(135deg, #00A3E1 0%, #0077A3 100%); color: var(--white); }
 .text-center { text-align: center; }
@@ -462,7 +460,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .dark-header-desc {
   max-width: 440px;
-  color: #94A3B8;
+  color: #E2E8F0;
   font-size: 0.95rem;
   line-height: 1.6;
 }
