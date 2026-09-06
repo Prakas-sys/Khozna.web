@@ -349,7 +349,7 @@ const TRANSLATIONS = {
     // Hero Section
     'hero-badge': '🇳🇵 Coming to Kathmandu',
     'hero-title': 'Find Your Next Home.<br /><span class="hero-highlight">No Middleman.</span>',
-    'hero-sub': 'Browse verified rooms, apartments, and houses. Talk directly to the owner. Request a visit. Move in — without paying a dalal a single rupee.',
+    'hero-sub': 'Browse verified rooms, apartments, and houses. Talk directly to the owner. Request a visit. Move in — without paying a broker a single rupee.',
     'hero-note': 'We\'ll email you the moment Khozna opens in Kathmandu.',
 
     // Placeholders
@@ -363,7 +363,7 @@ const TRANSLATIONS = {
     'prob-sub': 'Anyone who\'s looked for a room here knows the drill.',
     'prob-c1-t': 'No real photos',
     'prob-c1-d': 'You\'re making decisions based on a blurry picture and a neighbour\'s vague description. "Bright room, good location" — could be anything.',
-    'prob-c2-t': 'Dalal fee for what, exactly?',
+    'prob-c2-t': 'Broker fee for what, exactly?',
     'prob-c2-d': 'The broker takes Rs 3,000–10,000+, shows you three places you already found online, and disappears. Zero paperwork. Zero accountability.',
     'prob-c3-t': 'Who even is this owner?',
     'prob-c3-d': 'No ID check. No verification. You wire a deposit to a number from a Facebook post and hope for the best.',
@@ -430,7 +430,7 @@ const TRANSLATIONS = {
 
     // Footer
     'foot-tagline': 'Nepal\'s rental market, fixed.',
-    'foot-wl-label': 'Ready to ditch the dalal? Join the list.',
+    'foot-wl-label': 'Ready to ditch the broker? Join the list.',
     'foot-copyright': '© 2026 Khozna. Made in Nepal 🇳🇵',
     'foot-privacy': 'Privacy',
     'foot-terms': 'Terms',
