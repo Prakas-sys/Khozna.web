@@ -9,8 +9,9 @@
   --blue-light-bg:  #F0F9FF;
   --blue-banner:    #00A3E1;
   
-  --dark-slate:     #0B132B; /* Rich Deep Navy Slate for maximum color harmony with #00A3E1 */
-  --footer-dark:    #070C18; /* Ultra-Deep Midnight Blue */
+  --dark-slate:     #122730; /* Dark Teal Slate blending #487181 for How Khozna Makes It Easy */
+  --slate-accent:   #487181; /* User suggested Teal Accent */
+  --footer-dark:    #081E26; /* User suggested Deep Dark Teal Footer */
   
   --white:          #FFFFFF;
   --off-white:      #F8FAFC;
@@ -48,7 +49,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .section { padding: 90px 0; }
 .section-white { background: var(--white); }
 .section-light-grey { background: var(--off-white); }
-.section-dark-slate { background: var(--dark-slate); color: var(--white); }
+.section-dark-slate {
+  background: linear-gradient(135deg, #0E232B 0%, #1A3944 100%);
+  color: var(--white);
+  border-top: 1px solid rgba(72, 113, 129, 0.25);
+  border-bottom: 1px solid rgba(72, 113, 129, 0.25);
+}
 .section-blue-banner { background: linear-gradient(135deg, #00A3E1 0%, #0077A3 100%); color: var(--white); }
 .text-center { text-align: center; }
 .text-blue { color: var(--blue-primary); }
@@ -547,7 +553,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ═══════════════════ FOOTER ═══════════════════ */
 .footer-dark {
-  background: #050811;
+  background: #081E26;
   color: var(--white);
   padding: 70px 0 30px;
 }
