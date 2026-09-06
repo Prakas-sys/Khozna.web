@@ -661,7 +661,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   justify-content: center;
 }
 .banner-mockup-img {
-  width: 320px;
+  width: 240px;
   max-width: 100%;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
 }
@@ -891,7 +891,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     max-height: 400px;
   }
   .banner-mockup-img {
-    width: 290px;
+    width: 200px;
   }
   .banner-content {
     text-align: center;
