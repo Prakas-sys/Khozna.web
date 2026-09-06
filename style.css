@@ -551,6 +551,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   max-width: 100%;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.12));
 }
+.split-screen-frame {
+  border-radius: 32px;
+  border: 8px solid #0F172A;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  object-fit: cover;
+}
 
 /* ═══════════════════ SECTION 3: DARK HOW IT WORKS ═══════════════════ */
 .dark-section-header {
