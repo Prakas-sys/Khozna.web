@@ -349,34 +349,63 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .hero-mockup-img { width: 100%; height: auto; }
 
-/* Floating Tooltip Callouts */
+/* Floating Tooltip Callouts (Pro Glassmorphism) */
 .floating-tag {
   position: absolute;
   z-index: 10;
-  background: var(--white);
-  border: 1px solid var(--grey-border);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  padding: 8px 14px;
-  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08), 0 2px 8px rgba(0, 0, 0, 0.02);
+  padding: 10px 16px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-align: left;
-  animation: floatAnim 4s ease-in-out infinite;
+  animation: floatAnim 4.5s ease-in-out infinite;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.floating-tag:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(0, 163, 225, 0.16);
+  border-color: rgba(0, 163, 225, 0.4);
 }
 .tag-icon {
-  width: 28px; height: 28px;
-  border-radius: 50%;
+  width: 36px; height: 36px;
+  border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 0.75rem; font-weight: 700; color: white;
   flex-shrink: 0;
 }
-.blue-bg { background: var(--blue-primary); box-shadow: 0 4px 12px rgba(0,163,225,0.3); }
-.green-bg { background: #10B981; box-shadow: 0 4px 12px rgba(16,185,129,0.3); }
-.red-bg { background: #F43F5E; box-shadow: 0 4px 12px rgba(244,63,94,0.3); }
+.blue-bg {
+  background: rgba(0, 163, 225, 0.12);
+  color: #00A3E1;
+  border: 1px solid rgba(0, 163, 225, 0.22);
+}
+.green-bg {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.22);
+}
+.red-bg {
+  background: rgba(244, 63, 94, 0.12);
+  color: #F43F5E;
+  border: 1px solid rgba(244, 63, 94, 0.22);
+}
 
-.tag-text strong { display: block; font-size: 0.78rem; color: var(--text-primary); }
-.tag-text span { font-size: 0.7rem; color: var(--text-muted); }
+.tag-text strong {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+.tag-text span {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
 
 .tag-top-left     { top: 20px; left: -40px; animation-delay: 0s; }
 .tag-top-right    { top: 40px; right: -40px; animation-delay: 1s; }
