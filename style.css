@@ -547,14 +547,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .split-visual { display: flex; justify-content: center; }
 .split-mockup-img {
-  width: 360px;
+  width: 320px;
   max-width: 100%;
+  height: auto;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.12));
 }
 .split-mockup-img.mockup-detail {
-  width: 520px;
+  width: 340px;
   max-width: 100%;
-  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 22px 45px rgba(0,0,0,0.16));
 }
 .split-screen-frame {
   width: 250px;
@@ -666,16 +667,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   justify-content: center;
 }
 .banner-mockup-img {
-  width: 270px;
-  max-height: 520px;
+  width: 250px;
+  max-height: 480px;
   max-width: 100%;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.25));
 }
 .banner-screen-frame {
-  border-radius: 20px;
-  border: 5px solid #0F172A;
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.3);
+  border-radius: 28px;
+  border: 6px solid #0F172A;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
   object-fit: cover;
+  object-position: top;
 }
 
 /* ═══════════════════ FAQ SECTION ═══════════════════ */
@@ -890,18 +892,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .floating-tag:hover { transform: none; }
   
   .split-mockup-img {
-    width: 300px;
+    width: 260px;
   }
   .split-mockup-img.mockup-detail {
-    width: 380px;
+    width: 270px;
   }
   .split-screen-frame {
     width: 210px;
     max-height: 400px;
   }
   .banner-mockup-img {
-    width: 220px;
-    max-height: 420px;
+    width: 210px;
+    max-height: 400px;
   }
   .banner-content {
     text-align: center;
