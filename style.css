@@ -653,9 +653,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   justify-content: center;
 }
 .banner-mockup-img {
-  width: 350px;
+  width: 320px;
   max-width: 100%;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
+}
+.banner-screen-frame {
+  border-radius: 32px;
+  border: 8px solid #0F172A;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  object-fit: cover;
 }
 
 /* ═══════════════════ FAQ SECTION ═══════════════════ */
