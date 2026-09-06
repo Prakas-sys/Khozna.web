@@ -11,12 +11,6 @@
       "has": [{ "type": "header", "key": "x-forwarded-proto", "value": "http" }],
       "destination": "https://khozna.com/$1",
       "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.khozna.com" }],
-      "destination": "https://khozna.com/$1",
-      "permanent": true
     }
   ],
   "rewrites": [
