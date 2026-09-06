@@ -547,7 +547,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .split-visual { display: flex; justify-content: center; }
 .split-mockup-img {
-  width: 380px;
+  width: 340px;
   max-width: 100%;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.12));
 }
