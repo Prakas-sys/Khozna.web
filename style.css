@@ -552,8 +552,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.12));
 }
 .split-mockup-img.mockup-detail {
-  width: 440px;
-  filter: drop-shadow(0 25px 50px rgba(0,0,0,0.18));
+  width: 520px;
+  max-width: 100%;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.2));
 }
 .split-screen-frame {
   width: 250px;
@@ -665,8 +666,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   justify-content: center;
 }
 .banner-mockup-img {
-  width: 190px;
-  max-height: 380px;
+  width: 270px;
+  max-height: 520px;
   max-width: 100%;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
 }
@@ -892,15 +893,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     width: 300px;
   }
   .split-mockup-img.mockup-detail {
-    width: 340px;
+    width: 380px;
   }
   .split-screen-frame {
     width: 210px;
     max-height: 400px;
   }
   .banner-mockup-img {
-    width: 170px;
-    max-height: 340px;
+    width: 220px;
+    max-height: 420px;
   }
   .banner-content {
     text-align: center;
