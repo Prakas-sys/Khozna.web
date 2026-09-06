@@ -547,14 +547,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .split-visual { display: flex; justify-content: center; }
 .split-mockup-img {
-  width: 340px;
+  width: 270px;
   max-width: 100%;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.12));
 }
 .split-screen-frame {
-  border-radius: 32px;
-  border: 8px solid #0F172A;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: 250px;
+  max-height: 480px;
+  border-radius: 24px;
+  border: 6px solid #0F172A;
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.25);
   object-fit: cover;
 }
 
@@ -882,7 +884,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .floating-tag:hover { transform: none; }
   
   .split-mockup-img {
-    width: 310px;
+    width: 230px;
+  }
+  .split-screen-frame {
+    width: 210px;
+    max-height: 400px;
   }
   .banner-mockup-img {
     width: 290px;
