@@ -661,14 +661,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   justify-content: center;
 }
 .banner-mockup-img {
-  width: 240px;
+  width: 190px;
+  max-height: 380px;
   max-width: 100%;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
 }
 .banner-screen-frame {
-  border-radius: 32px;
-  border: 8px solid #0F172A;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  border: 5px solid #0F172A;
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.3);
   object-fit: cover;
 }
 
@@ -891,7 +892,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     max-height: 400px;
   }
   .banner-mockup-img {
-    width: 200px;
+    width: 170px;
+    max-height: 340px;
   }
   .banner-content {
     text-align: center;
