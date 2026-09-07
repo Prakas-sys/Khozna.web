@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self'; connect-src 'self' https://script.google.com https://docs.google.com; frame-ancestors 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  
+  <title>Privacy Policy — KHOZNA | Peer-to-Peer Rental Marketplace Nepal</title>
+  <meta name="title" content="Privacy Policy — KHOZNA | Peer-to-Peer Rental Marketplace Nepal" />
+  <meta name="description" content="Official Privacy Policy for Khozna Private Limited. Learn how we collect, protect, and manage your data, location permissions, KYC verification, and privacy rights." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://khozna.com/privacy-policy" />
+  
+  <link rel="shortcut icon" href="/public/logo%202.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/logo%202.png" />
+  <meta name="theme-color" content="#00A3E1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    :root {
+      --legal-bg: #F8FAFC;
+      --legal-sidebar-width: 300px;
+      --primary: #00A3E1;
+      --primary-dark: #0082B5;
+      --text-dark: #0F172A;
+      --text-muted: #64748B;
+      --border-color: #E2E8F0;
+      --card-bg: #FFFFFF;
+    }
+
+    body {
+      background-color: var(--legal-bg);
+      color: var(--text-dark);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .legal-nav-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 24px;
+    }
+
+    .legal-nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .legal-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .legal-brand img {
+      height: 36px;
+      width: auto;
+    }
+
+    .legal-brand span {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--text-dark);
+      letter-spacing: 0.5px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .back-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 99px;
+      background-color: #F1F5F9;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .back-home-btn:hover {
+      background-color: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .legal-layout {
+      max-width: 1280px;
+      margin: 40px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: var(--legal-sidebar-width) 1fr;
+      gap: 36px;
+    }
+
+    .legal-sidebar {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .sidebar-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .legal-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .legal-menu-link {
+      display: flex;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: all 0.2s ease;
+    }
+
+    .legal-menu-link:hover,
+    .legal-menu-link.active {
+      background-color: rgba(0, 163, 225, 0.08);
+      color: var(--primary);
+    }
+
+    .action-box {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      background: #FFFFFF;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 100%;
+      text-decoration: none;
+    }
+
+    .btn-action:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .legal-content {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 40px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .policy-header {
+      border-bottom: 2px solid #F1F5F9;
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+
+    .policy-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+
+    .policy-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .policy-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #F8FAFC;
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid #E2E8F0;
+    }
+
+    .policy-body h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 36px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .policy-body h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    .policy-body p {
+      margin-bottom: 16px;
+      color: #334155;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .policy-body ul, .policy-body ol {
+      margin-bottom: 20px;
+      padding-left: 24px;
+      color: #334155;
+    }
+
+    .policy-body li {
+      margin-bottom: 10px;
+      line-height: 1.65;
+    }
+
+    .alert-callout {
+      padding: 20px;
+      border-radius: 16px;
+      margin: 24px 0;
+      border-left: 5px solid var(--primary);
+      background: #F0F9FF;
+    }
+
+    .alert-callout.warning {
+      border-left-color: #EF4444;
+      background: #FEF2F2;
+    }
+
+    .alert-callout.success {
+      border-left-color: #10B981;
+      background: #ECFDF5;
+    }
+
+    .alert-callout-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-dark);
+      font-size: 1rem;
+    }
+
+    .contact-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 992px) {
+      .legal-layout {
+        grid-template-columns: 1fr;
+      }
+      .legal-sidebar {
+        position: static;
+        height: auto;
+      }
+      .legal-content {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="legal-nav-header">
+    <div class="legal-nav-container">
+      <a href="/" class="legal-brand">
+        <img src="/public/logo 2.png" alt="Khozna Logo" />
+        <span>KHOZNA</span>
+      </a>
+      <div class="header-actions">
+        <a href="/terms.html" class="back-home-btn">Terms & Conditions</a>
+        <a href="/" class="back-home-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back to Website
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Legal Layout -->
+  <main class="legal-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="legal-sidebar">
+      <div class="sidebar-title">Privacy Policy Index</div>
+      <ul class="legal-menu">
+        <li><a href="#section-1" class="legal-menu-link">1. Overview & Scope</a></li>
+        <li><a href="#section-2" class="legal-menu-link">2. Data We Collect</a></li>
+        <li><a href="#section-3" class="legal-menu-link">3. How We Use Data</a></li>
+        <li><a href="#section-4" class="legal-menu-link">4. Data Sharing & Disclosure</a></li>
+        <li><a href="#section-5" class="legal-menu-link">5. Data Security & Storage</a></li>
+        <li><a href="#section-6" class="legal-menu-link">6. Account & Data Deletion</a></li>
+        <li><a href="#section-7" class="legal-menu-link">7. Children's Privacy</a></li>
+        <li><a href="#section-8" class="legal-menu-link">8. Policy Updates</a></li>
+        <li><a href="#section-9" class="legal-menu-link">9. Contact Us</a></li>
+      </ul>
+
+      <div class="action-box">
+        <button class="btn-action" onclick="window.print()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Print Document
+        </button>
+        <button class="btn-action" onclick="copyPolicyLink()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span id="copy-text">Share Direct Link</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <article class="legal-content">
+      
+      <div class="policy-header">
+        <h1 class="policy-title">Privacy Policy</h1>
+        <div class="policy-meta">
+          <span><strong>Entity:</strong> Khozna Private Limited / Khozna App Solutions Pvt. Ltd.</span>
+          <span><strong>Effective Date:</strong> September 6, 2026</span>
+          <span><strong>Compliance:</strong> Google Play & Apple App Store Guidelines</span>
+        </div>
+      </div>
+
+      <div class="policy-body">
+        
+        <!-- SECTION 1 -->
+        <section id="section-1">
+          <h2>1. Overview & Scope</h2>
+          <p>Khozna Private Limited ("Khozna", "we", "us", or "our") operates Nepal's peer-to-peer room rental and homestay platform available via our mobile applications and official website (<a href="https://khozna.com" style="color:var(--primary); font-weight:600;">khozna.com</a>).</p>
+          <p>This Privacy Policy explains clearly and transparently how we collect, process, store, disclose, and protect your personal information when you register, search for rooms, list properties, communicate, or execute transactions through the Khozna platform.</p>
+          
+          <div class="alert-callout">
+            <div class="alert-callout-title">🔒 Our Core Privacy Commitment</div>
+            <p>We believe in direct, transparent relationships. Khozna <strong>NEVER sells your personal data or phone number</strong> to third-party advertising networks or data brokers.</p>
+          </div>
+        </section>
+
+        <!-- SECTION 2 -->
+        <section id="section-2">
+          <h2>2. Information We Collect</h2>
+          <p>To deliver a safe, scam-free rental experience across Nepal, we collect the following categories of information:</p>
+
+          <h3>2.1 Personal Identity Information</h3>
+          <ul>
+            <li><strong>Account Details:</strong> Full Name, Email Address, Registered Mobile Number, and Profile Avatar photo.</li>
+            <li><strong>Role Classification:</strong> Whether you are registering as a Room Seeker or Property Host/Landlord.</li>
+          </ul>
+
+          <h3>2.2 Know-Your-Customer (KYC) & Verification Data</h3>
+          <ul>
+            <li><strong>Identity Verification Documents:</strong> Images of government-issued identification certificates (Citizenship Certificate, Passport, Driving License, or Student ID).</li>
+            <li><strong>Verification Purpose:</strong> KYC verification is mandatory for Hosts and Seekers to eliminate rental fraud, fake listings, and identity spoofing. Submitted documents are encrypted and kept strictly confidential.</li>
+          </ul>
+
+          <h3>2.3 Geographic Location Data (GPS)</h3>
+          <ul>
+            <li><strong>Precise GPS Location:</strong> Collected with explicit user permission while using the app to display nearby rooms, verify host property coordinates, enable distance-based search radius, and assist navigation to property visits.</li>
+            <li><strong>Background Location:</strong> Location permissions are active only while utilizing location-based features within the application.</li>
+          </ul>
+
+          <h3>2.4 Property Media & Content Uploads</h3>
+          <ul>
+            <li><strong>Listing Content:</strong> Video walkthrough clips, high-resolution room photos, floor plans, rent pricing details, and property amenity descriptions uploaded by hosts.</li>
+          </ul>
+
+          <h3>2.5 Financial & Escrow Transaction Data</h3>
+          <ul>
+            <li><strong>Payment Logs:</strong> Transaction IDs, timestamps, and payment status for escrow booking deposits conducted via eSewa, Khalti, or Bank Transfer.</li>
+            <li><em>Note: Khozna does NOT store raw credit card numbers, wallet PINs, or banking passwords on our servers.</em></li>
+          </ul>
+
+          <h3>2.6 Technical & Device Information</h3>
+          <ul>
+            <li><strong>Device Identifiers:</strong> IP address, operating system version, device model, app version, unique device tokens for Firebase Push Notifications, and system crash logs.</li>
+          </ul>
+        </section>
+
+        <!-- SECTION 3 -->
+        <section id="section-3">
+          <h2>3. How We Use Your Information</h2>
+          <p>We use collected data strictly to operate, protect, and improve the Khozna platform:</p>
+          <ul>
+            <li><strong>Verifying Authenticity:</strong> Authenticating host identities and building ownership to eliminate rental scams in Nepal.</li>
+            <li><strong>Connecting Seekers & Hosts:</strong> Facilitating scheduled room visits, direct in-app messaging, and mutual contact exchange upon visit approval.</li>
+            <li><strong>Operating Khozna Escrow:</strong> Holding booking deposits safely in escrow until physical property inspection or move-in confirmation.</li>
+            <li><strong>Location-Based Recommendations:</strong> Presenting rooms and homestays nearby based on exact geographical proximity.</li>
+            <li><strong>Push Notifications & Alerts:</strong> Sending real-time updates regarding booking requests, chat messages, visit confirmations, and escrow status.</li>
+            <li><strong>Legal & Regulatory Compliance:</strong> Fulfilling tax reporting, anti-money laundering, and law enforcement requirements under the laws of Nepal.</li>
+          </ul>
+        </section>
+
+        <!-- SECTION 4 -->
+        <section id="section-4">
+          <h2>4. Data Sharing & Third-Party Disclosure</h2>
+          <p>We prioritize your privacy and strictly control how data is shared:</p>
+          
+          <h3>4.1 Mutual Host-Seeker Contact Release</h3>
+          <p>To protect users against spam and unauthorized solicitations, phone numbers and direct contact details are shared between a Host and Seeker <strong>ONLY after a visit request is accepted or an escrow deposit is completed</strong>.</p>
+
+          <h3>4.2 Essential Service Providers</h3>
+          <p>We share data with trusted infrastructure providers bound by strict confidentiality agreements:</p>
+          <ul>
+            <li><strong>Cloud Infrastructure & Database:</strong> Backend database services hosted securely on Supabase.</li>
+            <li><strong>Push Notifications:</strong> Firebase Cloud Messaging (FCM V1) for delivering real-time notification alerts.</li>
+            <li><strong>Digital Payment Gateways:</strong> Integration with eSewa, Khalti, and Nepal interbank transfer systems to process escrow deposits and payouts.</li>
+          </ul>
+
+          <h3>4.3 Legal Requirements & Law Enforcement</h3>
+          <p>We may disclose user information to police or judicial authorities of Nepal only if mandated by a formal court order, search warrant, or official legal process issued by the Cyber Bureau of Nepal Police.</p>
+        </section>
+
+        <!-- SECTION 5 -->
+        <section id="section-5">
+          <h2>5. Data Security & Storage</h2>
+          <p>We implement multi-layered security protections to keep your data safe:</p>
+          <ul>
+            <li><strong>Data Encryption:</strong> All data transmitted between your device and Khozna servers uses SSL/TLS 256-bit encryption. Database storage at rest uses AES-256 encryption.</li>
+            <li><strong>In-App Screenshot Protection:</strong> Sensitive mobile app screens containing private KYC identity documents enforce screenshot-blocking technology to prevent identity theft.</li>
+            <li><strong>Access Controls:</strong> KYC documents are accessible strictly by authorized compliance staff for verification audit purposes.</li>
+          </ul>
+        </section>
+
+        <!-- SECTION 6 -->
+        <section id="section-6">
+          <h2>6. Account & Data Deletion Rights</h2>
+          <p>In full compliance with Google Play Store and Apple App Store policies, every user has the right to permanently request the deletion of their account and personal data.</p>
+          
+          <div class="alert-callout success">
+            <div class="alert-callout-title">🗑️ Two Easy Ways to Delete Your Data</div>
+            <p><strong>Option A (In-App):</strong> Open Khozna App → Profile → Edit Profile → Tap <em>Delete Account & Purge Data</em>.</p>
+            <p><strong>Option B (Web Portal):</strong> Access our dedicated Web Data Deletion Portal at <a href="/legal/data-deletion.html" style="color:var(--primary); font-weight:700;">khozna.com/legal/data-deletion.html</a> to submit an immediate deletion request.</p>
+          </div>
+
+          <p>Upon receiving a deletion request, your profile info, KYC identity documents, media uploads, and session logs will be permanently erased within 48 hours. Statutory financial transaction logs are retained for 3 years solely for Nepal tax compliance audits before permanent purge.</p>
+        </section>
+
+        <!-- SECTION 7 -->
+        <section id="section-7">
+          <h2>7. Children's Privacy</h2>
+          <p>The Khozna platform is not intended for individuals under the age of 18. We do not knowingly collect or solicit personal information from minors. If we learn that a minor has submitted personal data, we will immediately delete the information and terminate the account.</p>
+        </section>
+
+        <!-- SECTION 8 -->
+        <section id="section-8">
+          <h2>8. Changes to Privacy Policy</h2>
+          <p>We may update this Privacy Policy periodically to reflect app updates, new security safeguards, or legal requirements in Nepal. Material changes will be notified via in-app banner announcements and by updating the "Effective Date" at the top of this page.</p>
+        </section>
+
+        <!-- SECTION 9 -->
+        <section id="section-9">
+          <h2>9. Contact Us</h2>
+          <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact our Data Protection Officer:</p>
+          
+          <div class="contact-card">
+            <h3 style="margin-top:0; color:var(--primary);">Khozna Private Limited</h3>
+            <p style="margin-bottom:8px;"><strong>Entity Name:</strong> Khozna App Solutions Pvt. Ltd.</p>
+            <p style="margin-bottom:8px;"><strong>Email:</strong> <a href="mailto:support@khozna.com" style="color:var(--primary); font-weight:600;">support@khozna.com</a></p>
+            <p style="margin-bottom:8px;"><strong>Phone / WhatsApp:</strong> +977 9705278379</p>
+            <p style="margin-bottom:0;"><strong>Office Location:</strong> Kathmandu, Nepal</p>
+          </div>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <script>
+    function copyPolicyLink() {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        const copyText = document.getElementById('copy-text');
+        copyText.textContent = '✓ Link Copied!';
+        setTimeout(() => { copyText.textContent = 'Share Direct Link'; }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

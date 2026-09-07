@@ -23,8 +23,16 @@
       "destination": "/terms.html"
     },
     {
+      "source": "/privacy-policy",
+      "destination": "/privacy-policy.html"
+    },
+    {
+      "source": "/privacy-policy.html",
+      "destination": "/privacy-policy.html"
+    },
+    {
       "source": "/privacy",
-      "destination": "/terms.html"
+      "destination": "/privacy-policy.html"
     },
     {
       "source": "/refund",
@@ -37,6 +45,10 @@
     {
       "source": "/legal/data-deletion",
       "destination": "/legal/data-deletion.html"
+    },
+    {
+      "source": "/legal/privacy-policy",
+      "destination": "/privacy-policy.html"
     }
   ],
   "headers": [
