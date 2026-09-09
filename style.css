@@ -165,7 +165,28 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+}
+.nav-download-app-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--blue-primary);
+  background: rgba(0, 163, 225, 0.08);
+  border: 1px solid rgba(0, 163, 225, 0.28);
+  padding: 6px 14px;
+  border-radius: 100px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+.nav-download-app-link:hover {
+  background: var(--blue-primary);
+  color: var(--white);
+  border-color: var(--blue-primary);
+  transform: translateY(-1px);
 }
 .lang-switch {
   display: flex;
@@ -252,7 +273,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: color 0.2s ease;
 }
 .drawer-link:hover { color: var(--blue-primary); }
-.drawer-footer { margin-top: 10px; }
+.drawer-footer { margin-top: 10px; display: flex; flex-direction: column; gap: 10px; }
+.drawer-download-link { width: 100%; justify-content: center; padding: 12px 20px; font-size: 0.95rem; }
 .btn-block { width: 100%; text-align: center; justify-content: center; }
 
 /* ═══════════════════ SCROLL REVEAL ANIMATIONS ═══════════════════ */
@@ -949,4 +971,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     gap: 8px;
   }
   .bottom-legal-links .sep { display: none; }
+  .nav-download-app-link {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
 }
