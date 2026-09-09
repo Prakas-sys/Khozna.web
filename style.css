@@ -172,6 +172,25 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 700;
   padding: 9px 22px;
 }
+
+/* Mobile-only Download App small bordered link */
+.nav-mobile-download-link {
+  display: none; /* hidden on desktop */
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--blue-primary);
+  background: var(--blue-light-bg);
+  border: 1.5px solid var(--blue-primary);
+  padding: 6px 12px;
+  border-radius: 100px;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.nav-mobile-download-link:hover {
+  background: var(--blue-primary);
+  color: var(--white);
+}
 .lang-switch {
   display: flex;
   align-items: center;
@@ -816,7 +835,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .nav-container { padding: 0 20px; }
   .nav-menu { display: none; }
   .mobile-toggle { display: flex; }
-  .nav-right .btn-pill-primary { display: none; }
+  .nav-right .nav-download-btn { display: none; }       /* hide big pill on mobile */
+  .nav-mobile-download-link { display: inline-flex; }  /* show small bordered link */
   
   .split-grid, .banner-grid, .footer-container {
     grid-template-columns: 1fr;
